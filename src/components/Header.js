@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link, IndexLink } from 'react-router';
+import '../styles/header.scss';
 
-const Header = (props) => {
+const Header = () => {
     return (
       <nav className="header">
         <IndexLink to="/" className="logo">CHEFSTALK</IndexLink>
