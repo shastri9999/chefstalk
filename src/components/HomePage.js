@@ -1,5 +1,7 @@
 import React from 'react';
 import '../styles/home-page.scss';
+import { Link } from 'react-router';
+
 
 const Proposition = ()=> {
   return (
@@ -38,13 +40,40 @@ const HowItWorks = ()=> {
   );
 };
 
+const RestaurantLogos = ()=>{
+  const restaurants = [1,2,3,4,5,6,7,8];
+  return (
+    <div className="restaurant-logos">
+      <div className="heading">
+        Restaurants that are hiring on the platform.
+      </div>
+      <div className="logos">
+        {
+          restaurants.map(restaurant=>(
+            <div className="logo" key={restaurant}>
+              <div className="inner">
+                  Logo
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  );
+};
+
 const Footer = ()=> {
   return (
     <div className="footer">
       <div className="content">
         Need footer content
       </div>
-      <div className="links" />
+      <div className="links">
+        <div className="left">
+          <Link to="/terms-conditions">Terms and Conditions</Link>
+          <Link to="/privacy">Privacy Policy</Link>
+        </div>
+      </div>
     </div>
   );
 };
@@ -54,6 +83,7 @@ const HomePage = () => {
     <div className="home">
       <Proposition />
       <HowItWorks />
+      <RestaurantLogos />
       <Footer />
     </div>
   );

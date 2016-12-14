@@ -83,6 +83,40 @@
 			}
 		}
 	}
+	.restaurant-logos {
+		width: 100%;
+		display: flex;
+		flex-flow: column;
+		.heading {
+			padding: 70px;
+			color: #888888;
+			font-size: 18px;
+			text-align: center;
+			padding-bottom: 10px;
+		}
+		.logos {
+			margin: 10px 120px;
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: center;
+			.logo {
+				height: 164px;
+			    width: 200px;
+			    background: #f4f4f4;
+			    margin: 40px;
+			    padding: 20px;
+			    .inner {
+			    	background-color: #fff;
+			    	height: 84px;
+			    	display: flex;
+			    	font-size: 16px;
+			    	color: #888888;
+			    	align-items: center;
+			    	justify-content: center;
+			    }
+			}
+		}
+	}
 	.footer {
 		display: flex;
 		width: 100%;
@@ -97,7 +131,20 @@
 			height: 300px;
 			color: #dbdbdb;
 			font-weight: 600;
-			font-size: 24px;
+			font-size: 20px;
+		}
+		.links {
+			font-size: 12px;
+			font-weight: 600;
+			background-color: #eeeeee;
+			width: 100%;
+			display: flex;
+			padding: 50px;
+			a {
+				text-decoration: none;
+				color: #a8a8a8;
+				margin: 0 60px;
+			}
 		}
 	}
 }
