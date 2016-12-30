@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import { Link, IndexLink } from 'react-router';
 import '../styles/header.scss';
 
@@ -15,5 +15,8 @@ const Header = () => {
     );
 };
 
+Header.propTypes = {
+  pathname: PropTypes.string
+};
 
 export default Header;

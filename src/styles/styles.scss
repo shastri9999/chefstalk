@@ -1,6 +1,20 @@
 @import "reset";
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+@import "variables";
+
+@font-face {
+	font-family: Gilory;
+	src: url('font/gilory-light.otf') format("opentype");
+}
+
+@font-face {
+	font-family: Gilory;
+	font-weight: bold;
+	src: url('font/gilory-extrabold.otf') format("opentype");
+}
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Gilory', sans-serif;
+  color: $darkcolor;
+  letter-spacing: 0.5px;
+  font-size: 18px;
 }
