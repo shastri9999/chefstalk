@@ -78,8 +78,7 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <hr className='section-divider' />
-
+      <hr className="section-divider" />
     </div>
   );
 };
