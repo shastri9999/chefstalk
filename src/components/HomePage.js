@@ -1,7 +1,8 @@
 import React from 'react';
 import '../styles/home-page.scss';
 import { Link, IndexLink } from 'react-router';
-
+import SearchBar from './SearchBar.js';
+import JobCarousel from './JobCarousel.js';
 
 const HomePage = () => {
   return (
@@ -31,18 +32,7 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <div className="search">
-        <img src={require('../images/search-icon.png')} className="search-icon" />
-        <input placeholder="Search by Position, Restaurant" />
-        <div className="divider" />
-        <div className="location">
-          Select Location
-        </div>
-        <img src={require('../images/triangle-down.png')} className="triangle-down" />
-        <button>
-          Get Job Offers
-        </button>
-      </div>
+      <SearchBar />
       <div className="create-profile">
         <h2>Create you profile</h2>
         <div className="steps">
@@ -84,6 +74,7 @@ const HomePage = () => {
         </div>
         <h3>There is a good bunch of reasons to use Chefstalk.</h3>
       </div>
+      <JobCarousel />
       <hr className="section-divider" />
       <div className="why-chefstalk">
         <h2>Why to use ChefsTalk</h2>
