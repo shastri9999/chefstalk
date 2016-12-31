@@ -12,6 +12,10 @@
 	src: url('font/gilory-extrabold.otf') format("opentype");
 }
 
+button {
+  font-family: 'Gilory', sans-serif;
+}
+
 body {
   font-family: 'Gilory', sans-serif;
   color: $darkcolor;
