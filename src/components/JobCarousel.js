@@ -31,20 +31,55 @@ export default class JobCarousel extends Component {
       variableWidth: true,
     };
     const slides = [{
-      image: 'https://s30.postimg.org/cqzqqa46p/mumbai_city_highlights_small_group_tour_in_mumba.jpg',
+      image: 'https://s30.postimg.org/cqzqqa46p/mumbai.jpg',
       place: 'Mumbai, India',
+      restaurant: {
+        name: 'Gran Hyatt',
+        image: 'https://s27.postimg.org/r6kp0y5df/hyatt.png',
+        positions: 'Master Chef, Bar Tender, Manager',
+        salaryRange: '$80K - $120K',
+        time: '3 hours ago',
+      },
     },{
-      image: 'https://s30.postimg.org/cqzqqa46p/mumbai_city_highlights_small_group_tour_in_mumba.jpg',
+      image: 'https://s30.postimg.org/5yobot4ld/berlin.jpg',
       place: 'Berlin, Germany',
+      restaurant: {
+        name: 'Radisson Blu',
+        image: 'https://s27.postimg.org/65f9fc7yr/radisson.png',
+        positions: 'Master Chef, Bar Tender, Manager',
+        salaryRange: '$80K - $120K',
+        time: '1 day ago',
+      },
     },{
-      image: 'https://s30.postimg.org/cqzqqa46p/mumbai_city_highlights_small_group_tour_in_mumba.jpg',
+      image: 'https://s27.postimg.org/mhrddkytf/barcelona.jpg',
       place: 'Barcelona, Spain',
+      restaurant: {
+        name: 'Radisson Blu',
+        image: 'https://s27.postimg.org/65f9fc7yr/radisson.png',
+        positions: 'Master Chef, Bar Tender, Manager',
+        salaryRange: '$80K - $120K',
+        time: '2 days ago',
+      },
     },{
-      image: 'https://s30.postimg.org/cqzqqa46p/mumbai_city_highlights_small_group_tour_in_mumba.jpg',
+      image: 'https://s30.postimg.org/enmg5n7z5/new_york.jpg',
       place: 'NewYork, USA',
+      restaurant: {
+        name: 'Radisson Blu',
+        image: 'https://s27.postimg.org/65f9fc7yr/radisson.png',
+        positions: 'Master Chef, Bar Tender, Manager',
+        salaryRange: '$80K - $120K',
+        time: '2 days ago',
+      },
     },{
-      image: 'https://s30.postimg.org/cqzqqa46p/mumbai_city_highlights_small_group_tour_in_mumba.jpg',
+      image: 'https://s23.postimg.org/65vxkfkjv/bangalore.jpg',
       place: 'Bengaluru, India',
+      restaurant: {
+        name: 'Grand Hyatt',
+        image: 'https://s27.postimg.org/r6kp0y5df/hyatt.png',
+        positions: 'Master Chef, Bar Tender, Manager',
+        salaryRange: '$80K - $120K',
+        time: '3 days ago',
+      },
     }];
     return (
       <div className="jobcarousel">
@@ -64,6 +99,14 @@ export default class JobCarousel extends Component {
                     {slide.place}
                   </div>
                   <div className="details">
+                    <img src={slide.restaurant.image} alt="" />
+                    <button className="apply">Apply</button>
+                    <h3>{slide.restaurant.name}</h3>
+                    <div className="positions">{slide.restaurant.positions}</div>
+                    <div className="salary">
+                      <div>{slide.restaurant.salaryRange}</div>
+                      <div className="time">{slide.restaurant.time}</div>
+                    </div>
                   </div>
               </div>
             </div>
