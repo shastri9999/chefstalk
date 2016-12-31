@@ -134,7 +134,7 @@ const HomePage = () => {
           <Link to="/unkown">Twitter</Link>
           <Link to="/unkown">Pinterest</Link>
           <Link to="/unkown">Instagram</Link>
-          <a className="country" href="/unkown">Country <span className="dropdown">▼</span></Link>
+          <Link className="country" href="/unkown">Country <span className="dropdown">▼</span></Link>
           <Link to="/unkown">Language <span className="dropdown">▼</span></Link>
         </div>
       </footer>
