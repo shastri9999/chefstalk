@@ -113,29 +113,29 @@ const HomePage = () => {
       <footer>
         <div className="links">
           <h3>Navigation</h3>
-          <a href="/unkown">Jobs</a>
-          <a href="/unkown">Chefs Login</a>
-          <a href="/unkown">Business Login</a>
+          <Link to="/unkown">Jobs</Link>
+          <Link to="/unkown">Chefs Login</Link>
+          <Link to="/unkown">Business Login</Link>
         </div>
         <div className="links">
           <h3>Job Board</h3>
-          <a href="/unkown">About</a>
-          <a href="/unkown">FAQ</a>
-          <a href="/unkown">Terms</a>
+          <Link to="/unkown">About</Link>
+          <Link to="/unkown">FAQ</Link>
+          <Link to="/unkown">Terms</Link>
         </div>
         <div className="links">
           <h3>Business</h3>
-          <a href="/unkown">Employer</a>
-          <a href="/unkown">Plans and Pricing</a>
+          <Link to="/unkown">Employer</Link>
+          <Link to="/unkown">Plans and Pricing</Link>
         </div>
         <div className="links">
           <h3>Connect</h3>
-          <a href="/unkown">Facebook</a>
-          <a href="/unkown">Twitter</a>
-          <a href="/unkown">Pinterest</a>
-          <a href="/unkown">Instagram</a>
-          <a className="country" href="/unkown">Country <span className="dropdown">▼</span></a>
-          <a href="/unkown">Language <span className="dropdown">▼</span></a>
+          <Link to="/unkown">Facebook</Link>
+          <Link to="/unkown">Twitter</Link>
+          <Link to="/unkown">Pinterest</Link>
+          <Link to="/unkown">Instagram</Link>
+          <a className="country" href="/unkown">Country <span className="dropdown">▼</span></Link>
+          <Link to="/unkown">Language <span className="dropdown">▼</span></Link>
         </div>
       </footer>
       <div className="copyright">© 2017 CHEFSTALK All Rights Reserved</div>
