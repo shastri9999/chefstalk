@@ -3,7 +3,6 @@ import '../styles/home-page.scss';
 import { Link, IndexLink } from 'react-router';
 
 
-
 const HomePage = () => {
   return (
     <div className="home">
@@ -79,6 +78,67 @@ const HomePage = () => {
         </div>
       </div>
       <hr className="section-divider" />
+      <div className="jobs">
+        <div className="title">
+          <h2>Jobs around the globe</h2>
+        </div>
+        <h3>There is a good bunch of reasons to use Chefstalk.</h3>
+      </div>
+      <hr className="section-divider" />
+      <div className="why-chefstalk">
+        <h2>Why to use ChefsTalk</h2>
+        <div className="reasons">
+          <div>
+            <h3>Establish a presence</h3>
+            <p>From saving for home repairs to taking a dream trip, use the extra income to fund your passions.</p>
+          </div>
+          <div>
+            <h3>Fuel your career</h3>
+            <p>Get tips and tools and connect with hosts like you from around the globe.</p>
+          </div>
+          <div>
+            <h3>Learn and inspire</h3>
+            <p>You set your price and decide when you want to host and how often.</p>
+          </div>
+        </div>
+        <h3 className="start-apply">
+          Start applying and receiving jobs.
+        </h3>
+        <div className="signup">
+          <img src={require('../images/footer-man.png')} className="footer-man" />
+          <button> Sign Up </button>
+        </div>
+      </div>
+      <hr className="section-divider" />
+      <footer>
+        <div className="links">
+          <h3>Navigation</h3>
+          <a href="/unkown">Jobs</a>
+          <a href="/unkown">Chefs Login</a>
+          <a href="/unkown">Business Login</a>
+        </div>
+        <div className="links">
+          <h3>Job Board</h3>
+          <a href="/unkown">About</a>
+          <a href="/unkown">FAQ</a>
+          <a href="/unkown">Terms</a>
+        </div>
+        <div className="links">
+          <h3>Business</h3>
+          <a href="/unkown">Employer</a>
+          <a href="/unkown">Plans and Pricing</a>
+        </div>
+        <div className="links">
+          <h3>Connect</h3>
+          <a href="/unkown">Facebook</a>
+          <a href="/unkown">Twitter</a>
+          <a href="/unkown">Pinterest</a>
+          <a href="/unkown">Instagram</a>
+          <a className="country" href="/unkown">Country <span className="dropdown">▼</span></a>
+          <a href="/unkown">Language <span className="dropdown">▼</span></a>
+        </div>
+      </footer>
+      <div className="copyright">© 2017 CHEFSTALK All Rights Reserved</div>
     </div>
   );
 };
