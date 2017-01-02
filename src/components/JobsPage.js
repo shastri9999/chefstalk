@@ -27,6 +27,10 @@ const JobsPage = () => {
         Your profile is incomplete. Complete your profile for getting more jobs.
         <div style={{'width':'38%'}} className="status-bar" />
       </div>
+      <div className="main">
+        <div className="job-list" />
+        <div className="job-detail" />
+      </div>
     </div>
   );
 };
