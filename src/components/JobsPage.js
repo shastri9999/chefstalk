@@ -23,6 +23,10 @@ const JobsPage = () => {
           <img src="https://s30.postimg.org/jq2v3j0jl/userlogo.jpg" className="avatar"/>
         </div>
       </div>
+      <div className="profile-completion-status">
+        Your profile is incomplete. Complete your profile for getting more jobs.
+        <div style={{'width':'38%'}} className="status-bar" />
+      </div>
     </div>
   );
 };
