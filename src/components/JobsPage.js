@@ -28,7 +28,18 @@ const JobsPage = () => {
         <div style={{'width':'38%'}} className="status-bar" />
       </div>
       <div className="main">
-        <div className="job-list" />
+        <div className="job-list" >
+          <div className="filter-bar">
+            <div className="filter">Location &#9662;</div>
+            <div className="filter">Job Title &#9662;</div>
+            <div className="filter">Restaurant Type &#9662;</div>
+            <div className="filter">Job Type &#9662;</div>
+            <div className="filter">Compensation &#9662;</div>
+          </div>
+          <div className="list" >
+            No Jobs Found
+          </div>
+        </div>
         <div className="job-detail" />
       </div>
     </div>
