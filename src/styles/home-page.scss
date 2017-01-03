@@ -37,7 +37,7 @@ $leftrightpadding: 9vw;
 			.links {
 				a {
 					margin-right: 30px;
-					&.signup {
+					&.signup:hover, &.login:hover {
 						background-color: $lightishblue;
 					    color: white;
 					    width: 9.27em;
@@ -45,8 +45,10 @@ $leftrightpadding: 9vw;
 					    line-height: 2.85em;
 					    text-align: center;
 					    border-radius: 100px;
+							border: 0;
+							opacity: 1;
 					}
-					&.login {
+					&.login, &.signup {
 					    width: 9.27em;
 					    display: inline-block;
 					    line-height: 2.85em;
@@ -105,7 +107,7 @@ $leftrightpadding: 9vw;
 			font-family: Gilory;
 			&::placeholder {
 				color: $darkcolor;
-			}		
+			}
 		}
 		.divider {
 			background-color: $cloudyblue;
@@ -161,7 +163,7 @@ $leftrightpadding: 9vw;
 			&>div:not(:last-of-type) {
 				margin-right: 69px;
 			}
-			h3 
+			h3
 			{
 				font-size: 1.35em;
 			}
@@ -177,7 +179,7 @@ $leftrightpadding: 9vw;
 		h2 {
 			font-size: 2.75em;
 		    line-height: 1.25;
-		    margin-bottom: 20px;			
+		    margin-bottom: 20px;
 		}
 		h3 {
 			font-size: 1.35em;
@@ -188,7 +190,7 @@ $leftrightpadding: 9vw;
 		h2 {
 			font-size: 2.75em;
 		    line-height: 1.25;
-		    margin-bottom: 70px;			
+		    margin-bottom: 70px;
 		}
 		.reasons {
 			display: flex;
