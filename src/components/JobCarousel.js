@@ -34,7 +34,7 @@ export default class JobCarousel extends Component {
       image: 'https://s30.postimg.org/cqzqqa46p/mumbai.jpg',
       place: 'Mumbai, India',
       restaurant: {
-        name: 'Gran Hyatt',
+        name: 'Grand Hyatt',
         image: 'https://s27.postimg.org/r6kp0y5df/hyatt.png',
         positions: 'Master Chef, Bar Tender, Manager',
         salaryRange: '$80K - $120K',

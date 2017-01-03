@@ -16,7 +16,7 @@ const JobsPage = ({jobs}) => {
         </div>
         <div className="search-area">
           <img src={require('../images/search-icon.png')} />
-          <input placeholder="Search by Position, Restruarant, Location" />
+          <input placeholder="Search by Position, Restaurant, Location" />
         </div>
         <div className="avatar-area">
           <img src={require('../images/bell.png')} className="bell" />
