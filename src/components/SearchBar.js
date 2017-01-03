@@ -1,6 +1,7 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {push} from 'react-router-redux';
+import {removeTermType, addTerm} from '../reducers/actions.js';
 
 class  SearchBar extends React.Component{
   constructor(props){
@@ -9,6 +10,7 @@ class  SearchBar extends React.Component{
       value: "",
       options: [],
       selectedOptionIndex: 0,
+      location: "",
     };
     this.handleChange = this.handleChange.bind(this);
     this.selectValue = this.selectValue.bind(this);
@@ -20,9 +22,11 @@ class  SearchBar extends React.Component{
       const keyCode = event.keyCode;
       if (keyCode == 13 && this.state.options.length)
       {
+        const term = this.state.options[this.state.selectedOptionIndex];
+        term ? this.props.replaceTerm(term) : null;
         this.setState({
           options: [],
-          value: this.state.options[this.state.selectedOptionIndex].display,
+          value: term.display,
         });
       }
       else if(keyCode == 38 && this.state.selectedOptionIndex > 0)
@@ -64,6 +68,7 @@ class  SearchBar extends React.Component{
   }
 
   selectValue(option){
+    this.props.replaceTerm(option);
     this.setState({
       value: option.display,
       options: [],
@@ -72,11 +77,10 @@ class  SearchBar extends React.Component{
   }
 
   render(){
-    const {searchTerms, search} = this.props;
+    const {search} = this.props;
     return (
         <div className="search">
           <img src={require('../images/search-icon.png')} className="search-icon" />
-          {searchTerms.length? <div>Search Terms </div>: null}
           <input placeholder="Search by Position, Restaurant"
                  onChange={this.handleChange}
                  onKeyDown={this.handleKeyDown}
@@ -86,7 +90,7 @@ class  SearchBar extends React.Component{
             Select Location
           </div>
           <img src={require('../images/triangle-down.png')} className="triangle-down" />
-          <button onClick={search}>
+          <button onClick={()=>{search(this.state.value);}}>
             Get Job Offers
           </button>
           {this.state.options.length? (
@@ -106,8 +110,8 @@ class  SearchBar extends React.Component{
 
 SearchBar.propTypes = {
   search: PropTypes.func,
-  searchTerms: PropTypes.array,
   filters: PropTypes.array,
+  replaceTerm: PropTypes.func,
 };
 
 const mapStateToProps = ({searchTerms, filters}) => {
@@ -119,7 +123,17 @@ const mapStateToProps = ({searchTerms, filters}) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    search: () => dispatch(push('/jobs')),
+    search: (value) => {
+      if (!value)
+      {
+        dispatch(removeTermType('non-location'));
+      }
+      dispatch(push('/jobs'));
+    },
+    replaceTerm: (term)=> {
+      dispatch(removeTermType('non-location'));
+      dispatch(addTerm(term));
+    }
   };
 };
 
