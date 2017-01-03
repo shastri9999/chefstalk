@@ -49,6 +49,10 @@ export default {
     display: 'Germany',
     type: 'location'
   },{
+    value: 'USA',
+    display: 'United States',
+    type: 'location'
+  },{
     value: 'India',
     display: 'India',
     type: 'location'
@@ -92,7 +96,7 @@ export default {
           'title': 'Bar Tender',
           'jobType': 'Full Time',
           'posted': '5 days ago',
-          'location': 'Brookyln, Germany',
+          'location': 'Brookyln, USA',
           'compensation': '$80K - $100K',
         },{
           'title': 'Bar Tender',
@@ -127,7 +131,7 @@ export default {
           'title': 'Bar Tender',
           'jobType': 'Full Time',
           'posted': '5 days ago',
-          'location': 'Brookyln, Germany',
+          'location': 'Brookyln, USA',
           'compensation': '$80K - $100K',
         },{
           'title': 'Bar Tender',

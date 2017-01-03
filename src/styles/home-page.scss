@@ -118,7 +118,7 @@ $leftrightpadding: 9vw;
 		    margin-left: 40px;
 		    margin-right: 20px;
 		}
-		input {
+		&>input {
 			flex: 1;
 			border: none;
 			font-size: 1em;
@@ -135,7 +135,9 @@ $leftrightpadding: 9vw;
 			margin-right: 30px;
 			margin-left: 30px;
 		}
-
+		.location {
+			position: relative;
+		}
 		.triangle-down {
 			position: relative;
 			top: 5px;

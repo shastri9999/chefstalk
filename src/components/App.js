@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import 'react-select/dist/react-select.min.css';
 
 class App extends React.Component {
   render() {

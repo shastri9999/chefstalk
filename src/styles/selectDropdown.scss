@@ -1,0 +1,55 @@
+@import "variables";
+.select-dropdown {
+    position: absolute;
+    top: 100%;
+    width: 260px;
+    font-size: 14px;
+    border: 1px solid $cloudyblue;
+    box-shadow: $shadow 1px 1px 1px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    font-size: 14px;
+    background: white;
+    margin-top: 18px;
+    display: none;
+    input {
+      padding: 10px;
+      margin-top: 12px;
+      margin-left: 12px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      outline: none;
+      border: 1px solid $cloudyblue;
+      border-radius: 3px;
+      letter-spacing: 0.5px;
+    }
+    .top-option-text {
+      text-transform: uppercase;
+      margin-left: 13px;
+      margin-bottom: 15px;
+    }
+
+    &::before {
+      content: " ";
+      width: 0;
+      height: 0;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-bottom: 7px solid $cloudyblue;
+      position: absolute;
+      top: -7px;
+      left: 20px;
+    }
+    &::after {
+      content: " ";
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 6px solid white;
+      position: absolute;
+      top: -6px;
+      left: 21px;
+    }
+}

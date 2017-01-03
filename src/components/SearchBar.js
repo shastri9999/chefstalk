@@ -2,6 +2,8 @@ import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {push} from 'react-router-redux';
 import {removeTermType, addTerm} from '../reducers/actions.js';
+import SelectDropDown from './selectDropdown.js';
+
 
 class  SearchBar extends React.Component{
   constructor(props){
@@ -88,6 +90,9 @@ class  SearchBar extends React.Component{
           <div className="divider" />
           <div className="location">
             Select Location
+            <SelectDropDown
+              placeholder="Enter a Location"
+              topOptionText="Top Locations"/>
           </div>
           <img src={require('../images/triangle-down.png')} className="triangle-down" />
           <button onClick={()=>{search(this.state.value);}}>
