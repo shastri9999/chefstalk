@@ -93,6 +93,25 @@ $leftrightpadding: 9vw;
 		font-size: 1em;
 		border-radius: 2px;
 		box-shadow: $shadow 0 4px 10px;
+		position: relative;
+		.dropdown {
+			position: absolute;
+	    background: white;
+	    top: 101px;
+	    left: 0;
+	    right: 0;
+	    border: 1px solid $cloudyblue;
+	    border-radius: 2px;
+			.option {
+				padding: 12px;
+				cursor: pointer;
+				padding-left: 100px;
+				&:hover {
+					background-color: #edf2f5;
+					color: $lightishblue;
+				}
+			}
+		}
 		.search-icon {
 			position: relative;
 		    top: 5px;

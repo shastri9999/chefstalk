@@ -3,9 +3,10 @@ import { Link } from 'react-router';
 import '../styles/jobspage.scss';
 import {connect} from 'react-redux';
 import JobItem from './JobItem.js';
+import JobDetail from './JobDetail.js';
 
 
-const JobsPage = ({jobs}) => {
+const JobsPage = ({jobs, selectedJob}) => {
   return (
     <div className="jobs-container">
       <div className="navbar">
@@ -44,7 +45,7 @@ const JobsPage = ({jobs}) => {
                           <div className="job-not-found">No Jobs found. </div>}
           </div>
         </div>
-        <div className="job-detail" />
+        <JobDetail job={selectedJob} />
       </div>
     </div>
   );
@@ -52,12 +53,14 @@ const JobsPage = ({jobs}) => {
 
 JobsPage.propTypes = {
   jobs: PropTypes.array,
+  selectedJob: PropTypes.object,
 };
 
 
-const mapStateToProps = ({jobs}) => {
+const mapStateToProps = ({jobs, selectedJobIndex}) => {
   return {
       jobs,
+      selectedJob: jobs[selectedJobIndex]
   };
 };
 

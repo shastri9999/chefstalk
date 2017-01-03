@@ -1,6 +1,34 @@
 export default {
   searchTerms: [],
-  filters: [],
+  filters: [{
+    value: 'Master Chef',
+    display: 'Master Chef',
+    type: 'title'
+  },{
+    value: 'Bar Tender',
+    display: 'Bar Tender',
+    type: 'title'
+  },{
+    value: 'Full Time',
+    display: 'Full Time',
+    type: 'jobType'
+  },{
+    value: 'Contract',
+    display: 'Contract',
+    type: 'jobType'
+  },{
+    value: 'Berlin',
+    display: 'Berlin',
+    type: 'location'
+  },{
+    value: 'Germany',
+    display: 'Germany',
+    type: 'location'
+  },{
+    value: 'India',
+    display: 'India',
+    type: 'location'
+  }],
   filteredJobs: [],
   jobs: [{
     restaurant: {
@@ -96,5 +124,5 @@ export default {
         'posted': '7 days ago'
     },
   }],
-  selectedJobIndex: -1,
+  selectedJobIndex: 0,
 };
