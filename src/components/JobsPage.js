@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import { Link } from 'react-router';
 import '../styles/jobspage.scss';
+import {connect} from 'react-redux';
 
-const JobsPage = () => {
+
+
+const JobsPage = (jobs) => {
   return (
     <div className="jobs-container">
       <div className="navbar">
@@ -37,7 +40,8 @@ const JobsPage = () => {
             <div className="filter">Compensation &#9662;</div>
           </div>
           <div className="list" >
-            No Jobs Found
+            {jobs.length ? jobs.map((job, index) => <div key={index}>job - {job.restuarant.name}</div> ) :
+                          <div className="job-not-found">No Jobs found. </div>}
           </div>
         </div>
         <div className="job-detail" />
@@ -46,4 +50,16 @@ const JobsPage = () => {
   );
 };
 
-export default JobsPage;
+JobsPage.propTypes = {
+  jobs: PropTypes.array,
+};
+
+
+const mapStateToProps = ({filteredJobs}) => {
+  return {
+      jobs: filteredJobs,
+  };
+};
+
+
+export default connect(mapStateToProps)(JobsPage);
