@@ -106,7 +106,7 @@ $leftrightpadding: 9vw;
 				padding: 12px;
 				cursor: pointer;
 				padding-left: 100px;
-				&:hover {
+				&:hover, &.selected {
 					background-color: #edf2f5;
 					color: $lightishblue;
 				}

@@ -8,10 +8,35 @@ class  SearchBar extends React.Component{
     this.state = {
       value: "",
       options: [],
+      selectedOptionIndex: 0,
     };
     this.handleChange = this.handleChange.bind(this);
     this.selectValue = this.selectValue.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
+  }
+
+  handleKeyDown(event){
+      const keyCode = event.keyCode;
+      if (keyCode == 13 && this.state.options.length)
+      {
+        this.setState({
+          options: [],
+          value: this.state.options[this.state.selectedOptionIndex].display,
+        });
+      }
+      else if(keyCode == 38 && this.state.selectedOptionIndex > 0)
+      {
+        this.setState({
+          selectedOptionIndex: this.state.selectedOptionIndex - 1,
+        });
+      }
+      else if(keyCode == 40 && this.state.selectedOptionIndex < this.state.options.length - 1)
+      {
+        this.setState({
+          selectedOptionIndex: this.state.selectedOptionIndex + 1,
+        });
+      }
   }
 
   handleChange(event){
@@ -19,13 +44,22 @@ class  SearchBar extends React.Component{
       event.preventDefault();
       this.setState({
         value: event.target.value,
-        options: this.props.filters,
+        options: event.target.value ? this.props.filters.filter((filter)=>{
+          if (filter.type == 'location')
+            return false;
+          else {
+            const regex = new RegExp('\\b' + event.target.value , 'gi');
+            return (filter.display.match(regex));
+          }
+        }) : "",
+        selectedOptionIndex: 0,
       });
   }
 
   handleBlur(){
     this.setState({
       options: [],
+      selectedOptionIndex: 0,
     });
   }
 
@@ -33,6 +67,7 @@ class  SearchBar extends React.Component{
     this.setState({
       value: option.display,
       options: [],
+      selectedOptionIndex: 0,
     });
   }
 
@@ -44,6 +79,7 @@ class  SearchBar extends React.Component{
           {searchTerms.length? <div>Search Terms </div>: null}
           <input placeholder="Search by Position, Restaurant"
                  onChange={this.handleChange}
+                 onKeyDown={this.handleKeyDown}
                  value={this.state.value}/>
           <div className="divider" />
           <div className="location">
@@ -56,7 +92,9 @@ class  SearchBar extends React.Component{
           {this.state.options.length? (
             <div className="dropdown">
               {this.state.options.map((option, index) => (
-                <div className="option" key={index} onClick={()=>{this.selectValue(option);}}
+                <div className={this.state.selectedOptionIndex == index ? 'option selected' : 'option'}
+                     key={index}
+                     onClick={()=>{this.selectValue(option);}}
                 onBlur={this.handleBlur}>{option.display}</div>
               ))}
             </div>

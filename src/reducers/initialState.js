@@ -5,6 +5,30 @@ export default {
     display: 'Master Chef',
     type: 'title'
   },{
+    value: 'Sous Chef',
+    display: 'Sous Chef',
+    type: 'title'
+  },{
+    value: 'Head Chef',
+    display: 'Head Chef',
+    type: 'title'
+  },{
+    value: 'Kitchen Porter',
+    display: 'Kitchen Porter',
+    type: 'title'
+  },{
+    value: 'Line Cook',
+    display: 'Line Cook',
+    type: 'title'
+  },{
+    value: 'Dish Washer',
+    display: 'Dish Washer',
+    type: 'title'
+  },{
+    value: 'Executive Chef',
+    display: 'Executive Chef',
+    type: 'title'
+  },{
     value: 'Bar Tender',
     display: 'Bar Tender',
     type: 'title'
@@ -28,6 +52,26 @@ export default {
     value: 'India',
     display: 'India',
     type: 'location'
+  }, {
+    value: 'Radisson Blu',
+    display: 'Radisson Blu',
+    type: 'name',
+  },{
+    value: 'Grand Hyatt',
+    display: 'Grand Hyatt',
+    type: 'name',
+  },{
+    value: 'Oberoi Hotels',
+    display: 'Oberoi Hotels',
+    type: 'name',
+  },{
+    value: 'Brookyln',
+    display: 'Brookyln',
+    type: 'location',
+  },{
+    value: 'Kolkota',
+    display: 'Kolkota',
+    type: 'location',
   }],
   filteredJobs: [],
   jobs: [{
