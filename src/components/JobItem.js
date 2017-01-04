@@ -1,11 +1,12 @@
 import React, {PropTypes} from 'react';
+import '../styles/jobitem.scss';
 
 const JobItem = ({job}) => {
   const {restaurant} = job;
   const {jobs} = restaurant;
   const jobsToDisplay = jobs.slice(0,3);
   const moreJobs = Math.max(0, jobs.length - 3);
-  return (<div className="job-item">
+  return (<div className="job-list-item">
             <div className="restaurant">
               <img src={restaurant.image} />
               <div className="name">{restaurant.name}</div>

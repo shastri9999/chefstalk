@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {push} from 'react-router-redux';
 import {removeTermType, addTerm} from '../reducers/actions.js';
 import SelectDropDown from './selectDropdown.js';
-
+import enhanceWithClickOutside from 'react-click-outside';
 
 class  SearchBar extends React.Component{
   constructor(props){
@@ -13,10 +13,11 @@ class  SearchBar extends React.Component{
       options: [],
       selectedOptionIndex: 0,
       location: "",
+      showLocation: false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.selectValue = this.selectValue.bind(this);
-    this.handleBlur = this.handleBlur.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
@@ -62,7 +63,7 @@ class  SearchBar extends React.Component{
       });
   }
 
-  handleBlur(){
+  handleClickOutside(){
     this.setState({
       options: [],
       selectedOptionIndex: 0,
@@ -90,11 +91,14 @@ class  SearchBar extends React.Component{
           <div className="divider" />
           <div className="location">
             Select Location
-            <SelectDropDown
+            {this.state.showLocation ? <SelectDropDown
               placeholder="Enter a Location"
-              topOptionText="Top Locations"/>
+              topOptionText="Top Locations"
+              onOutsideClick={()=>{this.setState({showLocation: false},);}}/> : null}
           </div>
-          <img src={require('../images/triangle-down.png')} className="triangle-down" />
+          <img src={require('../images/triangle-down.png')}
+               className="triangle-down"
+               onClick={()=>{this.setState({showLocation: !this.state.showLocation,});}}/>
           <button onClick={()=>{search(this.state.value);}}>
             Get Job Offers
           </button>
@@ -103,8 +107,9 @@ class  SearchBar extends React.Component{
               {this.state.options.map((option, index) => (
                 <div className={this.state.selectedOptionIndex == index ? 'option selected' : 'option'}
                      key={index}
-                     onClick={()=>{this.selectValue(option);}}
-                onBlur={this.handleBlur}>{option.display}</div>
+                     onClick={()=>{this.selectValue(option);}}>
+                     {option.display}
+                </div>
               ))}
             </div>
           ): null}
@@ -118,6 +123,8 @@ SearchBar.propTypes = {
   filters: PropTypes.array,
   replaceTerm: PropTypes.func,
 };
+
+const enhancedSearchBar = enhanceWithClickOutside(SearchBar);
 
 const mapStateToProps = ({searchTerms, filters}) => {
   return {
@@ -142,4 +149,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);
+export default connect(mapStateToProps, mapDispatchToProps)(enhancedSearchBar);

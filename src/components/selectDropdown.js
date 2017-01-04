@@ -1,5 +1,6 @@
 import React, {PropTypes} from 'react';
 import '../styles/selectDropdown.scss';
+import enhanceWithClickOutside from 'react-click-outside';
 
 class SelectDropDown extends React.Component {
   constructor(props) {
@@ -11,6 +12,11 @@ class SelectDropDown extends React.Component {
       selectedOptionIndex: 0,
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
+  }
+
+  handleClickOutside(){
+    this.props.onOutsideClick();
   }
 
   handleChange(event){
@@ -37,6 +43,7 @@ class SelectDropDown extends React.Component {
 SelectDropDown.propTypes = {
   placeholder: PropTypes.string,
   topOptionText: PropTypes.string,
+  onOutsideClick: PropTypes.func,
 };
 
-export default SelectDropDown;
+export default enhanceWithClickOutside(SelectDropDown);
