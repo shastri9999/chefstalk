@@ -4,9 +4,10 @@ import '../styles/jobspage.scss';
 import {connect} from 'react-redux';
 import JobItem from './JobItem.js';
 import JobDetail from './JobDetail.js';
+import {changeSelectedJob} from '../reducers/actions.js';
 
 
-const JobsPage = ({jobs, selectedJob, searchTerms}) => {
+const JobsPage = ({jobs, selectedJob, searchTerms, onJobItemClick}) => {
   return (
     <div className="jobs-container">
       <div className="navbar">
@@ -51,7 +52,8 @@ const JobsPage = ({jobs, selectedJob, searchTerms}) => {
                             const selected = selectedJob && (selectedJob.restaurant.name == job.restaurant.name);
                             return (<JobItem job={job}
                                             key={index}
-                                            selected={selected} />);
+                                            selected={selected}
+                                            onClick={()=>{onJobItemClick(job);}}/>);
                           }) :
                           <div className="job-not-found">No Jobs found. </div>}
           </div>
@@ -66,19 +68,70 @@ JobsPage.propTypes = {
   jobs: PropTypes.array,
   selectedJob: PropTypes.object,
   searchTerms: PropTypes.array,
+  onJobItemClick: PropTypes.func,
 };
 
 
 const mapStateToProps = ({jobs, selectedJob, searchTerms}) => {
+  let filteredJobs = jobs;
+  const titleValues = searchTerms.filter(term => term.type == 'title')
+                                 .map(term => term.value);
+  if (titleValues.length)
+  {
+    filteredJobs = filteredJobs.filter(job => {
+        const jobs = job.restaurant.jobs;
+        return jobs.filter((jobItem)=>{
+          return (titleValues.indexOf(jobItem.title) >= 0);
+        }).length;
+      });
+  }
+
+  // const locationValues = searchTerms.filter(term => term.type == 'location')
+  //                                   .map(term => term.value);
+
+  const jobTypeValues = searchTerms.filter(term => term.type == 'jobType')
+                             .map(term => term.value);
+   if (jobTypeValues.length)
+   {
+     filteredJobs = filteredJobs.filter(job => {
+         const jobs = job.restaurant.jobs;
+         return jobs.filter((jobItem)=>{
+           return (jobTypeValues.indexOf(jobItem.jobType) >= 0);
+         }).length;
+       });
+   }
+
+   const restaurantTypeValues = searchTerms.filter(term => term.type == 'restaurantType')
+                              .map(term => term.value);
+    if (restaurantTypeValues.length)
+    {
+      filteredJobs = filteredJobs.filter(job => {
+          return (restaurantTypeValues.indexOf(job.restaurant.restaurantType) >= 0);
+        });
+    }
+
+    const nameTypeValues = searchTerms.filter(term => term.type == 'name')
+                               .map(term => term.value);
+     if (nameTypeValues.length)
+     {
+       filteredJobs = filteredJobs.filter(job => {
+           return (nameTypeValues.indexOf(job.restaurant.name) >= 0);
+         });
+     }
+
   return {
-      jobs,
+      jobs: filteredJobs,
       searchTerms,
       selectedJob,
   };
 };
 
-// const mapDispatchToProps = (dispatch) => {
-//
-// }
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onJobItemClick: (job)=>{
+        dispatch(changeSelectedJob(job));
+    },
+  };
+};
 
-export default connect(mapStateToProps)(JobsPage);
+export default connect(mapStateToProps, mapDispatchToProps)(JobsPage);

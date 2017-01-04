@@ -76,6 +76,18 @@ export default {
     value: 'Kolkota',
     display: 'Kolkota',
     type: 'location',
+  }, {
+    value: '5 star Hotel',
+    display: '5 star Hotel',
+    type: 'restaurantType',
+  },{
+    value: '4 star Hotel',
+    display: '4 star Hotel',
+    type: 'restaurantType',
+  },{
+    value: '3 star Hotel',
+    display: '3 star Hotel',
+    type: 'restaurantType',
   }],
   filteredJobs: [],
   jobs: [{
@@ -129,12 +141,12 @@ export default {
         location: 'USA, Germany, India',
         jobs: [{
           'title': 'Bar Tender',
-          'jobType': 'Full Time',
+          'jobType': 'Contract',
           'posted': '5 days ago',
           'location': 'Brookyln, USA',
           'compensation': '$80K - $100K',
         },{
-          'title': 'Bar Tender',
+          'title': 'Line Cook',
           'jobType': 'Contract',
           'posted': '7 days ago',
           'location': 'Mumbai, India',

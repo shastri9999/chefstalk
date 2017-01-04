@@ -1,13 +1,42 @@
 @import "variables";
 .job-list-item {
-  &:hover {
-    border: 1px solid $lightishblue;
-    background-color: #fff;
-  }
   background-color: $job-item;
   border-bottom: 1px solid $cloudyblue;
   padding-top: 30px;
   padding-bottom: 30px;
+  position: relative;
+  &:hover {
+    border: 1px solid $lightishblue;
+    background-color: #fff;
+  }
+  &.selected {
+    background-color: #fff;
+    &:hover {
+      border: none;
+    }
+    &::before {
+      content: " ";
+      width: 0;
+    	height: 0;
+    	border-top: 9px solid transparent;
+    	border-left: 9px solid $cloudyblue;
+    	border-bottom: 9px solid transparent;
+      position: absolute;
+      left: 100%;
+      top: 43%;
+    }
+    &::after {
+      content: " ";
+      width: 0;
+    	height: 0;
+    	border-top: 8px solid transparent;
+    	border-left: 8px solid #fff;
+    	border-bottom: 8px solid transparent;
+      position: absolute;
+      left: 100%;
+      top: 43%;
+    }
+  }
   .restaurant {
     display: flex;
     align-items: center;

@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {push} from 'react-router-redux';
-import {removeTermType, addTerm} from '../reducers/actions.js';
+import {removeTermType, addTerm, changeSelectedJob} from '../reducers/actions.js';
 import SelectDropDown from './selectDropdown.js';
 import enhanceWithClickOutside from 'react-click-outside';
 
@@ -140,6 +140,7 @@ const mapDispatchToProps = (dispatch) => {
       {
         dispatch(removeTermType('non-location'));
       }
+      dispatch(changeSelectedJob(null));
       dispatch(push('/jobs'));
     },
     replaceTerm: (term)=> {

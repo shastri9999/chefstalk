@@ -1,12 +1,12 @@
 import React, {PropTypes} from 'react';
 import '../styles/jobitem.scss';
 
-const JobItem = ({job, selected}) => {
+const JobItem = ({job, selected, onClick}) => {
   const {restaurant} = job;
   const {jobs} = restaurant;
   const jobsToDisplay = jobs.slice(0,3);
   const moreJobs = Math.max(0, jobs.length - 3);
-  return (<div className={selected ? "job-list-item selected" : "job-list-item"}>
+  return (<div className={selected ? "job-list-item selected" : "job-list-item"} onClick={onClick}>
             <div className="restaurant">
               <img src={restaurant.image} />
               <div className="name">{restaurant.name}</div>
@@ -44,6 +44,7 @@ const JobItem = ({job, selected}) => {
 JobItem.propTypes = {
   job: PropTypes.object,
   selected: PropTypes.bool,
+  onClick: PropTypes.func,
 };
 
 
