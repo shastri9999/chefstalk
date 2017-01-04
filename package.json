@@ -30,6 +30,7 @@
   "author": "Cory House",
   "license": "MIT",
   "dependencies": {
+    "deepcopy": "^0.6.3",
     "object-assign": "4.1.0",
     "react": "15.3.2",
     "react-click-outside": "^2.2.0",

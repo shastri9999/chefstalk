@@ -19,6 +19,14 @@ class  SearchBar extends React.Component{
     this.selectValue = this.selectValue.bind(this);
     this.handleClickOutside = this.handleClickOutside.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.handleLocationSelected = this.handleLocationSelected.bind(this);
+  }
+
+  handleLocationSelected(option){
+    option ? this.props.replaceLocationTerm(option) : null;
+    this.setState({
+      location: option.display,
+    });
   }
 
   handleKeyDown(event){
@@ -80,7 +88,8 @@ class  SearchBar extends React.Component{
   }
 
   render(){
-    const {search} = this.props;
+    const {search, filters} = this.props;
+    const locationFilters = filters.filter(filter => filter.type == 'location');
     return (
         <div className="search">
           <img src={require('../images/search-icon.png')} className="search-icon" />
@@ -90,10 +99,12 @@ class  SearchBar extends React.Component{
                  value={this.state.value}/>
           <div className="divider" />
           <div className="location">
-            Select Location
+            {this.state.location ? this.state.location : "Select Location" }
             {this.state.showLocation ? <SelectDropDown
               placeholder="Enter a Location"
               topOptionText="Top Locations"
+              options={locationFilters}
+              onValueSelected={this.handleLocationSelected}
               onOutsideClick={()=>{this.setState({showLocation: false},);}}/> : null}
           </div>
           <img src={require('../images/triangle-down.png')}
@@ -122,6 +133,7 @@ SearchBar.propTypes = {
   search: PropTypes.func,
   filters: PropTypes.array,
   replaceTerm: PropTypes.func,
+  replaceLocationTerm: PropTypes.func,
 };
 
 const enhancedSearchBar = enhanceWithClickOutside(SearchBar);
@@ -146,7 +158,12 @@ const mapDispatchToProps = (dispatch) => {
     replaceTerm: (term)=> {
       dispatch(removeTermType('non-location'));
       dispatch(addTerm(term));
+    },
+    replaceLocationTerm: (term)=> {
+      dispatch(removeTermType('location'));
+      dispatch(addTerm(term));
     }
+
   };
 };
 
