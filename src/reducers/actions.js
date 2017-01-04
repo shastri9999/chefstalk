@@ -10,10 +10,10 @@ export const addTerm = (term) => {
   };
 };
 
-export const removeTerm = (index) => {
+export const removeTerm = (term) => {
   return {
     type: REMOVE_TERM,
-    index,
+    term,
   };
 };
 

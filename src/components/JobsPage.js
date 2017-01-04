@@ -4,10 +4,10 @@ import '../styles/jobspage.scss';
 import {connect} from 'react-redux';
 import JobItem from './JobItem.js';
 import JobDetail from './JobDetail.js';
-import {changeSelectedJob} from '../reducers/actions.js';
+import {changeSelectedJob, removeTerm} from '../reducers/actions.js';
 
 
-const JobsPage = ({jobs, selectedJob, searchTerms, onJobItemClick}) => {
+const JobsPage = ({jobs, selectedJob, searchTerms, onJobItemClick, removeSearchTerm}) => {
   return (
     <div className="jobs-container">
       <div className="navbar">
@@ -22,6 +22,7 @@ const JobsPage = ({jobs, selectedJob, searchTerms, onJobItemClick}) => {
             searchTerms.map((term)=>(
               <div className="search-term" key={term.value}>
                 {term.display}
+                <div className="close" onClick={()=>{removeSearchTerm(term);}}>x</div>
               </div>))
             : null}
           <input placeholder={searchTerms.length ? "" : "Search by Position, Restaurant, Location"}/>
@@ -69,6 +70,7 @@ JobsPage.propTypes = {
   selectedJob: PropTypes.object,
   searchTerms: PropTypes.array,
   onJobItemClick: PropTypes.func,
+  removeSearchTerm: PropTypes.func,
 };
 
 
@@ -130,6 +132,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onJobItemClick: (job)=>{
         dispatch(changeSelectedJob(job));
+    },
+    removeSearchTerm: (term)=>{
+      dispatch(removeTerm(term));
     },
   };
 };

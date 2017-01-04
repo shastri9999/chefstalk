@@ -4,7 +4,12 @@ const  searchTerms = (state=[], action)=>{
     case ADD_TERM:
       return [...state, action.term];
     case REMOVE_TERM:
-      return [...state.slice(0, action.index), ...state.slice(action.index+1)];
+    {
+      const termToRemove = action.term;
+      return state.filter((term)=>{
+        return !(term.value == termToRemove.value && term.type == termToRemove.type);
+      });
+    }
     case REMOVE_TERM_TYPE:
     {
       const termType = action.termType;

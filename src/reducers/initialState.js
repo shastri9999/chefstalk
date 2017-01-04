@@ -162,7 +162,7 @@ export default {
     },
   },{
     restaurant: {
-        name: 'Oberoi Hotel',
+        name: 'Oberoi Hotels',
         restaurantType: '4 star Hotel',
         image: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=150%C3%97150&w=150&h=150',
         employees: '150-200',

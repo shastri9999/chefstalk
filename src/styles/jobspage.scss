@@ -27,6 +27,24 @@ $navbarheight: 100px;
         padding-right: 40px;
         cursor: pointer;
         margin-right: 20px;
+        position: relative;
+        .close {
+          position: absolute;
+          right: 5px;
+          top: 7px;
+          font-size: 24px;
+          cursor: pointer;
+          border: 1px solid $cloudyblue;
+          color: $cloudyblue;
+          border-radius: 100%;
+          height: 26px;
+          width: 26px;
+          text-align: center;
+          line-height: 23px;
+          &:hover {
+            box-shadow: $shadow 1px 1px 1px 0;
+          }
+        }
       }
       input {
         outline: none;
