@@ -172,5 +172,5 @@ export default {
         'posted': '7 days ago'
     },
   }],
-  selectedJobIndex: 0,
+  selectedJob: null,
 };

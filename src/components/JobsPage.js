@@ -47,7 +47,12 @@ const JobsPage = ({jobs, selectedJob, searchTerms}) => {
             <div className="filter">Compensation &#9662;</div>
           </div>
           <div className="list" >
-            {jobs.length ? jobs.map((job, index) => <JobItem job={job} key={index} /> ) :
+            {jobs.length ? jobs.map((job, index) => {
+                            const selected = selectedJob && (selectedJob.restaurant.name == job.restaurant.name);
+                            return (<JobItem job={job}
+                                            key={index}
+                                            selected={selected} />);
+                          }) :
                           <div className="job-not-found">No Jobs found. </div>}
           </div>
         </div>
@@ -64,13 +69,16 @@ JobsPage.propTypes = {
 };
 
 
-const mapStateToProps = ({jobs, selectedJobIndex, searchTerms}) => {
+const mapStateToProps = ({jobs, selectedJob, searchTerms}) => {
   return {
       jobs,
       searchTerms,
-      selectedJob: jobs[selectedJobIndex]
+      selectedJob,
   };
 };
 
+// const mapDispatchToProps = (dispatch) => {
+//
+// }
 
 export default connect(mapStateToProps)(JobsPage);

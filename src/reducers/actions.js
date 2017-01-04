@@ -1,6 +1,7 @@
 import {ADD_TERM,
         REMOVE_TERM,
-        REMOVE_TERM_TYPE} from './actionTypes.js';
+        REMOVE_TERM_TYPE,
+        CHANGE_SELECTED_JOB} from './actionTypes.js';
 
 export const addTerm = (term) => {
   return {
@@ -20,5 +21,12 @@ export const removeTermType = (termType) => {
   return {
     type: REMOVE_TERM_TYPE,
     termType,
+  };
+};
+
+export const changeSelectedJob = (index) => {
+  return {
+    type: CHANGE_SELECTED_JOB,
+    index,
   };
 };
