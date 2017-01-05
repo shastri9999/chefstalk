@@ -7,7 +7,7 @@ import JobDetail from './JobDetail.js';
 import {changeSelectedJob, removeTerm, addTerm} from '../reducers/actions.js';
 import deepcopy from 'deepcopy';
 import SelectDropDown from './selectDropdown.js';
-
+import SearchBar from './SearchBar.js';
 
 class JobsPage extends React.Component {
   constructor(props){
@@ -79,7 +79,7 @@ class JobsPage extends React.Component {
                   </div>))}
               </div>
               : null}
-            {!searchTerms.length ? <input placeholder="Search by Position, Restaurant, Location"/> : null}
+            {!searchTerms.length ? <SearchBar mini={true}/> : null}
           </div>
           {this.state.loggedIn ? (<div className="avatar-area">
             <img src={require('../images/bell.png')} className="bell" />

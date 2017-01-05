@@ -35,7 +35,7 @@ class  SearchBar extends React.Component {
       if (keyCode == 13 && this.state.options.length)
       {
         const term = this.state.options[this.state.selectedOptionIndex];
-        term ? this.props.replaceTerm(term) : null;
+        term ? (!this.mini ? this.props.replaceTerm(term): this.props.addSearchTerm(term)): null;
         this.setState({
           options: [],
           value: term.display,
@@ -58,14 +58,14 @@ class  SearchBar extends React.Component {
   handleChange(event){
       event.stopPropagation();
       event.preventDefault();
-      if (document.body.scrollTop < 300)
+      if (document.body.scrollTop < 300 && !this.props.mini)
       {
         document.body.scrollTop = 300;
       }
       this.setState({
         value: event.target.value,
         options: event.target.value ? this.props.filters.filter((filter)=>{
-          if (filter.type == 'location')
+          if (filter.type == 'location' && !this.props.mini)
             return false;
           else {
             const regex = new RegExp('\\b' + event.target.value , 'gi');
@@ -84,7 +84,7 @@ class  SearchBar extends React.Component {
   }
 
   selectValue(option){
-    this.props.replaceTerm(option);
+    this.props.mini? this.props.addSearchTerm(option) : this.props.replaceTerm(option);
     this.setState({
       value: option.display,
       options: [],
@@ -93,17 +93,17 @@ class  SearchBar extends React.Component {
   }
 
   render(){
-    const {search, filters} = this.props;
+    const {search, filters, mini} = this.props;
     const locationFilters = filters.filter(filter => filter.type == 'location');
     return (
         <div className="search">
-          <img src={require('../images/search-icon.png')} className="search-icon" />
-          <input placeholder="Search by Position, Restaurant"
+          {!this.props.mini ? <img src={require('../images/search-icon.png')} className="search-icon" /> : null}
+          <input placeholder={mini ? "Search by Position, Restaurant, Location" : "Search by Position, Restaurant"}
                  onChange={this.handleChange}
                  onKeyDown={this.handleKeyDown}
                  value={this.state.value}/>
-          <div className="divider" />
-          <div className={this.state.location ? "location" : "location empty"}>
+          {!mini ? <div className="divider" /> : null}
+          {!mini ? <div className={this.state.location ? "location" : "location empty"}>
             {this.state.location ? this.state.location : "Select Location" }
             {this.state.showLocation ? <SelectDropDown
               placeholder="Enter a Location"
@@ -111,13 +111,13 @@ class  SearchBar extends React.Component {
               options={locationFilters}
               onValueSelected={this.handleLocationSelected}
               onOutsideClick={()=>{this.setState({showLocation: false},);}}/> : null}
-          </div>
-          <img src={require('../images/triangle-down.png')}
+          </div>: null}
+          {!mini ? <img src={require('../images/triangle-down.png')}
                className="triangle-down"
-               onClick={()=>{this.setState({showLocation: !this.state.showLocation,});}}/>
-          <button onClick={()=>{search(this.state.value);}}>
+               onClick={()=>{this.setState({showLocation: !this.state.showLocation,});}}/> : null}
+          {!mini ? <button onClick={()=>{search(this.state.value);}}>
             Get Job Offers
-          </button>
+          </button> : null}
           {this.state.options.length? (
             <div className="dropdown">
               {this.state.options.map((option, index) => (
@@ -139,6 +139,8 @@ SearchBar.propTypes = {
   filters: PropTypes.array,
   replaceTerm: PropTypes.func,
   replaceLocationTerm: PropTypes.func,
+  mini: PropTypes.bool,
+  addSearchTerm: PropTypes.func,
 };
 
 const enhancedSearchBar = enhanceWithClickOutside(SearchBar);
@@ -160,13 +162,19 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(changeSelectedJob(null));
       dispatch(push('/jobs'));
     },
+    addSearchTerm: (term)=>{
+      dispatch(addTerm(term));
+      dispatch(changeSelectedJob(null));
+    },
     replaceTerm: (term)=> {
       dispatch(removeTermType('non-location'));
       dispatch(addTerm(term));
+      dispatch(changeSelectedJob(null));
     },
     replaceLocationTerm: (term)=> {
       dispatch(removeTermType('location'));
       dispatch(addTerm(term));
+      dispatch(changeSelectedJob(null));
     }
 
   };
