@@ -58,6 +58,10 @@ class  SearchBar extends React.Component {
   handleChange(event){
       event.stopPropagation();
       event.preventDefault();
+      if (document.body.scrollTop < 300)
+      {
+        document.body.scrollTop = 300;
+      }
       this.setState({
         value: event.target.value,
         options: event.target.value ? this.props.filters.filter((filter)=>{
