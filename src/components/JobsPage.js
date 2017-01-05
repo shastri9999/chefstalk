@@ -4,7 +4,7 @@ import '../styles/jobspage.scss';
 import {connect} from 'react-redux';
 import JobItem from './JobItem.js';
 import JobDetail from './JobDetail.js';
-import {changeSelectedJob, removeTerm, removeTermType, addTerm} from '../reducers/actions.js';
+import {changeSelectedJob, removeTerm, addTerm} from '../reducers/actions.js';
 import deepcopy from 'deepcopy';
 import SelectDropDown from './selectDropdown.js';
 
@@ -21,7 +21,7 @@ class JobsPage extends React.Component {
   }
 
   handleLocationSelected(option){
-    option ? this.props.replaceLocationTerm(option) : null;
+    option ? this.props.addSearchTerm(option) : null;
     this.setState({
       locationExpanded: false,
     });
@@ -39,7 +39,6 @@ class JobsPage extends React.Component {
     const {jobs, selectedJob, searchTerms, onJobItemClick, removeSearchTerm, filters} = this.props;
     const locationFilters = filters.filter(filter => filter.type == 'location');
     const titleFilters = filters.filter(filter => filter.type == 'title');
-
     return (
       <div className="jobs-container">
         <div className="navbar">
@@ -74,8 +73,8 @@ class JobsPage extends React.Component {
         <div className="main">
           <div className="job-list" >
             <div className="filter-bar">
-              <div onClick={()=>{this.setState({locationExpanded: true,});}} className="filter">
-                Location &#9662;
+              <div className="filter">
+                <div onClick={()=>{this.setState({locationExpanded: true,});}} > Location &#9662; </div>
                 {this.state.locationExpanded ? <SelectDropDown
                   placeholder="Enter a Location"
                   topOptionText="Top Locations"
@@ -83,8 +82,8 @@ class JobsPage extends React.Component {
                   onValueSelected={this.handleLocationSelected}
                   onOutsideClick={()=>{this.setState({locationExpanded: false},);}}/> : null}
               </div>
-              <div className="filter" onClick={()=>{this.setState({jobTypeExpanded: true,});}}>
-                Job Title &#9662;
+              <div className="filter">
+                <div onClick={()=>{this.setState({jobTypeExpanded: true,});}} > Job Type &#9662; </div>
                 {this.state.jobTypeExpanded ? <SelectDropDown
                   placeholder="Enter a JobTitle"
                   topOptionText="Top Titles"
@@ -121,7 +120,6 @@ JobsPage.propTypes = {
   onJobItemClick: PropTypes.func,
   removeSearchTerm: PropTypes.func,
   filters: PropTypes.array,
-  replaceLocationTerm: PropTypes.func,
   addSearchTerm: PropTypes.func,
 };
 
@@ -145,15 +143,13 @@ const mapStateToProps = ({jobs, selectedJob, searchTerms, filters}) => {
                                     .map(term => term.value);
   if (locationValues.length)
   {
-    console.log(locationValues);
     filteredJobs = filteredJobs.filter(job => {
         const jobs = job.restaurant.jobs;
         job.restaurant.jobs = jobs.filter((jobItem)=>{
           return (locationValues.filter((value)=>{
             return jobItem.location.indexOf(value) >= 0;
-          }).length >= 0);
+          }).length);
         });
-        console.log(job.restaurant.jobs);
         return job.restaurant.jobs.length;
       });
 
@@ -209,10 +205,6 @@ const mapDispatchToProps = (dispatch) => {
     addSearchTerm: (term)=>{
       dispatch(addTerm(term));
     },
-    replaceLocationTerm: (term)=> {
-      dispatch(removeTermType('location'));
-      dispatch(addTerm(term));
-    }
   };
 };
 

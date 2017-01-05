@@ -2,7 +2,12 @@ import {ADD_TERM, REMOVE_TERM, REMOVE_TERM_TYPE} from './actionTypes.js';
 const  searchTerms = (state=[], action)=>{
   switch(action.type){
     case ADD_TERM:
-      return [...state, action.term];
+    {
+      const termIsPresent = !!state.filter((term)=>{
+        return (term.type == action.term.type) && (term.value == action.term.value);
+      }).length;
+      return termIsPresent? state : [...state, action.term];
+    }
     case REMOVE_TERM:
     {
       const termToRemove = action.term;

@@ -5,7 +5,7 @@ import {removeTermType, addTerm, changeSelectedJob} from '../reducers/actions.js
 import SelectDropDown from './selectDropdown.js';
 import enhanceWithClickOutside from 'react-click-outside';
 
-class  SearchBar extends React.Component{
+class  SearchBar extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -26,6 +26,7 @@ class  SearchBar extends React.Component{
     option ? this.props.replaceLocationTerm(option) : null;
     this.setState({
       location: option.display,
+      showLocation: false,
     });
   }
 
