@@ -19,7 +19,8 @@
       button.apply {
         background-color: #677a88;
         color: white;
-        border: 0
+        border: 0;
+        font-weight: 500;
       }
     }
     &::before {
@@ -28,10 +29,11 @@
     	height: 0;
     	border-top: 9px solid transparent;
     	border-left: 9px solid $cloudyblue;
-    	border-bottom: 9px solid transparent;
+    	border-bottom: 10px solid transparent;
       position: absolute;
       left: 100%;
       top: 43%;
+      margin-top: -1px;
     }
     &::after {
       content: " ";
@@ -117,6 +119,7 @@
       color: $opaque-color;
       cursor: pointer;
       outline: 0;
+      font-weight: 600;
       &:hover {
         background-color: $lightishblue;
         color: white;

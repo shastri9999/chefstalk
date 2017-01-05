@@ -9,29 +9,26 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-
+      align-items: center;
       img.logo  {
         height: 100px;
         width: 100px;
         border-right: 100px;
       }
       button {
-        border: 1px solid $cloudyblue;
-        border-radius: 100px;
         width: 120px;
         height: 40px;
+        border: 0;
+        font-weight: 500;
         text-align: center;
         line-height: 36px;
         font-size: 14px;
         background-color: transparent;
-        margin-right: 60px;
         color: $opaque-color;
         cursor: pointer;
         outline: 0;
-        &:hover {
-          background-color: $lightishblue;
-          color: white;
-        }
+        margin-top: -20px;
+        text-decoration: underline;
       }
     }
     .right {
@@ -59,18 +56,20 @@
     .top {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       .title {
-        font-weight: 900;
+        font-weight: 600;
+        font-size: 18px;
       }
       .other {
-        font-weight: 900;
+        font-weight: 600;
         color: $opaque-color;
       }
       .right {
         img {
           margin-right: 10px;
         }
-        font-weight: 900;
+        font-weight: 600;
         color: $opaque-color;
       }
     }
@@ -96,6 +95,7 @@
         color: $opaque-color;
         cursor: pointer;
         outline: 0;
+        font-weight: 600;
         &:hover {
           background-color: $lightishblue;
           border: 0;

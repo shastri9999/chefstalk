@@ -29,6 +29,7 @@ $leftrightpadding: 9vw;
 						background-color: $lightishblue;
 						border: solid 1px $lightishblue;
 						color: white;
+						font-weight: 500;
 					}
 				}
 			}
@@ -66,6 +67,8 @@ $leftrightpadding: 9vw;
 					color: rgba(0,0,0,0.4);
 					letter-spacing: 0.5px;
 					cursor: pointer;
+					font-size: 14px;
+					font-weight: 600;
 				}
 				h3 {
 					font-size: 20px;
