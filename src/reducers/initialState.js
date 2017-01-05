@@ -34,8 +34,22 @@ export default {
     type: 'title'
 },
 {
+    value: 'Line Cook',
+    display: 'Line Cook',
+    type: 'title'
+},
+{
     value: 'Grill Cook',
     display: 'Grill Cook',
+    type: 'title'
+},
+{
+    value: 'Saucier',
+    display: 'Saucier',
+    type: 'title'
+},{
+    value: 'Pâtissier',
+    display: 'Pâtissier',
     type: 'title'
 },
 {
@@ -167,7 +181,7 @@ export default {
         image: 'https://s27.postimg.org/r6kp0y5df/hyatt.png',
         employees: '25-100',
         founded: '2015',
-        location: 'USA, Germany, India',
+        location: 'USA, India',
         jobs: [{
           'title': 'Bar Tender',
           'jobType': 'Contract',

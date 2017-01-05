@@ -76,7 +76,7 @@ class JobsPage extends React.Component {
                   <div className="close" onClick={()=>{removeSearchTerm(term);}}>&#x2715;</div>
                 </div>))
               : null}
-            <input placeholder={searchTerms.length ? "" : "Search by Position, Restaurant, Location"}/>
+            {!searchTerms.length ? <input placeholder="Search by Position, Restaurant, Location"/> : null}
           </div>
           <div className="avatar-area">
             <img src={require('../images/bell.png')} className="bell" />

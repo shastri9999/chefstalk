@@ -15,8 +15,8 @@ const HomePage = () => {
           </IndexLink>
           <div className="links">
             <Link to="/restaurant">Are you a business?</Link>
-            <Link to="/signup" className="signup">Sign Up</Link>
             <Link to="/login" className="login">Login</Link>
+            <Link to="/signup" className="signup">Sign Up</Link>
           </div>
         </nav>
         <div className="proposition">

@@ -56,6 +56,10 @@ const JobDetail = ({job}) => {
                   <div className="other">
                     {jobitem.compensation} | {jobitem.jobType}
                   </div>
+                  <div className="right">
+                    <img src={require("../images/location.png")} />
+                    {jobitem.location}
+                  </div>
                 </div>
                 <div className="middle">
                   <div className="description">
@@ -67,10 +71,6 @@ const JobDetail = ({job}) => {
                   <div className="left">
                     <img src={require("../images/hourglass.png")} />
                     {jobitem.posted}
-                  </div>
-                  <div className="right">
-                    <img src={require("../images/location.png")} />
-                    {jobitem.location}
                   </div>
                 </div>
                </div>

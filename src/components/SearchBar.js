@@ -71,7 +71,7 @@ class  SearchBar extends React.Component {
             const regex = new RegExp('\\b' + event.target.value , 'gi');
             return (filter.display.match(regex));
           }
-        }) : "",
+        }).slice(0, 7) : "",
         selectedOptionIndex: 0,
       });
   }
