@@ -75,7 +75,7 @@ class SelectDropDown extends React.Component {
             {this.props.topOptionText}
           </div>) : null}
         {!this.state.value ? (
-          this.props.options.slice(3).map((option, index)=>{
+          this.props.options.slice(0,3).map((option, index)=>{
             return <div className="option" key={index} onClick={()=>{this.handleSelection(option);}}>{option.display}</div>;
           })
         ) : null}

@@ -14,10 +14,14 @@ class JobsPage extends React.Component {
     super(props);
     this.state = {
       locationExpanded: false,
+      titleExpanded: false,
       jobTypeExpanded: false,
     };
     this.handleLocationSelected = this.handleLocationSelected.bind(this);
     this.handleTitleSelected = this.handleTitleSelected.bind(this);
+    this.handleRestuarantTypeSelected = this.handleRestuarantTypeSelected.bind(this);
+    this.handleJobTypeSelected = this.handleJobTypeSelected.bind(this);
+
   }
 
   handleLocationSelected(option){
@@ -30,15 +34,31 @@ class JobsPage extends React.Component {
   handleTitleSelected(option){
     option ? this.props.addSearchTerm(option) : null;
     this.setState({
+      titleExpanded: false,
+    });
+  }
+
+  handleRestuarantTypeSelected(option){
+    option ? this.props.addSearchTerm(option) : null;
+    this.setState({
+      restaurantTypeExpanded: false,
+    });
+  }
+
+  handleJobTypeSelected(option){
+    option ? this.props.addSearchTerm(option) : null;
+    this.setState({
       jobTypeExpanded: false,
     });
-
   }
 
   render(){
     const {jobs, selectedJob, searchTerms, onJobItemClick, removeSearchTerm, filters} = this.props;
     const locationFilters = filters.filter(filter => filter.type == 'location');
     const titleFilters = filters.filter(filter => filter.type == 'title');
+    const restaurantTypeFilters = filters.filter(filter => filter.type == 'restaurantType');
+    const jobTypeFilters = filters.filter(filter => filter.type == 'jobType');
+    
     return (
       <div className="jobs-container">
         <div className="navbar">
@@ -83,16 +103,32 @@ class JobsPage extends React.Component {
                   onOutsideClick={()=>{this.setState({locationExpanded: false},);}}/> : null}
               </div>
               <div className="filter">
-                <div onClick={()=>{this.setState({jobTypeExpanded: true,});}} > Job Type &#9662; </div>
-                {this.state.jobTypeExpanded ? <SelectDropDown
+                <div onClick={()=>{this.setState({titleExpanded: true,});}} > Job Title &#9662; </div>
+                {this.state.titleExpanded ? <SelectDropDown
                   placeholder="Enter a JobTitle"
                   topOptionText="Top Titles"
                   options={titleFilters}
                   onValueSelected={this.handleTitleSelected}
+                  onOutsideClick={()=>{this.setState({titleExpanded: false},);}}/> : null}
+              </div>
+              <div className="filter">
+                <div onClick={()=>{this.setState({restaurantTypeExpanded: true,});}} > Restaurant Type &#9662; </div>
+                {this.state.restaurantTypeExpanded ? <SelectDropDown
+                  placeholder="Enter type of Restaurant"
+                  topOptionText="Top Restaurant Types"
+                  options={restaurantTypeFilters}
+                  onValueSelected={this.handleRestuarantTypeSelected}
+                  onOutsideClick={()=>{this.setState({restaurantTypeExpanded: false},);}}/> : null}
+              </div>
+              <div className="filter">
+              <div onClick={()=>{this.setState({jobTypeExpanded: true,});}} > Job Type &#9662; </div>
+                {this.state.jobTypeExpanded ? <SelectDropDown
+                  placeholder="Enter Job Type"
+                  topOptionText="Top Job Types"
+                  options={jobTypeFilters}
+                  onValueSelected={this.handleJobTypeSelected}
                   onOutsideClick={()=>{this.setState({jobTypeExpanded: false},);}}/> : null}
               </div>
-              <div className="filter">Restaurant Type &#9662;</div>
-              <div className="filter">Job Type &#9662;</div>
               <div className="filter">Compensation &#9662;</div>
             </div>
             <div className="list" >
