@@ -16,6 +16,7 @@ class JobsPage extends React.Component {
       locationExpanded: false,
       titleExpanded: false,
       jobTypeExpanded: false,
+      loggedIn: false,
     };
     this.handleLocationSelected = this.handleLocationSelected.bind(this);
     this.handleTitleSelected = this.handleTitleSelected.bind(this);
@@ -70,26 +71,31 @@ class JobsPage extends React.Component {
           <div className="search-area">
             <img src={require('../images/search-icon.png')} />
             {searchTerms.length ?
-              searchTerms.map((term)=>(
-                <div className="search-term" key={term.value}>
-                  {term.display}
-                  <div className="close" onClick={()=>{removeSearchTerm(term);}}>&#x2715;</div>
-                </div>))
+              <div className="search-term-container">{
+                searchTerms.map((term)=>(
+                  <div className="search-term" key={term.value}>
+                    {term.display}
+                    <div className="close" onClick={()=>{removeSearchTerm(term);}}>&#x2715;</div>
+                  </div>))}
+              </div>
               : null}
             {!searchTerms.length ? <input placeholder="Search by Position, Restaurant, Location"/> : null}
           </div>
-          <div className="avatar-area">
+          {this.state.loggedIn ? (<div className="avatar-area">
             <img src={require('../images/bell.png')} className="bell" />
             <div className="user">
               Sebastian Wussler
             </div>
             <img src="https://s30.postimg.org/jq2v3j0jl/userlogo.jpg" className="avatar"/>
-          </div>
+          </div>):(<div className="avatar-area">
+            <Link to="/login" className="login">Login</Link>
+            <Link to="/signup" className="signup">Sign Up</Link>
+          </div>)}
         </div>
-        <div className="profile-completion-status">
+        {this.state.loggedIn ?<div className="profile-completion-status">
           Your profile is incomplete. Complete your profile for getting more jobs.
           <div style={{'width':'38%'}} className="status-bar" />
-        </div>
+        </div>: null}
         <div className="main">
           <div className="job-list" >
             <div className="filter-bar">

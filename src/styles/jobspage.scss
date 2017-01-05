@@ -1,11 +1,10 @@
 @import "variables";
-$navbarheight: 100px;
 .jobs-container {
   font-weight: 600;
   .navbar {
-    height: $navbarheight;
     display: flex;
     align-items: center;
+    border-bottom: 1px solid $cloudyblue;
     .logo {
       padding: 30px;
       border-right: 1px solid $cloudyblue;
@@ -20,26 +19,32 @@ $navbarheight: 100px;
         position: relative;
         top: 3px;
       }
+      .search-term-container {
+        display: flex;
+        flex-wrap: wrap;
+      }
       .search-term {
-        font-size: 14px;
+        font-size: 12px;
         background: #EEF2F5;
-        padding: 14px;
+        padding: 12px;
         border-radius: 100px;
-        padding-right: 40px;
+        padding-right: 33px;
         margin-right: 20px;
         position: relative;
+        margin-bottom: 5px;
+        margin-top: 5px;
         .close {
           position: absolute;
-          right: 5px;
-          top: 7px;
-          line-height: 26px;
-          font-size: 18px;
+          right: 4px;
+          top: 6px;
+          line-height: 24px;
+          font-size: 16px;
           cursor: pointer;
           border: 1px solid $cloudyblue;
           color: $cloudyblue;
           border-radius: 100%;
-          height: 26px;
-          width: 26px;
+          height: 24px;
+          width: 24px;
           text-align: center;
           &:hover {
             box-shadow: $shadow 1px 1px 1px 0;
@@ -50,7 +55,6 @@ $navbarheight: 100px;
         outline: none;
         border: none;
         flex: 1;
-        line-height: $navbarheight - 2;
         font-size: 14px;
         &::placeholder {
           color: $darkcolor;
@@ -74,6 +78,31 @@ $navbarheight: 100px;
         width: 37px;
         border-radius: 100%;
       }
+      a {
+        text-transform: uppercase;
+        font-size: 14px;
+        text-decoration: none;
+        &.signup {
+          background-color: $lightishblue;
+            color: white;
+            width: 9.27em;
+            display: inline-block;
+            line-height: 2.85em;
+            text-align: center;
+            border-radius: 100px;
+            border: 0;
+            opacity: 1;
+        }
+        &.login {
+            display: inline-block;
+            line-height: 2.85em;
+            text-align: center;
+            margin-right: 35px;
+        }
+        &:hover {
+          opacity: 0.8;
+        }
+      }
     }
   }
   .profile-completion-status {
@@ -96,7 +125,7 @@ $navbarheight: 100px;
   .main {
     display: flex;
     align-items: stretch;
-    min-height: calc(100vh - 150px);
+    min-height: calc(100vh - 100px);
     .job-list {
       width: 50vw;
       min-width: 650px;
