@@ -1,0 +1,138 @@
+@import "variables";
+.job-detail {
+  .main-detail {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    .left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      img.logo  {
+        height: 100px;
+        width: 100px;
+        border-right: 100px;
+      }
+      button {
+        border: 1px solid $cloudyblue;
+        border-radius: 100px;
+        width: 120px;
+        height: 40px;
+        text-align: center;
+        line-height: 36px;
+        font-size: 14px;
+        background-color: transparent;
+        margin-right: 60px;
+        color: $opaque-color;
+        cursor: pointer;
+        outline: 0;
+        &:hover {
+          background-color: $lightishblue;
+          color: white;
+        }
+      }
+    }
+    .right {
+      font-size: 14px;
+      padding: 30px;
+      padding-bottom: 10px;
+      color: $opaque-color;
+      .info {
+        margin-bottom: 20px;
+        img {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+  .job-item {
+    margin: 15px 30px;
+    padding: 20px;
+    background: white;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    border: 1px solid $cloudyblue;
+    border-radius: 5px;
+    .top {
+      display: flex;
+      .title {
+        font-weight: 900;
+        width: 33%;
+      }
+      .other {
+        font-weight: 900;
+        color: $opaque-color;
+      }
+    }
+    .middle {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .description {
+        width: 70%;
+        font-size: 12px;
+      }
+      button {
+        border: 1px solid $cloudyblue;
+        border-radius: 100px;
+        width: 120px;
+        height: 40px;
+        text-align: center;
+        line-height: 36px;
+        font-size: 14px;
+        background-color: white;
+        color: $opaque-color;
+        cursor: pointer;
+        outline: 0;
+        &:hover {
+          background-color: $lightishblue;
+          border: 0;
+          color: white;
+        }
+      }
+
+    }
+    .bottom {
+      display: flex;
+      color: $opaque-color;
+      .left {
+        img {
+          margin-right: 10px;
+        }
+        width: 33%;
+        font-weight: 600;
+        font-style: italic;
+      }
+      .right {
+        img {
+          margin-right: 10px;
+        }
+        font-weight: 900;
+      }
+    }
+  }
+  .about-company, .perks, .benifits {
+    margin: 15px 30px;
+    padding: 20px;
+    background: white;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    border: 1px solid $cloudyblue;
+    border-radius: 5px;
+    h4 {
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+  }
+  .perks, .benifits {
+    div:not(:last-of-type) {
+      margin-bottom: 20px;
+    }
+  }
+}

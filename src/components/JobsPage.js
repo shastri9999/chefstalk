@@ -237,9 +237,11 @@ const mapDispatchToProps = (dispatch) => {
     },
     removeSearchTerm: (term)=>{
       dispatch(removeTerm(term));
+      dispatch(changeSelectedJob(null));
     },
     addSearchTerm: (term)=>{
       dispatch(addTerm(term));
+      dispatch(changeSelectedJob(null));
     },
   };
 };

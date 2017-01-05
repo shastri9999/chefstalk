@@ -15,6 +15,13 @@
       border: none;
       border-bottom: 1px solid $cloudyblue;
     }
+    .job-item-footer {
+      button.apply {
+        background-color: #677a88;
+        color: white;
+        border: 0
+      }
+    }
     &::before {
       content: " ";
       width: 0;
@@ -92,7 +99,7 @@
     .time {
       color: $opaque-color;
       line-height: 28px;
-      font-weight: 500;
+      font-style: italic;
       img {
         padding-right: 16px;
       }
