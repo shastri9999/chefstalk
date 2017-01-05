@@ -99,7 +99,7 @@ class  SearchBar extends React.Component {
                  onKeyDown={this.handleKeyDown}
                  value={this.state.value}/>
           <div className="divider" />
-          <div className="location">
+          <div className={this.state.location ? "location" : "location empty"}>
             {this.state.location ? this.state.location : "Select Location" }
             {this.state.showLocation ? <SelectDropDown
               placeholder="Enter a Location"

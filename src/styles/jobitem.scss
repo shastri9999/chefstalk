@@ -92,6 +92,7 @@
     .time {
       color: $opaque-color;
       line-height: 28px;
+      font-weight: 500;
       img {
         padding-right: 16px;
       }
@@ -102,7 +103,8 @@
       width: 120px;
       height: 40px;
       text-align: center;
-      line-height: 40px;
+      line-height: 36px;
+      font-size: 1em;
       background-color: #fff;
       margin-right: 60px;
       color: $opaque-color;

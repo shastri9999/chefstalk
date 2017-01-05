@@ -58,7 +58,7 @@ class JobsPage extends React.Component {
     const titleFilters = filters.filter(filter => filter.type == 'title');
     const restaurantTypeFilters = filters.filter(filter => filter.type == 'restaurantType');
     const jobTypeFilters = filters.filter(filter => filter.type == 'jobType');
-    
+
     return (
       <div className="jobs-container">
         <div className="navbar">
@@ -73,7 +73,7 @@ class JobsPage extends React.Component {
               searchTerms.map((term)=>(
                 <div className="search-term" key={term.value}>
                   {term.display}
-                  <div className="close" onClick={()=>{removeSearchTerm(term);}}>x</div>
+                  <div className="close" onClick={()=>{removeSearchTerm(term);}}>&#x2715;</div>
                 </div>))
               : null}
             <input placeholder={searchTerms.length ? "" : "Search by Position, Restaurant, Location"}/>

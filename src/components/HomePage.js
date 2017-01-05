@@ -21,7 +21,7 @@ const HomePage = () => {
         </nav>
         <div className="proposition">
           <div>
-            <h2>Discover Jobs around the world.</h2>
+            <h2>Discover Culinary Jobs around the world.</h2>
             <h3>
               Sub Key Value change your future, culnary. <br/>
               Sub Key Value change your culnary.
@@ -92,10 +92,10 @@ const HomePage = () => {
             <p>You set your price and decide when you want to host and how often.</p>
           </div>
         </div>
-        <h3 className="start-apply">
-          Start applying and receiving jobs.
-        </h3>
         <div className="signup">
+          <h3 className="start-apply">
+            Start applying and receiving jobs.
+          </h3>
           <img src={require('../images/footer-man.png')} className="footer-man" />
           <button> Sign Up </button>
         </div>
