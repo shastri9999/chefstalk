@@ -28,7 +28,7 @@
         background: #EEF2F5;
         padding: 12px;
         border-radius: 100px;
-        padding-right: 33px;
+        padding-right: 30px;
         margin-right: 20px;
         position: relative;
         margin-bottom: 5px;
@@ -36,15 +36,15 @@
         .close {
           position: absolute;
           right: 4px;
-          top: 6px;
-          line-height: 24px;
-          font-size: 16px;
+          top: 7px;
+          line-height: 20px;
+          font-size: 14px;
           cursor: pointer;
           border: 1px solid $cloudyblue;
           color: $cloudyblue;
           border-radius: 100%;
-          height: 24px;
-          width: 24px;
+          height: 20px;
+          width: 20px;
           text-align: center;
           &:hover {
             box-shadow: $shadow 1px 1px 1px 0;
