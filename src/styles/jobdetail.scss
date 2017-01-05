@@ -52,7 +52,10 @@
     font-weight: 400;
     line-height: 1.5;
     border: 1px solid $cloudyblue;
-    border-radius: 5px;
+    border-radius: 3px;
+    &:hover {
+      box-shadow: $shadow 1px 1px 10px 2px;
+    }
     .top {
       display: flex;
       justify-content: space-between;
@@ -115,23 +118,29 @@
       }
     }
   }
-  .about-company, .perks, .benifits {
+  .container {
     margin: 15px 30px;
-    padding: 20px 30px;
-    background: white;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.5;
     border: 1px solid $cloudyblue;
-    border-radius: 5px;
-    h4 {
-      font-weight: 900;
-      margin-bottom: 20px;
+    border-radius: 3px;
+    background: white;
+
+    .about-company, .perks, .benifits {
+      padding: 20px 30px;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: $opaque-color;
+      h4 {
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: $darkcolor;
+      }
+    }
+    .perks, .benifits {
+      div:not(:last-of-type) {
+        margin-bottom: 10px;
+      }
     }
   }
-  .perks, .benifits {
-    div:not(:last-of-type) {
-      margin-bottom: 20px;
-    }
-  }
+
 }

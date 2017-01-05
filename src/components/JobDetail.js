@@ -76,17 +76,19 @@ const JobDetail = ({job}) => {
                </div>
               );
             })}
-            <div className="about-company">
-              <h4>ABOUT COMPANY</h4>
-              <div>{about}</div>
-            </div>
-            <div className="perks">
-              <h4>PERKS</h4>
-              {perks.map((perk, index) => <div key={index}>{perk}</div>)}
-            </div>
-            <div className="benifits">
-              <h4>BENIFITS</h4>
-              {benifits.map((benifit, index) => <div key={index}>{benifit}</div>)}
+            <div className="container">
+              <div className="about-company">
+                <h4>ABOUT COMPANY</h4>
+                <div>{about}</div>
+              </div>
+              <div className="perks">
+                <h4>PERKS</h4>
+                {perks.map((perk, index) => <div key={index}>{perk}</div>)}
+              </div>
+              <div className="benifits">
+                <h4>BENIFITS</h4>
+                {benifits.map((benifit, index) => <div key={index}>{benifit}</div>)}
+              </div>
             </div>
           </div>);
 };
