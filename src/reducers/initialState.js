@@ -5,26 +5,55 @@ export default {
     display: 'Master Chef',
     type: 'title'
   },{
+    value: 'Executive Sous Chef',
+    display: 'Executive Sous Chef',
+    type: 'title'
+},
+{
+    value: 'Boulanger',
+    display: 'Boulanger',
+    type: 'title'
+},
+{
+    value: 'Boucher',
+    display: 'Boucher',
+    type: 'title'
+},{
+    value: 'Entremetier',
+    display: 'Entremetier',
+    type: 'title'
+},
+{
+    value: 'Junior Sous Chef',
+    display: 'Junior Sous Chef',
+    type: 'title'
+},
+{
     value: 'Sous Chef',
     display: 'Sous Chef',
     type: 'title'
-  },{
-    value: 'Head Chef',
-    display: 'Head Chef',
+},
+{
+    value: 'Grill Cook',
+    display: 'Grill Cook',
     type: 'title'
-  },{
-    value: 'Kitchen Porter',
-    display: 'Kitchen Porter',
+},
+{
+    value: 'Sommelier',
+    display: 'Sommelier',
     type: 'title'
-  },{
-    value: 'Line Cook',
-    display: 'Line Cook',
+},
+{
+    value: 'Waiter',
+    display: 'Waiter',
     type: 'title'
-  },{
-    value: 'Dish Washer',
-    display: 'Dish Washer',
+},
+{
+    value: 'Restaurant Manager',
+    display: 'Restaurant Manager',
     type: 'title'
-  },{
+},
+{
     value: 'Executive Chef',
     display: 'Executive Chef',
     type: 'title'
