@@ -84,7 +84,9 @@
       align-items: center;
       .description {
         width: 70%;
-        font-size: 12px;
+        font-size: 13px;
+        opacity: 0.4;
+        font-weight: 300;
       }
       button {
         border: 1px solid $cloudyblue;
