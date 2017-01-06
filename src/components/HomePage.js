@@ -34,7 +34,7 @@ const HomePage = () => {
       </div>
       <SearchBar />
       <div className="create-profile">
-        <h2>Create you profile</h2>
+        <h2>Create Your Profile</h2>
         <div className="steps">
           <div>
             <div className="image-container">

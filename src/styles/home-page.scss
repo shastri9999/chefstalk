@@ -1,5 +1,5 @@
 @import "variables";
-$leftrightpadding: 8vw;
+$leftrightpadding: 135px;
 .home {
 	display: flex;
 	flex-flow: column;
@@ -16,6 +16,7 @@ $leftrightpadding: 8vw;
 		padding: 30px $leftrightpadding;
 		background-image: linear-gradient(290deg, #7bedc1, #acffe3);
 		overflow: hidden;
+		padding-bottom: 0;
 		nav {
 			font-size: 0.78em;
 			text-transform: uppercase;
@@ -26,10 +27,12 @@ $leftrightpadding: 8vw;
 			.logo {
 				display: flex;
 				align-items: center;
-				font-size: 1.6em;
+				font-size: 24px;
 				font-weight: 900;
 				img {
 					margin-right: 10px;
+					position: relative;
+					top: -1px;
 				}
 			}
 			a {
@@ -37,23 +40,29 @@ $leftrightpadding: 8vw;
 				color: $darkcolor;
 			}
 			.links {
+				display: flex;
+				align-items: center;
 				a {
-					margin-right: 30px;
-					&.signup {
-						background-color: $lightishblue;
-					    color: white;
-					    width: 9.27em;
+					margin-right: 40px;
+					letter-spacing: 0.5px;
+					&.login {
 					    display: inline-block;
-					    line-height: 2.85em;
 					    text-align: center;
+					}
+					&.signup {
+ 							background-color: $lightishblue;
+					    color: #fff;
+							width: 130px;
+							height: 40px;
+					    display: flex;
 					    border-radius: 100px;
 							border: 0;
 							opacity: 1;
-					}
-					&.login {
-					    display: inline-block;
-					    line-height: 2.85em;
-					    text-align: center;
+							margin-right: 0;
+							font-size: 13px;
+							letter-spacing: 1px;
+							justify-content: center;
+							align-items: center;
 					}
 					&:hover {
 						opacity: 0.8;
@@ -68,39 +77,40 @@ $leftrightpadding: 8vw;
 				width: 50%;
 			}
 			h2 {
-				font-size: 2.75em;
-			  line-height: 1.25;
-			  margin-top: 2.3em;
-				font-weight: 700;
+				font-size: 48px;
+		    line-height: 60px;
+		    margin-top: 111px;
+		    font-weight: 900;
+		    letter-spacing: 0.3px;
 			}
 			h3 {
-				font-size: 1.2em;
-		    line-height: 1.3;
-		    margin-top: 1.2em;
-		    color: $opaque-color;
+				font-size: 20px;
+		    line-height: 30px;
+		    margin-top: 21px;
+		    opacity: 0.4;
 		    font-weight: 500;
-		    letter-spacing: 0.5px;
 			}
 			img {
-				margin-top: 30px;
-				margin-bottom: -31px;
+				margin-top: 23px;
+		    position: relative;
+		    left: -21px;
+		    top: 3px;
 			}
 		}
 	}
 	.search {
-		margin: 30px $leftrightpadding;
+		margin: 40px $leftrightpadding;
 		border: 1px solid $cloudyblue;
+		border-radius: 5px;
 		height: 100px;
 		display: flex;
 		align-items:center;
 		font-size: 1em;
-		border-radius: 2px;
-		box-shadow: $shadow 0 4px 10px;
 		position: relative;
 		.dropdown {
 			position: absolute;
 	    background: white;
-	    top: 101px;
+	    top: 99px;
 	    left: 0;
 	    right: 0;
 	    border: 1px solid $cloudyblue;
@@ -108,7 +118,7 @@ $leftrightpadding: 8vw;
 			.option {
 				padding: 12px;
 				cursor: pointer;
-				padding-left: 100px;
+				padding-left: 79px;
 				&:hover, &.selected {
 					background-color: #edf2f5;
 					color: $lightishblue;
@@ -118,8 +128,8 @@ $leftrightpadding: 8vw;
 		.search-icon {
 			position: relative;
 		    top: 5px;
-		    margin-left: 40px;
-		    margin-right: 20px;
+		    margin-left: 30px;
+		    margin-right: 10px;
 		}
 		&>input {
 			flex: 1;
@@ -129,6 +139,7 @@ $leftrightpadding: 8vw;
 			font-family: Gilory;
 			&::placeholder {
 				color: $opaque-color;
+				font-weight: 500;
 			}
 		}
 		.divider {
@@ -140,14 +151,16 @@ $leftrightpadding: 8vw;
 		}
 		.location {
 			position: relative;
-			min-width: 140px;
+			min-width: 157px;
+			font-weight: 500;
 			&.empty {
 				color: $opaque-color;
 			}
 		}
 		.triangle-down {
 			position: relative;
-			top: 5px;
+			top: 3px;
+			right: 3px;
 			margin-right: 20px;
 			margin-left: 20px;
 			cursor: pointer;
@@ -163,7 +176,7 @@ $leftrightpadding: 8vw;
 	    outline: none;
 	    border: 0;
 	    font-size: 1em;
-			font-weight: 600;
+			font-weight: 700;
 			letter-spacing: 0.5px;
 			&:hover {
 				opacity: 0.8;
@@ -171,11 +184,10 @@ $leftrightpadding: 8vw;
 		}
 	}
 	.create-profile {
-		margin: 30px $leftrightpadding;
+		margin: 20px $leftrightpadding;
 		h2 {
-			font-size: 2.75em;
-		    line-height: 1.25;
-		    margin-bottom: 60px;
+			font-size: 48px;
+		  margin-bottom: 80px;
 			font-weight: 900;
 		}
 		.steps {
@@ -188,7 +200,9 @@ $leftrightpadding: 8vw;
 				align-items: center;
 				.image-container {
 					height: 150px;
-					margin-bottom: 40px;
+			    margin-bottom: 40px;
+			    display: flex;
+			    align-items: center;
 				}
 			}
 			&>div:not(:last-of-type) {
@@ -197,13 +211,14 @@ $leftrightpadding: 8vw;
 			h3
 			{
 				font-size: 1.35em;
-				font-weight: 600;
+				font-weight: 700;
 			}
 			p {
 				line-height: 1.56em;
 		    text-align: center;
 		    margin-top: 22px;
 				color: $opaque-color;
+				font-weight: 300;
 			}
 		}
 	}
@@ -237,7 +252,6 @@ $leftrightpadding: 8vw;
 			}
 			p {
 				line-height: 1.67;
-				letter-spacing: 0.2px;
 				color: $opaque-color;
 			}
 			div {

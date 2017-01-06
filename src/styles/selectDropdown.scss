@@ -24,18 +24,22 @@
       outline: none;
       border: 1px solid $cloudyblue;
       border-radius: 3px;
-      letter-spacing: 0.5px;
+      font-size: 14px;
+      font-weight: 300;
     }
     .top-option-text {
       text-transform: uppercase;
-      margin-left: 13px;
-      margin-bottom: 15px;
+      margin-left: 18px;
+      margin-bottom: 5px;
+      margin-top: 10px;
+      font-size: 14px;
     }
     .option {
-      padding: 5px;
-      padding-left: 15px;
+      font-size: 14px;
+      padding: 8px;
+      padding-left: 20px;
       cursor: pointer;
-      font-weight: 500;
+      font-weight: 300;
       &:hover, &.selected {
         background-color: #edf2f5;
         color: $lightishblue;

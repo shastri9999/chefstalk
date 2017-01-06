@@ -3,32 +3,31 @@
 
 @font-face {
 	font-family: Gilory;
-	font-weight: 200;
-	src: url('font/ultralight.woff2') format("woff2");
+	src: url('font/regular.otf') format("opentype");
 }
 
 @font-face {
 	font-family: Gilory;
-	font-weight: 400;
-	src: url('font/gilory-light.otf') format("opentype");
+	font-weight: 300;
+	src: url('font/light.otf') format("opentype");
 }
 
 @font-face {
 	font-family: Gilory;
 	font-weight: 500;
-	src: url('font/regular.woff2') format("woff2");
+	src: url('font/medium.otf') format("opentype");
 }
 
 @font-face {
 	font-family: Gilory;
-	font-weight: 600;
-	src: url('font/semibold.woff2') format("woff2");
+	font-weight: 700;
+	src: url('font/semibold.otf') format("opentype");
 }
 
 @font-face {
 	font-family: Gilory;
 	font-weight: 900;
-	src: url('font/gilory-extrabold.otf') format("opentype");
+	src: url('font/extrabold.otf') format("opentype");
 }
 
 
@@ -39,6 +38,6 @@ button {
 body {
   font-family: 'Gilory', sans-serif;
   color: $darkcolor;
-  letter-spacing: 0.5px;
   font-size: 18px;
+	letter-spacing: 0.2px;
 }
