@@ -79,7 +79,7 @@ class JobsPage extends React.Component {
                   </div>))}
               </div>
               : null}
-            {!searchTerms.length ? <SearchBar mini={true}/> : null}
+            <SearchBar mini={true} />
           </div>
           {this.state.loggedIn ? (<div className="avatar-area">
             <img src={require('../images/bell.png')} className="bell" />

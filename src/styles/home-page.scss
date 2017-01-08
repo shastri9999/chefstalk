@@ -107,6 +107,40 @@ $leftrightpadding: 135px;
 		align-items:center;
 		font-size: 1em;
 		position: relative;
+		.search-term-container {
+			display: flex;
+			flex-wrap: wrap;
+			&.no-input {
+				flex: 1;
+			}
+			overflow: hidden;
+		}
+		.search-term {
+			font-size: 14px;
+			background: #EEF2F5;
+			padding: 12px;
+			border-radius: 100px;
+			padding-right: 30px;
+			margin-right: 20px;
+			position: relative;
+			margin-bottom: 5px;
+			margin-top: 5px;
+			font-weight: 700;
+			.close {
+				position: absolute;
+				right: 4px;
+				top: 9px;
+				line-height: 20px;
+				font-size: 14px;
+				cursor: pointer;
+				color: $cloudyblue;
+				border-radius: 100%;
+				height: 20px;
+				width: 20px;
+				text-align: center;
+				font-weight: 500;
+			}
+		}
 		.dropdown {
 			position: absolute;
 	    background: white;
