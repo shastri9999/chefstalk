@@ -4,11 +4,7 @@ export default {
     value: 'Master Chef',
     display: 'Master Chef',
     type: 'title'
-  },{
-    value: 'Executive Sous Chef',
-    display: 'Executive Sous Chef',
-    type: 'title'
-},
+  },
 {
     value: 'Boulanger',
     display: 'Boulanger',
@@ -24,13 +20,13 @@ export default {
     type: 'title'
 },
 {
-    value: 'Junior Sous Chef',
-    display: 'Junior Sous Chef',
+    value: 'Sous Chef',
+    display: 'Sous Chef',
     type: 'title'
 },
 {
-    value: 'Sous Chef',
-    display: 'Sous Chef',
+    value: 'Junior Sous Chef',
+    display: 'Junior Sous Chef',
     type: 'title'
 },
 {
