@@ -47,6 +47,7 @@ const JobDetail = ({job}) => {
                 </div>
               </div>
             </div>
+            <h3 className="openings">CURRENT OPENINGS</h3>
             {jobs.map((jobitem, index)=> {
               return (<div key={index} className="job-item">
                 <div className="top">

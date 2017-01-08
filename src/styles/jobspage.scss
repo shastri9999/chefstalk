@@ -24,7 +24,7 @@
         flex-wrap: wrap;
       }
       .search-term {
-        font-size: 12px;
+        font-size: 14px;
         background: #EEF2F5;
         padding: 12px;
         border-radius: 100px;
@@ -33,22 +33,20 @@
         position: relative;
         margin-bottom: 5px;
         margin-top: 5px;
+        font-weight: 700;
         .close {
           position: absolute;
           right: 4px;
-          top: 7px;
+          top: 9px;
           line-height: 20px;
           font-size: 14px;
           cursor: pointer;
-          border: 1px solid $cloudyblue;
           color: $cloudyblue;
           border-radius: 100%;
           height: 20px;
           width: 20px;
           text-align: center;
-          &:hover {
-            box-shadow: $shadow 1px 1px 1px 0;
-          }
+          font-weight: 500;
         }
       }
       .search {
@@ -152,7 +150,7 @@
     align-items: stretch;
     min-height: calc(100vh - 100px);
     .job-list {
-      width: 50vw;
+      width: 53vw;
       min-width: 650px;
       display: flex;
       flex-direction: column;

@@ -311,7 +311,8 @@ $leftrightpadding: 135px;
 			display: flex;
 			flex-direction: column;
 			h3 {
-				font-size: 1em;
+				font-size: 20px;
+				letter-spacing: 0.2px;
 		    margin-bottom: 2em;
 		    font-weight: 600;
 			}
@@ -319,7 +320,8 @@ $leftrightpadding: 135px;
 				margin-bottom: 0.7em;
 				color: $opaque-color;
 				opacity: 0.9;
-				font-size: 0.9em;
+				font-size: 18px;
+				letter-spacing: 0.2px;
 				text-decoration: none;
 				cursor: pointer;
 				&:hover {
