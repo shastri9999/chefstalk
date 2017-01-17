@@ -1,13 +1,12 @@
 import React, {PropTypes} from 'react';
-import { Link } from 'react-router';
 import '../styles/jobspage.scss';
 import {connect} from 'react-redux';
 import JobItem from './JobItem.js';
 import JobDetail from './JobDetail.js';
-import {changeSelectedJob, removeTerm, addTerm} from '../reducers/actions.js';
+import {changeSelectedJob, addTerm} from '../reducers/actions.js';
 import deepcopy from 'deepcopy';
 import SelectDropDown from './selectDropdown.js';
-import SearchBar from './SearchBar.js';
+import SearchHeader from './SearchHeader.js';
 
 class JobsPage extends React.Component {
   constructor(props){
@@ -54,7 +53,7 @@ class JobsPage extends React.Component {
   }
 
   render(){
-    const {jobs, selectedJob, searchTerms, onJobItemClick, removeSearchTerm, filters} = this.props;
+    const {jobs, selectedJob, onJobItemClick, filters} = this.props;
     const locationFilters = filters.filter(filter => filter.type == 'location');
     const titleFilters = filters.filter(filter => filter.type == 'title');
     const restaurantTypeFilters = filters.filter(filter => filter.type == 'restaurantType');
@@ -62,36 +61,7 @@ class JobsPage extends React.Component {
 
     return (
       <div className="jobs-container">
-        <div className="navbar">
-          <div className="logo">
-            <Link to="/">
-              <img src={require('../images/logo.png')} />
-            </Link>
-          </div>
-          <div className="search-area">
-            <img src={require('../images/search-icon.png')} />
-            {searchTerms.length ?
-              <div className="search-term-container">{
-                searchTerms.map((term)=>(
-                  <div className="search-term" key={term.value}>
-                    {term.display}
-                    <div className="close" onClick={()=>{removeSearchTerm(term);}}>&#x2715;</div>
-                  </div>))}
-              </div>
-              : null}
-            <SearchBar mini={true} />
-          </div>
-          {this.state.loggedIn ? (<div className="avatar-area">
-            <img src={require('../images/bell.png')} className="bell" />
-            <div className="user">
-              Sebastian Wussler
-            </div>
-            <img src="https://s30.postimg.org/jq2v3j0jl/userlogo.jpg" className="avatar"/>
-          </div>):(<div className="avatar-area">
-            <Link to="/login" className="login">Login</Link>
-            <Link to="/signup" className="signup">Sign Up</Link>
-          </div>)}
-        </div>
+        <SearchHeader />
         {this.state.loggedIn ?<div className="profile-completion-status">
           Your profile is incomplete. Complete your profile for getting more jobs.
           <div style={{'width':'38%'}} className="status-bar" />
@@ -158,9 +128,7 @@ class JobsPage extends React.Component {
 JobsPage.propTypes = {
   jobs: PropTypes.array,
   selectedJob: PropTypes.object,
-  searchTerms: PropTypes.array,
   onJobItemClick: PropTypes.func,
-  removeSearchTerm: PropTypes.func,
   filters: PropTypes.array,
   addSearchTerm: PropTypes.func,
 };
@@ -230,7 +198,6 @@ const mapStateToProps = ({jobs, selectedJob, searchTerms, filters}) => {
 
   return {
       jobs: filteredJobs,
-      searchTerms,
       selectedJob,
       filters,
   };
@@ -240,10 +207,6 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onJobItemClick: (job)=>{
         dispatch(changeSelectedJob(job));
-    },
-    removeSearchTerm: (term)=>{
-      dispatch(removeTerm(term));
-      dispatch(changeSelectedJob(null));
     },
     addSearchTerm: (term)=>{
       dispatch(addTerm(term));
