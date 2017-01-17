@@ -1,28 +1,53 @@
+@import "variables";
 nav.header {
-  font-size: 20px;
-  color: #666;
+  font-size: 0.78em;
+  text-transform: uppercase;
   display: flex;
-  padding: 40px;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #e0e0e0;
-  a {
-    text-decoration: none;
-    color: inherit;
-    &.logo {
-      font-weight: 900;
+  font-weight: 600;
+  .logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 900;
+    img {
+      margin-right: 10px;
+      position: relative;
+      top: -1px;
     }
   }
-  .right {
-    color: #b6b6b6;
-    font-weight: 400;
-    font-size: 14px;
+  a {
+    text-decoration: none;
+    color: $darkcolor;
+  }
+  .links {
+    display: flex;
+    align-items: center;
     a {
-      font-weight: 600;
-      padding: 30px;
+      margin-right: 40px;
+      letter-spacing: 0.5px;
+      &.login {
+          display: inline-block;
+          text-align: center;
+      }
+      &.signup {
+          background-color: $lightishblue;
+          color: #fff;
+          width: 130px;
+          height: 40px;
+          display: flex;
+          border-radius: 100px;
+          border: 0;
+          opacity: 1;
+          margin-right: 0;
+          font-size: 13px;
+          letter-spacing: 1px;
+          justify-content: center;
+          align-items: center;
+      }
       &:hover {
-        background: rgba(245, 245, 245, 0.4);
-        opacity: 0.9;
+        opacity: 0.8;
       }
     }
   }

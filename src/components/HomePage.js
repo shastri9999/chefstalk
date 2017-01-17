@@ -1,24 +1,15 @@
 import React from 'react';
 import '../styles/home-page.scss';
-import { Link, IndexLink } from 'react-router';
+import { Link } from 'react-router';
 import SearchBar from './SearchBar.js';
 import JobCarousel from './JobCarousel.js';
+import Header from './Header.js';
 
 const HomePage = () => {
   return (
     <div className="home">
       <div className="hero">
-        <nav>
-          <IndexLink to="/" className="logo">
-            <img src={require('../images/logo.png')} />
-            Chefstalk
-          </IndexLink>
-          <div className="links">
-            <Link to="/restaurant">Are you a business?</Link>
-            <Link to="/login" className="login">Login</Link>
-            <Link to="/signup" className="signup">Sign Up</Link>
-          </div>
-        </nav>
+        <Header />
         <div className="proposition">
           <div>
             <h2>Discover Culinary Jobs around the world.</h2>
