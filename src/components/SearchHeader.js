@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import {connect} from 'react-redux';
 import {changeSelectedJob, removeTerm} from '../reducers/actions.js';
 import SearchBar from './SearchBar.js';
+import '../styles/searchheader.scss';
 
 class SearchHeader extends React.Component {
   constructor(props){
@@ -17,7 +18,7 @@ class SearchHeader extends React.Component {
     const {searchTerms, removeSearchTerm} = this.props;
 
     return (
-      <div className="navbar">
+      <div className="navbar search-header">
         <div className="logo">
           <Link to="/">
             <img src={require('../images/logo.png')} />
