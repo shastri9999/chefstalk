@@ -1,5 +1,7 @@
 import React, {PropTypes} from 'react';
 import '../styles/jobdetail.scss';
+import { Link } from 'react-router';
+
 
 const JobDetail = ({job}) => {
   if (!job)
@@ -26,7 +28,7 @@ const JobDetail = ({job}) => {
               <div className="left">
                 <img className="logo" src={restaurant.image} />
                 <h3>{restaurant.name}</h3>
-                <button> View Profile </button>
+                <Link to={`restaurant/${restaurant.name}`}> View Profile </Link>
               </div>
               <div className="right">
                 <div className="info">

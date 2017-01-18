@@ -15,7 +15,7 @@ export default (
     <IndexRoute component={HomePage}/>
     <Route path="/jobs" component={JobsPage}/>
     <Route path="/profile" component={ChefProfilePage}/>
-    <Route path="/restaurant/:id" component={RestaurantProfilePage}/>
+    <Route path="/restaurant/:name" component={RestaurantProfilePage}/>
     <Route path="/login" component={LoginPage}/>
     <Route path="/signup" component={SignupPage}/>
     <Route path="*" component={NotFoundPage}/>
