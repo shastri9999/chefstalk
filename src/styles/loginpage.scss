@@ -1,0 +1,8 @@
+@import "variables";
+$leftrightpadding: 135px;
+.login-page {
+  .nav-wrapper {
+    padding: 30px $leftrightpadding;
+    border-bottom: 1px solid $border-color;
+  }
+}
