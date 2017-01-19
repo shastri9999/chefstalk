@@ -12,6 +12,7 @@ export default class ChefProfilePage extends React.Component {
 
 
   render(){
+    const summary = "I’m Rahul. Allow me to introduce myself a little. I love the simplicity in design, however, I am extremely enthusiastic in details as well. User friendly is an important priority which I mainly consider. Just inform me the requirements and you will get a charming visual work in a few days. I am punctual, neat, systematic, easy to talk with and also a positive thinker. Please let me know, if you are in need of these services.";
     return (
       <div className="chef-profile-page">
         <SearchHeader />
@@ -45,7 +46,10 @@ export default class ChefProfilePage extends React.Component {
           </div>
         </div>
         <div className="bottom">
-          Awards
+          <div className="summary">
+             <h3>Summary</h3>
+             <div>{summary}</div>
+          </div>
         </div>
       </div>
     );
