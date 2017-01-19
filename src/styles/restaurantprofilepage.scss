@@ -1,1 +1,58 @@
 @import "variables";
+.restaurant-profile-page{
+  .top {
+    padding-left: 203px;
+    background-color: #fff;
+    border-bottom: 1px solid $border-color;
+    display: flex;
+    align-items: center;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    color: $opaque-color;
+    font-size: 14px;
+    .avatar {
+      height: 182px;
+      width: 182px;
+      border-radius: 182px;
+      flex-shrink: 0;
+    }
+    .middle {
+      max-width: 501px;
+      margin-left: 50px;
+      margin-right: 70px;
+      h2 {
+        font-weight: 900;
+        font-size: 36px;
+        color: $darkcolor;
+        margin-bottom: 20px;
+      }
+      .description {
+        line-height: 1.43;
+        letter-spacing: 0.2px;
+      }
+    }
+    .right {
+      .info {
+        margin-bottom: 20px;
+        font-weight: 700;
+        img {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+  .bottom {
+    display: flex;
+    align-items: stretch;
+    .left {
+      flex: 1;
+      background-color: #f4f8fb;
+      border-right: 1px solid $border-color;
+      height: 500px;
+    }
+    .right {
+      background-color: #fff;
+      width: 500px;
+    }
+  }
+}

@@ -133,7 +133,7 @@ export default {
     restaurant: {
         name: 'Radisson Blu',
         restaurantType: '5 star Hotel',
-        image: 'https://s27.postimg.org/65f9fc7yr/radisson.png',
+        image: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=150%C3%97150&w=150&h=150',
         employees: '15-20',
         founded: '2012',
         location: 'USA, Germany, India',
@@ -174,7 +174,7 @@ export default {
     restaurant: {
         name: 'Grand Hyatt',
         restaurantType: '5 star Hotel',
-        image: 'https://s27.postimg.org/r6kp0y5df/hyatt.png',
+        image: 'https://s27.postimg.org/jv3wsbixf/grandhyatt.png',
         employees: '25-100',
         founded: '2015',
         location: 'USA, India',
