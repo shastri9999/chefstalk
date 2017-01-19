@@ -1,3 +1,81 @@
 @import "variables";
 .chef-profile-page {
+  .top {
+    padding-left: 203px;
+    padding-right: 243px;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    display: flex;
+    .avatar {
+      width: 182px;
+      border-radius: 182px;
+      height: 182px;
+      flex-shrink: 0;
+    }
+    .middle {
+      padding-left: 50px;
+      padding-right: 150px;
+      h2 {
+        font-weight: 900;
+        font-size: 36px;
+        margin-bottom: 10px;
+      }
+      .title {
+        display: flex;
+        font-size: 14px;
+        font-weight: 700;
+        color: $opaque-color;
+        letter-spacing: 0.2px;
+        margin-bottom: 20px;
+      }
+      .summary {
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.2px;
+        line-height: 1.36;
+        color: $opaque-color;
+        max-width: 400px;
+      }
+      .links {
+        margin-top: 20px;
+        img {
+          margin-right: 20px;
+          opacity: 0.3;
+          cursor: pointer;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+    .right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      button {
+        width: 192px;
+      	height: 50px;
+      	border-radius: 100px;
+      	border: solid 1px $border-color;
+        background-color: white;
+        color: $opaque-color;
+        font-size: 14px;
+        font-weight: 900;
+        cursor: pointer;
+        margin-bottom: 20px;
+        outline: none;
+        &:hover {
+          color: white;
+          border: 1px solid $lightishblue;
+          background-color: $lightishblue;
+        }
+      }
+    }
+  }
+  .bottom {
+    background-color: #f4f8fb;
+    padding-left: 335px;
+    padding-right: 335px;
+    flex: 1;
+  }
 }
