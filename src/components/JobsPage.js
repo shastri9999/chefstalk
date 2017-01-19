@@ -6,7 +6,7 @@ import JobDetail from './JobDetail';
 import {changeSelectedJob, addTerm} from '../reducers/actions';
 import SelectDropDown from './selectDropdown';
 import SearchHeader from './SearchHeader';
-import filterJobs from '../helpers/filterJobs'
+import filterJobs from '../helpers/filterJobs';
 
 class JobsPage extends React.Component {
   constructor(props){

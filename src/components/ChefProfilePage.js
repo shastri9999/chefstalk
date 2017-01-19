@@ -1,13 +1,17 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
+import {connect} from 'react-redux';
+import {push} from 'react-router-redux';
 import '../styles/chefprofilepage.scss';
 import SearchHeader from './SearchHeader.js';
 
-export default class ChefProfilePage extends React.Component {
+class ChefProfilePage extends React.Component {
   constructor(props){
     super(props);
-    this.state = {
-      loggedIn: false,
-    };
+  }
+
+  componentWillMount(){
+    const {loggedIn, redirect} = this.props;
+    if (!loggedIn) redirect();
   }
 
 
@@ -100,3 +104,18 @@ export default class ChefProfilePage extends React.Component {
     );
   }
 }
+ChefProfilePage.propTypes = {
+    loggedIn: PropTypes.bool,
+    redirect: PropTypes.func,
+};
+
+const mapStateToProps = ({loggedIn}) => {return {loggedIn,};};
+const mapDispatchToProps = (dispatch)=>{
+  return {
+    redirect: ()=>{
+        dispatch(push('/login'));
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ChefProfilePage);
