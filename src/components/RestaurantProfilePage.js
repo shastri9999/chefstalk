@@ -32,6 +32,19 @@ class RestaurantProfilePage extends React.Component {
     const links = ["www.anotherlink.com",
                       "www.mymainsite.com",];
     const jobDescription = "Short description - twenty words only but you certainly know your way around core design tools. Your client experience is from. Short description - twenty words only but you certainly know your way around core design tools";
+    const awards = [{
+      title: 'Kyoorius',
+      subtitle: 'Red Elephant',
+      year: '2015',
+    },{
+      title: 'Kyoorius',
+      subtitle: 'Red Elephant',
+      year: '2015',
+    },{
+      title: 'Kyoorius',
+      subtitle: 'Red Elephant',
+      year: '2015',
+    },];
 
     return (
       <div className="restaurant-profile-page">
@@ -68,6 +81,27 @@ class RestaurantProfilePage extends React.Component {
             <div className="about">
               <h3>About Company</h3>
               <div>{about}</div>
+            </div>
+            <div className="awards">
+              <h3>Awards</h3>
+              {awards.map((item, index)=>(
+                <div key={index}>
+                  <div className="main">
+                    <img src={require('../images/awards.png')} />
+                    <div className="middle">
+                      <h4>{item.title}</h4>
+                      <div className="detail">
+                        <div className="left">
+                          {item.subtitle}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="duration">
+                      {item.year}
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
             <h3 className="openings">CURRENT OPENINGS</h3>
             {jobs.map((jobitem, index)=> {

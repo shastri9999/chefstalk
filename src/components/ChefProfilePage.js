@@ -36,6 +36,19 @@ class ChefProfilePage extends React.Component {
       duration: 'January 2010 - December 2011',
       description: 'Got an opportunity to create awesome digital experience for different clients while working on branding / web projects. Responsibilities include conceptualising.',
     }];
+    const awards = [{
+      title: 'Kyoorius',
+      subtitle: 'Red Elephant',
+      year: '2015',
+    },{
+      title: 'Kyoorius',
+      subtitle: 'Red Elephant',
+      year: '2015',
+    },{
+      title: 'Kyoorius',
+      subtitle: 'Red Elephant',
+      year: '2015',
+    },];
     return (
       <div className="chef-profile-page">
         <SearchHeader />
@@ -96,6 +109,27 @@ class ChefProfilePage extends React.Component {
                   </div>
                 </div>
                 {item.description? <div className="description">{item.description}</div>:null}
+              </div>
+            ))}
+          </div>
+          <div className="awards">
+            <h3>Awards</h3>
+            {awards.map((item, index)=>(
+              <div key={index}>
+                <div className="main">
+                  <img src={require('../images/awards.png')} />
+                  <div className="middle">
+                    <h4>{item.title}</h4>
+                    <div className="detail">
+                      <div className="left">
+                        {item.subtitle}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="duration">
+                    {item.year}
+                  </div>
+                </div>
               </div>
             ))}
           </div>
