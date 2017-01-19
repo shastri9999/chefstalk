@@ -224,4 +224,5 @@ export default {
     },
   }],
   selectedJob: null,
+  loggedIn: false,
 };

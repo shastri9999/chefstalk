@@ -3,19 +3,16 @@ import { Link } from 'react-router';
 import {connect} from 'react-redux';
 import {changeSelectedJob, removeTerm} from '../reducers/actions.js';
 import SearchBar from './SearchBar.js';
+import AvatarArea from './avatar.js';
 import '../styles/searchheader.scss';
 
 class SearchHeader extends React.Component {
   constructor(props){
     super(props);
-    this.state = {
-      loggedIn: false,
-    };
   }
 
-
   render(){
-    const {searchTerms, removeSearchTerm} = this.props;
+    const {searchTerms, removeSearchTerm, loggedIn} = this.props;
 
     return (
       <div className="navbar search-header">
@@ -25,7 +22,9 @@ class SearchHeader extends React.Component {
           </Link>
         </div>
         <div className="search-area">
-          <img src={require('../images/search-icon.png')} />
+          <Link to="/jobs">
+            <img src={require('../images/search-icon.png')} />
+          </Link>
           {searchTerms.length ?
             <div className="search-term-container">{
               searchTerms.map((term)=>(
@@ -37,13 +36,7 @@ class SearchHeader extends React.Component {
             : null}
           <SearchBar mini={true} />
         </div>
-        {this.state.loggedIn ? (<div className="avatar-area">
-          <img src={require('../images/bell.png')} className="bell" />
-          <div className="user">
-            Sebastian Wussler
-          </div>
-          <img src="https://s30.postimg.org/jq2v3j0jl/userlogo.jpg" className="avatar"/>
-        </div>):(<div className="avatar-area">
+        {loggedIn ? <AvatarArea />: (<div className="avatar-area">
           <Link to="/login" className="login">Login</Link>
           <Link to="/signup" className="signup">Sign Up</Link>
         </div>)}
@@ -55,12 +48,14 @@ class SearchHeader extends React.Component {
 SearchHeader.propTypes = {
   removeSearchTerm: PropTypes.func,
   searchTerms: PropTypes.array,
+  loggedIn: PropTypes.bool,
 };
 
 
-const mapStateToProps = ({searchTerms}) => {
+const mapStateToProps = ({searchTerms, loggedIn}) => {
   return {
       searchTerms,
+      loggedIn,
   };
 };
 
