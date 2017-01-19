@@ -1,6 +1,6 @@
 @import "variables";
 .restaurant-profile-page{
-  .top {
+  &>.top {
     padding-left: 203px;
     background-color: #fff;
     border-bottom: 1px solid $border-color;
@@ -41,18 +41,145 @@
       }
     }
   }
-  .bottom {
+  &>.bottom {
     display: flex;
     align-items: stretch;
-    .left {
+    &>.left {
       flex: 1;
       background-color: #f4f8fb;
       border-right: 1px solid $border-color;
-      height: 500px;
+      min-height: 700px;
+      padding: 30px;
+      padding-left: 135px;
+      .about {
+        border: 1px solid $border-color;
+        border-radius: 3px;
+        background-color: #fff;
+        padding: 30px;
+        h3 {
+          font-weight: 700;
+          font-size: 14px;
+          text-transform: uppercase;
+          margin-bottom: 30px;
+        }
+        div {
+          padding-left: 50px;
+          color: $opaque-color;
+          letter-spacing: 0.2px;
+          line-height: 1.43;
+          font-size: 14px;
+        }
+      }
+      .openings {
+        font-size: 14px;
+        font-weight: 900;
+        letter-spacing: 0.5px;
+        margin-left: 5px;
+        margin-bottom: 35px;
+        margin-top: 35px;
+      }
+      .job-item {
+        margin: 15px 0px;
+        padding: 20px 30px;
+        background: white;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.5;
+        border: 1px solid $cloudyblue;
+        border-radius: 3px;
+        &:hover {
+          box-shadow: $shadow 1px 1px 10px 2px;
+        }
+        .top {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .title {
+            font-weight: 600;
+            font-size: 20px;
+            letter-spacing: 0.2px;
+          }
+          .other {
+            font-weight: 600;
+            color: $opaque-color;
+            letter-spacing: 0.5px;
+            font-size: 14px;
+          }
+          .right {
+            img {
+              margin-right: 10px;
+            }
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            color: $opaque-color;
+            font-size: 14px;
+          }
+        }
+        .middle {
+          margin-top: 30px;
+          margin-bottom: 30px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .description {
+            width: 70%;
+            font-size: 13px;
+            opacity: 0.4;
+            font-weight: 300;
+          }
+          button {
+            border: 1px solid $cloudyblue;
+            border-radius: 100px;
+            width: 120px;
+            height: 40px;
+            text-align: center;
+            line-height: 36px;
+            font-size: 14px;
+            background-color: white;
+            color: $opaque-color;
+            cursor: pointer;
+            outline: 0;
+            font-weight: 600;
+            &:hover {
+              background-color: $lightishblue;
+              border: 0;
+              color: white;
+            }
+          }
+
+        }
+        .bottom {
+          display: flex;
+          color: $opaque-color;
+          .left {
+            img {
+              margin-right: 10px;
+            }
+            font-weight: 600;
+          }
+        }
+      }
     }
-    .right {
+    &>.right {
       background-color: #fff;
+      padding: 30px;
+      padding-top: 50px;
       width: 500px;
+      padding-top: 0;
+      .perks, .benifits, .links {
+        font-size: 14px;
+        color: $opaque-color;
+        h4 {
+          color: $darkcolor;
+          margin-bottom: 20px;
+          font-weight: 700;
+          margin-top: 50px;
+        }
+        div {
+          font-weight: 500;
+          margin-bottom: 30px;
+        }
+      }
     }
   }
 }
