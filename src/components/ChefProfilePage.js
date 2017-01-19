@@ -13,6 +13,25 @@ export default class ChefProfilePage extends React.Component {
 
   render(){
     const summary = "I’m Rahul. Allow me to introduce myself a little. I love the simplicity in design, however, I am extremely enthusiastic in details as well. User friendly is an important priority which I mainly consider. Just inform me the requirements and you will get a charming visual work in a few days. I am punctual, neat, systematic, easy to talk with and also a positive thinker. Please let me know, if you are in need of these services.";
+    const experience = [{
+      title: 'Master Chef',
+      restaurantName: 'Grand Hyatt',
+      location: 'Mumbai, India',
+      duration: 'March 2014 - Present',
+      description: '',
+    },{
+      title: 'Junior Chef',
+      restaurantName: 'Radisson Blu',
+      location: 'Berlin, Germany',
+      duration: 'January 2012 - December 2013',
+      description: '',
+    },{
+      title: 'Bar Tender',
+      restaurantName: 'Kitti SU The Lalit',
+      location: 'Paris, France',
+      duration: 'January 2010 - December 2011',
+      description: 'Got an opportunity to create awesome digital experience for different clients while working on branding / web projects. Responsibilities include conceptualising.',
+    }];
     return (
       <div className="chef-profile-page">
         <SearchHeader />
@@ -49,6 +68,32 @@ export default class ChefProfilePage extends React.Component {
           <div className="summary">
              <h3>Summary</h3>
              <div>{summary}</div>
+          </div>
+          <div className="experience">
+            <h3>Experience</h3>
+            {experience.map((item, index)=>(
+              <div key={index}>
+                <div className="main">
+                  <img src={require('../images/chefhatbig.png')} />
+                  <div className="middle">
+                    <h4>{item.title}</h4>
+                    <div className="detail">
+                      <div className="left">
+                        {item.restaurantName}
+                      </div>
+                      <div>&nbsp;&nbsp;|&nbsp;&nbsp;</div>
+                      <div className="right">
+                        {item.location}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="duration">
+                    {item.duration}
+                  </div>
+                </div>
+                {item.description? <div className="description">{item.description}</div>:null}
+              </div>
+            ))}
           </div>
         </div>
       </div>
