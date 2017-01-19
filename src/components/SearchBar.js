@@ -19,7 +19,6 @@ class  SearchBar extends React.Component {
     this.selectValue = this.selectValue.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.handleLocationSelected = this.handleLocationSelected.bind(this);
-    this.handleSearchClick = this.handleSearchClick.bind(this);
   }
 
   handleLocationSelected(option){
@@ -28,10 +27,6 @@ class  SearchBar extends React.Component {
       location: option.display,
       showLocation: false,
     });
-  }
-
-  handleSearchClick(){
-    this.props.goToJobs();
   }
 
   handleKeyDown(event){
@@ -95,14 +90,14 @@ class  SearchBar extends React.Component {
   }
 
   render(){
-    const {search, filters, mini, searchTerms, removeSearchTerm, goToJobs} = this.props;
+    const {search, filters, mini, searchTerms, removeSearchTerm} = this.props;
     const locationFilters = filters.filter(filter => filter.type == 'location');
     const placeholder = !searchTerms.length ?
                         (mini ? "Search by Position, Restaurant, Location" : "Search by Position, Restaurant"):"";
     const showInput = (mini && searchTerms.length < 6)  || (!mini && searchTerms.length < 3);
     return (
         <div className="search">
-          {!mini ? <img src={require('../images/search-icon.png')} onClick={this.handleSearchClick} className="search-icon" /> : null}
+          {!mini ? <img src={require('../images/search-icon.png')} className="search-icon" /> : null}
           {!mini && searchTerms.length ? (<div className={showInput ? "search-term-container" : "search-term-container no-input"}>{
             searchTerms.map((term)=>(
               <div className="search-term" key={term.value}>
@@ -154,7 +149,6 @@ SearchBar.propTypes = {
   addSearchTerm: PropTypes.func,
   removeSearchTerm: PropTypes.func,
   addLocationTerm: PropTypes.func,
-  goToJobs: PropTypes.func,
 };
 
 const enhancedSearchBar = enhanceWithClickOutside(SearchBar);
@@ -170,9 +164,6 @@ const mapDispatchToProps = (dispatch) => {
   return {
     search: () => {
       dispatch(changeSelectedJob(null));
-      dispatch(push('/jobs'));
-    },
-    goToJobs: ()=> {
       dispatch(push('/jobs'));
     },
     addSearchTerm: (term)=>{
