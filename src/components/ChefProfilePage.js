@@ -36,6 +36,25 @@ class ChefProfilePage extends React.Component {
       duration: 'January 2010 - December 2011',
       description: 'Got an opportunity to create awesome digital experience for different clients while working on branding / web projects. Responsibilities include conceptualising.',
     }];
+    const education  = [{
+      title: 'Pune University',
+      restaurantName: 'Hotel Management',
+      location: 'Pune, India',
+      duration: '2010 - 2014',
+      description: '',
+    },{
+      title: 'Mumbai University',
+      restaurantName: 'Cocktail Making',
+      location: 'Mumbai, India',
+      duration: '2015',
+      description: '',
+    },{
+      title: 'Stockholm Art University',
+      restaurantName: 'Culinary art',
+      location: 'Paris, France',
+      duration: '2015',
+      description: '',
+    }];
     const awards = [{
       title: 'Kyoorius',
       subtitle: 'Red Elephant',
@@ -48,6 +67,16 @@ class ChefProfilePage extends React.Component {
       title: 'Kyoorius',
       subtitle: 'Red Elephant',
       year: '2015',
+    },];
+    const languages = [{
+      langauge: 'German',
+      fluency: 'Native',
+    },{
+      langauge: 'English',
+      fluency: 'Fluent',
+    },{
+      langauge: 'Hindi',
+      fluency: 'Conversational',
     },];
     return (
       <div className="chef-profile-page">
@@ -130,6 +159,49 @@ class ChefProfilePage extends React.Component {
                     {item.year}
                   </div>
                 </div>
+              </div>
+            ))}
+          </div>
+          <div className="education">
+            <h3>Education</h3>
+            {education.map((item, index)=>(
+              <div key={index}>
+                <div className="main">
+                  <img src={require('../images/ribbon.png')} />
+                  <div className="middle">
+                    <h4>{item.title}</h4>
+                    <div className="detail">
+                      <div className="left">
+                        {item.restaurantName}
+                      </div>
+                      <div>&nbsp;&nbsp;|&nbsp;&nbsp;</div>
+                      <div className="right">
+                        {item.location}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="duration">
+                    {item.duration}
+                  </div>
+                </div>
+                {item.description? <div className="description">{item.description}</div>:null}
+              </div>
+            ))}
+          </div>
+          <div className="languages">
+            <h3>Languages</h3>
+            {languages.map((item, index)=>(
+              <div key={index}>
+                <div className="main">
+                  <img src={require('../images/language.png')} />
+                  <div className="middle">
+                    <h4>{item.langauge}</h4>
+                  </div>
+                  <div className="duration">
+                    {item.fluency}
+                  </div>
+                </div>
+                {item.description? <div className="description">{item.description}</div>:null}
               </div>
             ))}
           </div>
