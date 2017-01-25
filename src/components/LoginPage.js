@@ -91,18 +91,6 @@ class LoginPage extends React.Component {
               Employer
             </div>
           </div>
-          <div className="social">
-            <div className="facebook button">
-              Facebook
-            </div>
-            <div className="google button">
-              Google
-            </div>
-          </div>
-          <hr />
-          <div className="or">
-            or
-          </div>
           <input type="text"
                  placeholder="Email Id / User Id"
                  onKeyDown={this.handleKeyDown}
@@ -127,8 +115,6 @@ class LoginPage extends React.Component {
           {this.state.invalidCredentials ? <div className="error">
             Invalid username/password
           </div>: null}
-
-          <div className="line" />
           <div className="bottom">
             <div className="left">
               <div className="text"> {"Don't have an account?"} </div>
@@ -137,6 +123,18 @@ class LoginPage extends React.Component {
             <button onClick={this.handleLogin}>
               Login
             </button>
+          </div>
+          <hr />
+          <div className="or">
+            or
+          </div>
+          <div className="social">
+            <div className="facebook button">
+              Facebook
+            </div>
+            <div className="google button">
+              Google
+            </div>
           </div>
         </div>
       </div>
