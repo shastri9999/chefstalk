@@ -103,15 +103,17 @@ $leftrightpadding: 30px;
       height: 60px;
       border-radius: 3px;
       outline: none;
-      background-color: #f4f8fb;
       font-size: 14px;
-      color: $opaque-color;
       font-weight: 500;
       padding-left: 30px;
       border: 1px solid $border-color;
       margin-bottom: 20px;
       &::placeholder{
         font-weight: 500;
+      }
+      &[value=""]{
+        background-color: #f4f8fb;
+        color: $opaque-color;
       }
     }
     .password-wrapper {

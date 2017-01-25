@@ -10,9 +10,18 @@ class SignupPage extends React.Component {
     this.state = {
       showPassword: false,
       rememberme: true,
+      userName: "",
+      password: "",
+      email: "",
+      fullName: "",
     };
     this.toggleShowPassword = this.toggleShowPassword.bind(this);
     this.toggleRememberme = this.toggleRememberme.bind(this);
+    this.handleChangeUser = this.handleChangeUser.bind(this);
+    this.handleChangePassword = this.handleChangePassword.bind(this);
+    this.handleChangeFullName = this.handleChangeFullName.bind(this);
+    this.handleChangeEmail = this.handleChangeEmail.bind(this);
+
   }
 
   toggleShowPassword(){
@@ -25,6 +34,30 @@ class SignupPage extends React.Component {
     this.setState({
       rememberme: !this.state.rememberme,
     });
+  }
+
+  handleChangeUser(event){
+      this.setState({
+        userName: event.target.value,
+      });
+  }
+
+  handleChangeFullName(event){
+      this.setState({
+        fullName: event.target.value,
+      });
+  }
+
+  handleChangeEmail(event){
+      this.setState({
+        email: event.target.value,
+      });
+  }
+
+  handleChangePassword(event){
+      this.setState({
+        password: event.target.value,
+      });
   }
 
   render(){
@@ -43,23 +76,24 @@ class SignupPage extends React.Component {
               Employer
             </div>
           </div>
-          <div className="social">
-            <div className="facebook button">
-              Facebook
-            </div>
-            <div className="google button">
-              Google
-            </div>
-          </div>
-          <hr />
-          <div className="or">
-            or
-          </div>
-          <input type="text" placeholder="Full Name" />
-          <input type="text" placeholder="User Id" />
-          <input type="text" placeholder="Email Id" />
+          <input type="text"
+                 placeholder="Full Name"
+                 onChange={this.handleChangeFullName}
+                 value={this.state.fullName}/>
+         <input type="text"
+                placeholder="User Id"
+                onChange={this.handleChangeUser}
+                value={this.state.userName}/>
+          <input type="text"
+                 placeholder="Email Id"
+                 onChange={this.handleChangeEmail}
+                 value={this.state.email}/>
           <div className="password-wrapper">
-            <input type={this.state.showPassword ? "text":"password"} placeholder="Password" />
+          <input type={this.state.showPassword ? "text":"password"}
+                 placeholder="Password"
+                 onKeyDown={this.handleKeyDown}
+                 onChange={this.handleChangePassword}
+                 value={this.state.password}/>
             <div className="show-hide" onClick={this.toggleShowPassword}>
               Show/Hide
             </div>
@@ -70,7 +104,6 @@ class SignupPage extends React.Component {
             {" and "}
             <Link to="/privacy">Privacy Policy.</Link>
           </div>
-          <div className="line" />
           <div className="bottom">
             <div className="left">
               <div className="text"> {"Already have an account?"} </div>
@@ -79,6 +112,18 @@ class SignupPage extends React.Component {
             <button>
               Sign Up
             </button>
+          </div>
+          <hr />
+          <div className="or">
+            or
+          </div>
+          <div className="social">
+            <div className="facebook button">
+              Facebook
+            </div>
+            <div className="google button">
+              Google
+            </div>
           </div>
         </div>
       </div>

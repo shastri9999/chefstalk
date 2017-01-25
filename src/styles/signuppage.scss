@@ -1,23 +1,31 @@
 @import "variables";
-$leftrightpadding: 135px;
+$leftrightpadding: 30px;
 .signup-page {
   display: flex;
   flex-flow: column;
   align-items: center;
-  margin-bottom: 30px;
+  padding-bottom: 30px;
+  min-height: 100vh;
+  background: url('../images/background-left.png') no-repeat, url('../images/background-right.png') no-repeat 100%, white;
+  background-size: 40% 100%, 20% 100%;
   .nav-wrapper {
     width: 100%;
     padding: 30px $leftrightpadding;
-    border-bottom: 1px solid $border-color;
+    .links {
+      display: none;
+    }
   }
   &>h2{
     font-size: 24px;
     font-weight: 700;
     color: $lightishblue;
     margin: 30px;
+    margin-top: -30px;
   }
   .login-form {
     border: 1px solid $border-color;
+    background-color: #fff;
+    box-shadow: rgba(28,55,105,0.1) 0 30px 40px;
     border-radius: 3px;
     position: relative;
     display: flex;
@@ -25,6 +33,7 @@ $leftrightpadding: 135px;
     align-items: center;
     .top {
       display: flex;
+      margin-bottom: 30px;
       .talent, .employer {
           width: 217px;
           height: 66px;
@@ -46,6 +55,7 @@ $leftrightpadding: 135px;
       justify-content: space-between;
       position: relative;
       margin-bottom: 20px;
+      margin-top: 0;
       align-self: stretch;
       .button {
         width: 170px;
@@ -53,20 +63,21 @@ $leftrightpadding: 135px;
         border-radius: 3px;
         font-size: 14px;
         line-height: 17px;
-        color: white;
+        color: $opaque-color;
         font-weight: 700;
         display: flex;
         cursor: pointer;
         justify-content: center;
         align-items: center;
+        border: 1px solid $border-color;
         &:hover {
-          opacity: 0.9;
+          box-shadow: 0 6px 15px 0 rgba(45, 106, 217, 0.27);
         }
-        &.facebook{
-          background-color: $facebook;
+        &.facebook {
+          background: url('../images/facebookfull.png') no-repeat -25px 10px;
         }
-        &.google{
-          background-color: $google;
+        &.google {
+          background: url('../images/google.png') no-repeat -25px 12px;
         }
       }
     }
@@ -76,7 +87,7 @@ $leftrightpadding: 135px;
       font-size: 14px;
       background-color: #fff;
       padding: 0 10px;
-      top: 170px;
+      bottom: 103px;
       left: 200px;
       color: $opaque-color;
     }
@@ -92,15 +103,17 @@ $leftrightpadding: 135px;
       height: 60px;
       border-radius: 3px;
       outline: none;
-      background-color: #f4f8fb;
       font-size: 14px;
-      color: $opaque-color;
       font-weight: 500;
       padding-left: 30px;
       border: 1px solid $border-color;
       margin-bottom: 20px;
       &::placeholder{
         font-weight: 500;
+      }
+      &[value=""]{
+        background-color: #f4f8fb;
+        color: $opaque-color;
       }
     }
     .password-wrapper {
@@ -137,6 +150,7 @@ $leftrightpadding: 135px;
       font-size: 14px;
       display: flex;
       font-weight: 700;
+      margin-top: 15px;
       align-self: stretch;
       justify-content: space-between;
       padding: 0 30px;
@@ -162,12 +176,9 @@ $leftrightpadding: 135px;
         width: 170px;
         height: 60px;
         border-radius: 3px;
-        display: flex;
         cursor: pointer;
-        justify-content: center;
-        align-items: center;
         &:hover {
-          opacity: 0.8;
+          box-shadow: 0 6px 15px 0 rgba(45, 106, 217, 0.27);
         }
       }
     }
