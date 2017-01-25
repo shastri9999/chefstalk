@@ -2,8 +2,11 @@ import React, {PropTypes} from 'react';
 import '../styles/welcomepage.scss';
 import Header from './Header.js';
 import { Link } from 'react-router';
+import {push} from 'react-router-redux';
+import {connect} from 'react-redux';
 
-const DefaultContent = ()=>{
+
+const DefaultContent = ({getStarted})=>{
   return (<div className="default">
     <div className="greet">
       <h2>Welcome to Chefstalk</h2>
@@ -14,9 +17,13 @@ const DefaultContent = ()=>{
         <Link to="/policy"> Nondiscrimination Policy</Link> and
         <Link to="/payments"> Payments Terms of Service, Privacy Policy</Link>.
       </div>
-      <button className="next">Get Started</button>
+      <button className="next" onClick={getStarted}>Get Started</button>
     </div>
   </div>);
+};
+
+DefaultContent.propTypes = {
+  getStarted: PropTypes.func,
 };
 
 class WelcomePage extends React.Component {
@@ -26,7 +33,7 @@ class WelcomePage extends React.Component {
         <Header />
       </div>
       <div className="content">
-        {this.props.children ? this.props.children : <DefaultContent />}
+        {this.props.children ? this.props.children : <DefaultContent getStarted={this.props.getStarted}/>}
       </div>
     </div>);
   }
@@ -34,6 +41,14 @@ class WelcomePage extends React.Component {
 
 WelcomePage.propTypes = {
   children: PropTypes.element,
+  getStarted: PropTypes.func,
 };
 
-export default WelcomePage;
+const mapDispatchToProps = (dispatch)=>{
+  return {
+    getStarted: ()=>{
+      dispatch(push('/welcome/picture'));
+    },
+  };
+};
+export default connect(null, mapDispatchToProps)(WelcomePage);

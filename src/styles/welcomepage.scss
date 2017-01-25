@@ -24,7 +24,6 @@ $leftrightpadding: 30px;
       border-radius: 3px;
       position: relative;
       background-position: -40px -5px;
-      position: relative;
       .greet {
         border-radius: 3px;
         top: 30px;
@@ -57,6 +56,32 @@ $leftrightpadding: 30px;
         }
       }
     }
+    .profile-picture,.gender-page,.language-page,.award-page,.experience-page,.education-page,.title-page {
+      min-width: 770px;
+      min-height: 600px;
+      border-radius: 3px;
+      position: relative;
+      background-color: #fff;
+      box-shadow: rgba(28,55,105,0.10) 3px 4px 40px;
+      padding: 30px;
+      padding-top: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      h3 {
+        font-size: 20px;
+        font-weight: 700;
+      }
+      .controls {
+        position: absolute;
+        left: 30px;
+        right: 30px;
+        bottom: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
     button.next {
       background-color: $lightishblue;
       color: white;
@@ -71,6 +96,19 @@ $leftrightpadding: 30px;
         box-shadow: 0 6px 15px 0 rgba(45, 106, 217, 0.27);
       }
     }
-
+    button.previous {
+      background-color: white;
+      color: $opaque-color;
+      font-size: 14px;
+      width: 150px;
+      height: 45px;
+      border-radius: 100px;
+      outline: none;
+      border: 1px solid $border-color;
+      cursor: pointer;
+      &:hover {
+        box-shadow: 0 6px 15px 0 rgba(45, 106, 217, 0.27);
+      }
+    }
   }
 }

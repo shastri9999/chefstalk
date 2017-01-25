@@ -10,6 +10,14 @@ import LoginPage from './components/LoginPage';
 import SignupPage from './components/SignupPage';
 import WelcomePage from './components/WelcomePage';
 import NotFoundPage from './components/NotFoundPage';
+import ProfilePicture from './components/ProfilePicture';
+import GenderPage from './components/GenderPage';
+import LanguagePage from './components/LanguagePage';
+import TitlePage from './components/TitlePage';
+import AwardPage from './components/AwardPage';
+import ExperiencePage from './components/ExperiencePage';
+import EducationPage from './components/EducationPage';
+
 
 export default (
   <Route path="/" component={App}>
@@ -19,7 +27,15 @@ export default (
     <Route path="/restaurant/:name" component={RestaurantProfilePage}/>
     <Route path="/login" component={LoginPage}/>
     <Route path="/signup" component={SignupPage}/>
-    <Route path="/welcome" component={WelcomePage}/>
+    <Route path="/welcome" component={WelcomePage}>
+      <Route path="picture" component={ProfilePicture}/>
+      <Route path="gender" component={GenderPage}/>
+      <Route path="language" component={LanguagePage}/>
+      <Route path="award" component={AwardPage}/>
+      <Route path="experience" component={ExperiencePage}/>
+      <Route path="education" component={EducationPage}/>
+      <Route path="title-pitch" component={TitlePage}/>
+    </Route>
     <Route path="*" component={NotFoundPage}/>
   </Route>
 );
