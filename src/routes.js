@@ -8,6 +8,7 @@ import ChefProfilePage from './components/ChefProfilePage';
 import RestaurantProfilePage from './components/RestaurantProfilePage';
 import LoginPage from './components/LoginPage';
 import SignupPage from './components/SignupPage';
+import WelcomePage from './components/WelcomePage';
 import NotFoundPage from './components/NotFoundPage';
 
 export default (
@@ -18,6 +19,7 @@ export default (
     <Route path="/restaurant/:name" component={RestaurantProfilePage}/>
     <Route path="/login" component={LoginPage}/>
     <Route path="/signup" component={SignupPage}/>
+    <Route path="/welcome" component={WelcomePage}/>
     <Route path="*" component={NotFoundPage}/>
   </Route>
 );
