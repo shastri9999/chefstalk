@@ -1,12 +1,14 @@
 import React, {PropTypes} from 'react';
 import {go, push} from 'react-router-redux';
 import {connect} from 'react-redux';
+import AddItemButton from './AddItemButton';
 
 
 class ExperiencePage extends React.Component {
   render(){
     return (<div className="experience-page">
       <h3>Experience</h3>
+      <AddItemButton text="Add Experience" />
       <div className="controls">
         <button className="previous" onClick={this.props.goBack}>Back</button>
         <button className="next" onClick={this.props.next}>Next</button>

@@ -2,6 +2,7 @@ import React, {PropTypes} from 'react';
 import {go, push} from 'react-router-redux';
 import {connect} from 'react-redux';
 import {changeProfileGender} from '../reducers/actions';
+import ProfileCheckBox from './ProfileCheckBox';
 
 const GenderCircle = ({selected, gender, onSelect})=>{
   const className = `${selected?'selected ':''}gender-circle ${gender}`;
@@ -58,8 +59,8 @@ class GenderPage extends React.Component {
                       onSelect={this.handleChangeGender("female")}/>
       </div>
       <div className="nogender">
-        <div className={gender=="no"? "checked": "unchecked"}
-             onClick={this.toggleDiscloseGender} />
+        <ProfileCheckBox selected={gender=="no"}
+                         onClick={this.toggleDiscloseGender} />
         <div className="text">
           Prefer not to disclose
         </div>

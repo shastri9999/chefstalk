@@ -110,6 +110,43 @@ $leftrightpadding: 30px;
         box-shadow: 0 6px 15px 0 rgba(45, 106, 217, 0.27);
       }
     }
+    .checkbox {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      &.value-checked {
+        background-image: url('../images/checked.png');
+        border:none;
+      }
+      &.value-unchecked {
+        border:1px solid $border-color;
+        border-radius: 2px;
+      }
+    }
+    .add-item-button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 100px;
+      width: 268px;
+      height: 268px;
+      border-radius: 3px;
+      background-color: #f4f8fb;
+      border: solid 1px #cbd6dd;
+      font-size: 20px;
+      font-weight: 700;
+      color: $opaque-color;
+      .plus {
+        font-size: 48px;
+        font-weight: 300;
+        cursor: pointer;
+      }
+      .action {
+        letter-spacing: 0.29px;
+        cursor: pointer;
+      }
+    }
     .gender-page {
       .gender {
         display: flex;
@@ -121,19 +158,8 @@ $leftrightpadding: 30px;
         font-weight: 700;
         display: flex;
         align-items: center;
-        &>div:first-of-type{
-          width: 20px;
-          height: 20px;
-          cursor: pointer;
+        .checkbox{
           margin-right: 10px;
-          &.checked {
-            background-image: url('../images/checked.png');
-            border:none;
-          }
-          &.unchecked {
-            border:1px solid $border-color;
-            border-radius: 2px;
-          }
         }
         .text {
           opacity: 0.5;
@@ -186,6 +212,9 @@ $leftrightpadding: 30px;
         }
 
       }
+    }
+    .award-page {
+
     }
   }
 }

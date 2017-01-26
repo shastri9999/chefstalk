@@ -1,12 +1,14 @@
 import React, {PropTypes} from 'react';
 import {go, push} from 'react-router-redux';
 import {connect} from 'react-redux';
+import AddItemButton from './AddItemButton';
 
 
 class EducationPage extends React.Component {
   render(){
     return (<div className="education-page">
       <h3>Education</h3>
+      <AddItemButton text="Add Education" />
       <div className="controls">
         <button className="previous" onClick={this.props.goBack}>Back</button>
         <button className="next">Next</button>
