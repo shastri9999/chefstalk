@@ -5,6 +5,7 @@ import jobs from './jobs.js';
 import selectedJob from './selectedJob.js';
 import filters from './filters.js';
 import loggedIn from './auth.js';
+import activeProfile from './activeProfile.js';
 
 const rootReducer = combineReducers({
   searchTerms,
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
   selectedJob,
   filters,
   loggedIn,
+  activeProfile,
   routing: routerReducer
 });
 

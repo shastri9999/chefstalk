@@ -3,7 +3,8 @@ import {ADD_TERM,
         REMOVE_TERM_TYPE,
         CHANGE_SELECTED_JOB,
         LOGIN,
-        LOGOUT,} from './actionTypes.js';
+        LOGOUT,
+        SELECT_PROFILE_GENDER,} from './actionTypes.js';
 
 export const addTerm = (term) => {
   return {
@@ -43,5 +44,12 @@ export const login = (userName)=>{
 export const logout = ()=>{
   return {
     type: LOGOUT,
+  };
+};
+
+export const changeProfileGender = (gender)=>{
+  return {
+    type: SELECT_PROFILE_GENDER,
+    gender,
   };
 };

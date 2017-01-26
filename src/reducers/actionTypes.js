@@ -4,3 +4,4 @@ export const REMOVE_TERM_TYPE = 'REMOVE_TERM_TYPE';
 export const CHANGE_SELECTED_JOB = 'CHANGE_SELECTED_JOB';
 export const LOGIN = 'LOGIN';
 export const LOGOUT = 'LOGOUT';
+export const SELECT_PROFILE_GENDER = 'SELECT_PROFILE_GENDER';

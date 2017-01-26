@@ -128,7 +128,6 @@ export default {
     display: '3 star Hotel',
     type: 'restaurantType',
   }],
-  filteredJobs: [],
   jobs: [{
     restaurant: {
         name: 'Radisson Blu',
@@ -225,4 +224,7 @@ export default {
   }],
   selectedJob: null,
   loggedIn: false,
+  activeProfile: {
+    gender: "male",
+  },
 };

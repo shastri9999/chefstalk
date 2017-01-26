@@ -7,6 +7,8 @@
   letter-spacing: 0.5px;
   border: 1px solid $job-item;
   border-bottom: 1px solid $cloudyblue;
+  margin-right: 10px;
+  border-right: 1px solid $cloudyblue;
   &:hover {
     border: 1px solid $lightishblue;
     background-color: #fff;
@@ -14,12 +16,11 @@
   &.selected {
     background-color: #fff;
     border: 1px solid $cloudyblue;
-    border-right: 1px solid #fff;
     border-top: 1px solid #fff;
     &:hover {
       border: 1px solid #fff;
       border-bottom: 1px solid $cloudyblue;
-      border-right: 1px solid #fff;
+      border-right: 1px solid $cloudyblue;
     }
     .job-item-footer {
       button.apply {
