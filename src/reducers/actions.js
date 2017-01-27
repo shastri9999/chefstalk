@@ -4,7 +4,9 @@ import {ADD_TERM,
         CHANGE_SELECTED_JOB,
         LOGIN,
         LOGOUT,
-        SELECT_PROFILE_GENDER,} from './actionTypes.js';
+        SELECT_PROFILE_GENDER,
+        ADD_PROFILE_AWARD,
+        SET_PROFILE_AWARDS,} from './actionTypes.js';
 
 export const addTerm = (term) => {
   return {
@@ -51,5 +53,19 @@ export const changeProfileGender = (gender)=>{
   return {
     type: SELECT_PROFILE_GENDER,
     gender,
+  };
+};
+
+export const addProfileAward = (award)=>{
+  return {
+    type: ADD_PROFILE_AWARD,
+    award,
+  };
+};
+
+export const setProfileAwards = (awards)=>{
+  return {
+    type: SET_PROFILE_AWARDS,
+    awards,
   };
 };

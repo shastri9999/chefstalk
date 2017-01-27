@@ -226,5 +226,6 @@ export default {
   loggedIn: false,
   activeProfile: {
     gender: "male",
+    awards: [],
   },
 };

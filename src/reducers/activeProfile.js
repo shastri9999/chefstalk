@@ -1,5 +1,7 @@
 import initialState from './initialState.js';
-import {SELECT_PROFILE_GENDER} from './actionTypes';
+import {SELECT_PROFILE_GENDER,
+        ADD_PROFILE_AWARD,
+        SET_PROFILE_AWARDS,} from './actionTypes';
 
 const  activeProfile = (state = initialState.activeProfile, action)=>{
   switch (action.type) {
@@ -8,6 +10,23 @@ const  activeProfile = (state = initialState.activeProfile, action)=>{
         ...state,
         gender: action.gender,
       };
+    case ADD_PROFILE_AWARD :
+    {
+      const {awards} = state;
+      const {award} =  action;
+      return {
+        ...state,
+        awards: [...awards, award],
+      };
+    }
+    case SET_PROFILE_AWARDS :
+    {
+      const {awards} = action;
+      return {
+        ...state,
+        awards,
+      }; 
+    }
     default:
       return state;
   }

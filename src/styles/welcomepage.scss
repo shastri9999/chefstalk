@@ -82,7 +82,17 @@ $leftrightpadding: 30px;
         align-items: center;
       }
     }
-    button.next {
+    .buttons-container {
+      margin-top: 30px;
+      &>button {
+        margin-right: 20px;
+        &.save, &.cancel {
+          width: 130px;
+          height: 40px;
+        }
+      }
+    }
+    button.next, button.save {
       background-color: $lightishblue;
       color: white;
       font-size: 14px;
@@ -96,7 +106,7 @@ $leftrightpadding: 30px;
         box-shadow: 0 6px 15px 0 rgba(45, 106, 217, 0.27);
       }
     }
-    button.previous {
+    button.previous, button.cancel {
       background-color: white;
       color: $opaque-color;
       font-size: 14px;
@@ -110,6 +120,37 @@ $leftrightpadding: 30px;
         box-shadow: 0 6px 15px 0 rgba(45, 106, 217, 0.27);
       }
     }
+    .input-container {
+      display: flex;
+      flex-flow: row wrap;
+      width: 600px;
+      &>.input-wrapper {
+        margin-right: 10px;
+        width: calc(50% - 10px);
+        position: relative;
+        margin-top: 20px;
+        label {
+          font-size: 14px;
+          font-weight: 700;
+          display: block;
+          position: absolute;
+          top: -20px;
+        }
+        input.empty+label{
+          display: none;
+        }
+        input {
+          background-color: #ffffff;
+          border-radius: 3px;
+          border: solid 1px #cbd6dd;
+          font-size: 14px;
+          font-weight: 500;
+          padding-left: 20px;
+          height: 50px;
+          width: 100%;
+        }
+      }
+    }
     .checkbox {
       width: 20px;
       height: 20px;
@@ -121,6 +162,31 @@ $leftrightpadding: 30px;
       &.value-unchecked {
         border:1px solid $border-color;
         border-radius: 2px;
+      }
+    }
+    .dropdown {
+      .Select-control {
+        border-radius: 3px;
+        height: 50px;
+        border: 1px solid $cloudyblue;
+        color: $darkcolor;
+        .Select-placeholder {
+          padding-left: 20px;
+          color: $opaque-color;
+          line-height: 48px;
+        }
+        .Select-value{
+          padding-left: 20px;
+          line-height: 48px;
+        }
+        .Select-input > input {
+          padding-left: 10px;
+          padding-top: 15px;
+          font-weight: 700;
+        }
+      }
+      .Select-option, .Select-noresults {
+        padding-left: 20px;
       }
     }
     .add-item-button {
@@ -214,7 +280,23 @@ $leftrightpadding: 30px;
       }
     }
     .award-page {
-
+      .add-award {
+        margin-top: 150px;
+        .input-container {
+            .year-wrapper {
+              width: calc(50% - 10px);
+              margin-top: 48px;
+              font-weight: 700;
+              font-size: 14px;
+              position: relative;
+              &::before {
+                position: absolute;
+                top:-20px;
+                content: "Date Recieved"
+              }
+            }
+        }
+      }
     }
   }
 }
