@@ -227,5 +227,8 @@ export default {
   activeProfile: {
     gender: "male",
     awards: [],
+    languages: [],
+    educations: [],
+    experiences: [],
   },
 };

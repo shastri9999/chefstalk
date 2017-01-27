@@ -124,7 +124,7 @@ $leftrightpadding: 30px;
       display: flex;
       flex-flow: row wrap;
       width: 600px;
-      &>.dropdown-wrapper {
+      .dropdown-wrapper {
         width: calc(50% - 10px);
         margin-top: 48px;
         font-weight: 700;
@@ -142,7 +142,7 @@ $leftrightpadding: 30px;
           font-weight: 400;
         }
       }
-      &>.input-wrapper {
+      .input-wrapper {
         margin-right: 10px;
         width: calc(50% - 10px);
         position: relative;
@@ -175,19 +175,34 @@ $leftrightpadding: 30px;
         }
       }
     }
-    .checkbox {
-      width: 20px;
-      height: 20px;
-      cursor: pointer;
-      &.value-checked {
-        background-image: url('../images/checked.png');
-        border:none;
+    .checkbox-wrapper {
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      .checkbox {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        &.value-checked {
+          background-image: url('../images/checked.png');
+          border:none;
+        }
+        &.value-unchecked {
+          border:1px solid $border-color;
+          border-radius: 2px;
+        }
       }
-      &.value-unchecked {
-        border:1px solid $border-color;
-        border-radius: 2px;
+      .text {
+        margin-left: 10px;
+        text-transform: capitalize;
+        opacity: 0.5;
+        &.value-checked {
+          opacity: 1;
+        }
       }
     }
+
     .dropdown {
       .Select-control {
         border-radius: 3px;
@@ -207,6 +222,7 @@ $leftrightpadding: 30px;
           padding-left: 10px;
           padding-top: 15px;
           font-weight: 700;
+          min-width: 30px;
         }
       }
       .Select-option, .Select-noresults {
@@ -242,18 +258,8 @@ $leftrightpadding: 30px;
         display: flex;
         margin-top: 150px;
       }
-      .nogender {
+      .checkbox-wrapper {
         margin-top: 50px;
-        font-size: 14px;
-        font-weight: 700;
-        display: flex;
-        align-items: center;
-        .checkbox{
-          margin-right: 10px;
-        }
-        .text {
-          opacity: 0.5;
-        }
       }
       .gender-circle {
         width: 89px;
@@ -306,6 +312,41 @@ $leftrightpadding: 30px;
     .award-page {
       .add-award {
         margin-top: 150px;
+      }
+    }
+    .language-page {
+      .input-container {
+        width: 400px;
+        height: 450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .language-item {
+            width: 100%;
+            margin-bottom: 30px;
+            .dropdown-wrapper {
+              width: 100%;
+              margin-top: 0;
+              .Select-control {
+                background-color: #eef2f5;
+              }
+              .is-open .Select-control, .has-value .Select-control{
+                background-color: #fff;
+              }
+            }
+            .fluency-container {
+              display: flex;
+              margin-top: 12px;
+              justify-content: space-between;
+            }
+          }
+          .add-language {
+            align-self: flex-end;
+          	font-size: 14px;
+          	color: $lightishblue;
+            font-weight: 700;
+            cursor: pointer;
+          }
       }
     }
   }

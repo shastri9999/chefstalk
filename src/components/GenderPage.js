@@ -58,13 +58,9 @@ class GenderPage extends React.Component {
                       selected={gender == "female"}
                       onSelect={this.handleChangeGender("female")}/>
       </div>
-      <div className="nogender">
-        <ProfileCheckBox selected={gender=="no"}
-                         onClick={this.toggleDiscloseGender} />
-        <div className="text">
-          Prefer not to disclose
-        </div>
-      </div>
+      <ProfileCheckBox selected={gender=="no"}
+                       onClick={this.toggleDiscloseGender}
+                       label="Prefer not to disclose"/>
       <div className="controls">
         <button className="previous" onClick={this.props.goBack}>Back</button>
         <button className="next" onClick={this.props.next}>Next</button>

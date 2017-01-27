@@ -3,7 +3,7 @@ import Select from 'react-select';
 
 const ProfileDropdown = ({value, placeholder, label, error, noResultsText, onChange, options, onKeyDown})=>{
     return  (<div className="dropdown-wrapper">
-      <label>Date Received</label>
+      {label?<label>{label}</label>:null}
       <Select
         className="dropdown"
         options={options}
@@ -28,6 +28,10 @@ ProfileDropdown.propTypes = {
   options: PropTypes.array,
   noResultsText: PropTypes.string,
   onKeyDown: PropTypes.func,
+};
+
+ProfileDropdown.defaultProps = {
+  onKeyDown: ()=>{},
 };
 
 
