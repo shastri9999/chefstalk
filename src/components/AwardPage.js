@@ -3,7 +3,7 @@ import {go, push} from 'react-router-redux';
 import {connect} from 'react-redux';
 import AddItemButton from './AddItemButton';
 import {addProfileAward} from '../reducers/actions';
-import ProfileDropdown from './ProfileDropdown';
+import ProfileDropdown from './ProfileDropDown';
 import ProfileInput from './ProfileInput';
 
 class AddAwardComponent extends React.Component {
