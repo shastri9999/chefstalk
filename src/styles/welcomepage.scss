@@ -124,6 +124,24 @@ $leftrightpadding: 30px;
       display: flex;
       flex-flow: row wrap;
       width: 600px;
+      &>.dropdown-wrapper {
+        width: calc(50% - 10px);
+        margin-top: 48px;
+        font-weight: 700;
+        font-size: 14px;
+        position: relative;
+        label {
+          position: absolute;
+          top:-20px;
+        }
+        .error {
+          position: absolute;
+          font-size: 11px;
+          top: 55px;
+          color: red;
+          font-weight: 400;
+        }
+      }
       &>.input-wrapper {
         margin-right: 10px;
         width: calc(50% - 10px);
@@ -135,6 +153,12 @@ $leftrightpadding: 30px;
           display: block;
           position: absolute;
           top: -20px;
+        }
+        .error {
+          position: absolute;
+          font-size: 11px;
+          top: 55px;
+          color: red;
         }
         input.empty+label{
           display: none;
@@ -282,20 +306,6 @@ $leftrightpadding: 30px;
     .award-page {
       .add-award {
         margin-top: 150px;
-        .input-container {
-            .year-wrapper {
-              width: calc(50% - 10px);
-              margin-top: 48px;
-              font-weight: 700;
-              font-size: 14px;
-              position: relative;
-              &::before {
-                position: absolute;
-                top:-20px;
-                content: "Date Recieved"
-              }
-            }
-        }
       }
     }
   }

@@ -2,8 +2,9 @@ import React, {PropTypes} from 'react';
 import {go, push} from 'react-router-redux';
 import {connect} from 'react-redux';
 import AddItemButton from './AddItemButton';
-import Select from 'react-select';
 import {addProfileAward} from '../reducers/actions';
+import ProfileDropdown from './ProfileDropdown';
+import ProfileInput from './ProfileInput';
 
 class AddAwardComponent extends React.Component {
     constructor(props){
@@ -24,12 +25,14 @@ class AddAwardComponent extends React.Component {
       this.state = {
         years,
         award,
-        error: "",
+        error: {},
       };
 
       this.onYearChange = this.onYearChange.bind(this);
       this.onNameChange = this.onNameChange.bind(this);
       this.onOrganizationChange = this.onOrganizationChange.bind(this);
+      this.saveAward = this.saveAward.bind(this);
+      this.clearError = this.clearError.bind(this);
     }
 
     onYearChange(year){
@@ -51,46 +54,79 @@ class AddAwardComponent extends React.Component {
         award: {...this.state.award,organization},
       });
     }
+    clearError(field){
+      return ()=>{
+        let {error} = this.state;
+        error[field] = "";
+        this.setState({
+          error,
+        });
+      };
+    }
+    validate(award){
+      let valid = true;
+      let organization = "";
+      let year = "";
+      let name = "";
+      if (!award.organization) {
+        organization=  "Award Organization cannot be empty";
+        valid = false;
+      }
+      if(!award.name) {
+        name="Award Name cannot be empty";
+        valid = false;
+      }
+      if(!award.year) {
+        year = "Year cannot be empty";
+        valid = false;
+      }
+      this.setState({
+        error: {
+          organization,
+          year,
+          name,
+        },
+      });
+      return valid;
+    }
 
+    saveAward() {
+      const {award} = this.state;
+      if (this.validate(award))
+      {
+        this.props.onSave(award);
+      }
+    }
 
     render(){
-      const {onSave, onCancel} = this.props;
-      const {award} =  this.state;
+      const {onCancel} = this.props;
+      const {award,error} =  this.state;
       return (<div className="add-award">
         <div className="input-container">
-          <div className="input-wrapper">
-            <input type="text"
-                   placeholder="Award Organization"
-                   value={award.organization}
-                   onChange={this.onOrganizationChange}
-                   className={award.organization?'has-value':'empty'}/>
-            <label>Award Organization</label>
-          </div>
-          <div className="input-wrapper">
-            <input type="text"
-                   placeholder="Award"
-                   value={award.name}
-                   onChange={this.onNameChange}
-                   className={award.name?'has-value':'empty'}/>
-            <label>Award</label>
-          </div>
-          <div className="year-wrapper">
-            <Select
-              name="year"
-              className="dropdown"
-              options={this.state.years}
-              value={award.year}
-              clearable={false}
-              simpleValue
-              noResultsText="Not a valid year"
-              onChange={this.onYearChange}
-              placeholder="Year"
-            />
-          </div>
+          <ProfileInput  label="Award Organization"
+                         placeholder="Award Organization"
+                         value={award.organization}
+                         onChange={this.onOrganizationChange}
+                         error={error.organization}
+                         onKeyDown={this.clearError("organization")}/>
+          <ProfileInput  label="Award Name"
+                         placeholder="Award Name"
+                         value={award.name}
+                         onChange={this.onNameChange}
+                         error={error.name}
+                         onKeyDown={this.clearError("name")}/>
+          <ProfileDropdown  label="Date Received"
+                            options={this.state.years}
+                            value={award.year}
+                            noResultsText="Not a valid year"
+                            onChange={this.onYearChange}
+                            placeholder="Year"
+                            error={error.year}
+                            onKeyDown={this.clearError("year")}/>
         </div>
         <div className="buttons-container">
           <button className="save"
-                  onClick={()=>{onSave(award);}}>Save</button>
+                  onClick={this.saveAward}>Save</button>
           <button className="cancel"
                   onClick={onCancel}>Cancel</button>
         </div>
@@ -117,6 +153,7 @@ class AwardPage extends React.Component {
 
   createAward(award){
       this.props.addProfileAward(award);
+      this.moveState("initial")();
   }
 
   moveState(state){
