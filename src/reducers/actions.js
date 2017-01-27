@@ -6,7 +6,13 @@ import {ADD_TERM,
         LOGOUT,
         SELECT_PROFILE_GENDER,
         ADD_PROFILE_AWARD,
-        SET_PROFILE_AWARDS,} from './actionTypes.js';
+        SET_PROFILE_AWARDS,
+        ADD_PROFILE_EXPERIENCE,
+        SET_PROFILE_EXPERIENCES,
+        ADD_PROFILE_EDUCATION,
+        SET_PROFILE_EDUCATIONS,
+        ADD_PROFILE_LANGUAGE,
+        SET_PROFILE_LANGUAGES,} from './actionTypes.js';
 
 export const addTerm = (term) => {
   return {
@@ -67,5 +73,47 @@ export const setProfileAwards = (awards)=>{
   return {
     type: SET_PROFILE_AWARDS,
     awards,
+  };
+};
+
+export const addProfileExperience = (experience)=>{
+  return {
+    type: ADD_PROFILE_EXPERIENCE,
+    experience,
+  };
+};
+
+export const setProfileExperiences = (experiences)=>{
+  return {
+    type: SET_PROFILE_EXPERIENCES,
+    experiences,
+  };
+};
+
+export const addProfileEducation = (education)=>{
+  return {
+    type: ADD_PROFILE_EDUCATION,
+    education,
+  };
+};
+
+export const setProfileEducations = (educations)=>{
+  return {
+    type: SET_PROFILE_EDUCATIONS,
+    educations,
+  };
+};
+
+export const addProfileLanguage = (language)=>{
+  return {
+    type: ADD_PROFILE_LANGUAGE,
+    language,
+  };
+};
+
+export const setProfileLanguages = (languages)=>{
+  return {
+    type: SET_PROFILE_LANGUAGES,
+    languages,
   };
 };
