@@ -59,14 +59,17 @@ const HomePage = () => {
         <h2>Why to use ChefsTalk</h2>
         <div className="reasons">
           <div>
+            <div className="step-number">01</div>
             <h3>Establish a presence</h3>
             <p>From saving for home repairs to taking a dream trip, use the extra income to fund your passions.</p>
           </div>
           <div>
+          <div className="step-number">02</div>
             <h3>Fuel your career</h3>
             <p>Get tips and tools and connect with hosts like you from around the globe.</p>
           </div>
           <div>
+            <div className="step-number">03</div>
             <h3>Learn and inspire</h3>
             <p>You set your price and decide when you want to host and how often.</p>
           </div>
@@ -79,7 +82,6 @@ const HomePage = () => {
           <button> Sign Up </button>
         </div>
       </div>
-      <hr className="section-divider" />
       <footer>
         <div className="links">
           <h3>Navigation</h3>

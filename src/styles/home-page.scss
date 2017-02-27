@@ -199,6 +199,12 @@ $leftrightpadding: 135px;
 	}
 	.why-chefstalk {
 		margin: 0 $leftrightpadding;
+		.step-number {
+			font-weight: 900;
+			opacity: 0.2;
+			margin-bottom: 18px;
+			font-size: 24px;
+		}
 		h2 {
 			font-size: 2.75em;
 		    line-height: 1.25;
@@ -265,9 +271,12 @@ $leftrightpadding: 135px;
 		}
 	}
 	footer {
-		margin: 0 $leftrightpadding;
+		padding: 0 $leftrightpadding;
 		display: flex;
 		justify-content: space-between;
+		background-color: #1F2E39;
+		margin-top: 100px;
+		padding-top: 50px;
 		.links {
 			flex: 1;
 			display: flex;
@@ -277,17 +286,18 @@ $leftrightpadding: 135px;
 				letter-spacing: 0.2px;
 		    margin-bottom: 2em;
 		    font-weight: 600;
+				color: white;
 			}
 			a {
 				margin-bottom: 0.7em;
-				color: $opaque-color;
-				opacity: 0.9;
+				color: white;
+				opacity: 0.5;
 				font-size: 18px;
 				letter-spacing: 0.2px;
 				text-decoration: none;
 				cursor: pointer;
 				&:hover {
-					opacity: 0.3;
+					opacity: 1;
 				}
 				&.country {
 					margin-top: 1.5em;
@@ -300,9 +310,10 @@ $leftrightpadding: 135px;
 		}
 	}
 	.copyright {
-		margin-top: 40px;
-		margin-bottom: 160px;
+		padding-top: 40px;
+		padding-bottom: 160px;
 		text-align: center;
-		opacity: 0.5;
+		background-color: #1F2E39;
+		color: rgba(white, 0.5);
 	}
 }
