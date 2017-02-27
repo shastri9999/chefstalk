@@ -4,6 +4,8 @@ import {push} from 'react-router-redux';
 import {removeTerm, removeTermType, addTerm, changeSelectedJob} from '../reducers/actions.js';
 import SelectDropDown from './selectDropdown.js';
 import enhanceWithClickOutside from 'react-click-outside';
+import {animateScroll} from 'react-scroll';
+
 
 class  SearchBar extends React.Component {
   constructor(props){
@@ -62,9 +64,10 @@ class  SearchBar extends React.Component {
   handleChange(event){
       event.stopPropagation();
       event.preventDefault();
-      if (document.body.scrollTop < 300 && !this.props.mini)
+      const breakpoint = window.innerWidth * 0.36;
+      if (document.body.scrollTop < breakpoint && !this.props.mini)
       {
-        document.body.scrollTop = 300;
+        animateScroll.scrollTo(breakpoint + 5);
       }
       this.setState({
         value: event.target.value,

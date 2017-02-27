@@ -10,18 +10,6 @@ const HomePage = () => {
     <div className="home">
       <div className="hero">
         <Header />
-        <div className="proposition">
-          <div>
-            <h2>Discover Culinary Jobs around the world.</h2>
-            <h3>
-              Sub Key Value change your future, culnary. <br/>
-              Sub Key Value change your culnary.
-            </h3>
-          </div>
-          <div>
-            <img src={require('../images/banner-image.png')} />
-          </div>
-        </div>
       </div>
       <SearchBar />
       <div className="create-profile">
