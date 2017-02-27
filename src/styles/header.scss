@@ -44,10 +44,14 @@ nav.header {
           letter-spacing: 1px;
           justify-content: center;
           align-items: center;
+          &:hover {
+            background-color: $lightishblue;
+            color: #fff;
+            opacity: 1;
+          }
       }
       &:hover {
-        background-color: $lightishblue;
-        color: #fff;
+        opacity: 0.9;
       }
     }
   }
