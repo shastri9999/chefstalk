@@ -64,10 +64,10 @@ class  SearchBar extends React.Component {
   handleChange(event){
       event.stopPropagation();
       event.preventDefault();
-      const breakpoint = window.innerWidth * 0.36;
+      const breakpoint = window.innerWidth * 0.3;
       if (document.body.scrollTop < breakpoint && !this.props.mini)
       {
-        animateScroll.scrollTo(breakpoint + 5);
+        animateScroll.scrollTo( 1.2 * breakpoint - 35);
       }
       this.setState({
         value: event.target.value,
