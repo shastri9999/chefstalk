@@ -32,13 +32,12 @@ nav.header {
           text-align: center;
       }
       &.signup {
-          background-color: $lightishblue;
-          color: #fff;
+          border: 1px solid $lightishblue;
+          color: $lightishblue;
           width: 130px;
           height: 40px;
           display: flex;
           border-radius: 100px;
-          border: 0;
           opacity: 1;
           margin-right: 0;
           font-size: 13px;
@@ -47,7 +46,8 @@ nav.header {
           align-items: center;
       }
       &:hover {
-        opacity: 0.8;
+        background-color: $lightishblue;
+        color: #fff;
       }
     }
   }

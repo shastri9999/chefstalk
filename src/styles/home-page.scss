@@ -1,5 +1,5 @@
 @import "variables";
-$leftrightpadding: 135px;
+$leftrightpadding: 9.3vw;
 .home {
 	display: flex;
 	flex-flow: column;
@@ -231,7 +231,7 @@ $leftrightpadding: 135px;
 		}
 		.signup
 		{
-			margin: 0 100px;
+			margin: 0 7vw;
 			height: 150px;
 			border-radius: 5px;
 			background-color: $lightishblue;
