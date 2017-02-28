@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 import SearchBar from './SearchBar.js';
 import JobCarousel from './JobCarousel.js';
 import Header from './Header.js';
+// import Slider from 'react-slick';
 
 const HomePage = () => {
   return (
