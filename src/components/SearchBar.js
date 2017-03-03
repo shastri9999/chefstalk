@@ -100,7 +100,7 @@ class  SearchBar extends React.Component {
     const showInput = (mini && searchTerms.length < 6)  || (!mini && searchTerms.length < 3);
     return (
         <div className="search">
-          {!mini ? <img src={require('../images/search-icon.png')} className="search-icon" /> : null}
+          {!mini ? <img src={require('../images/search-icon.png')} className="search-icon" onClick={()=>{search(this.state.value);}} /> : null}
           {!mini && searchTerms.length ? (<div className={showInput ? "search-term-container" : "search-term-container no-input"}>{
             searchTerms.map((term)=>(
               <div className="search-term" key={term.value}>

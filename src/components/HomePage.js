@@ -1,12 +1,31 @@
 import React from 'react';
 import '../styles/home-page.scss';
+import '../styles/home-page-responsive.scss';
 import { Link } from 'react-router';
 import SearchBar from './SearchBar.js';
 import JobCarousel from './JobCarousel.js';
 import Header from './Header.js';
-// import Slider from 'react-slick';
+import Slider from 'react-slick';
 
 const HomePage = () => {
+  const settings = {
+    dots: true,
+    speed: 500,
+    arrows: false,
+    slidesToScroll: 1,
+    slidesToShow: 1,
+    dotsClass: 'home-dots',
+    infinite: false,
+    responsive: [{
+      breakpoint: 620,
+      settings: {
+        slidesToShow: 1,
+      }
+    }, {breakpoint: 100000,
+      settings: 'unslick'
+    }
+    ]
+  };
   return (
     <div className="home">
       <div className="hero">
@@ -15,8 +34,8 @@ const HomePage = () => {
       <SearchBar />
       <div className="create-profile">
         <h2>Create Your Profile</h2>
-        <div className="steps">
-          <div>
+        <Slider className="steps" {...settings}>
+          <div className="step">
             <div className="image-container">
                 <img src={require('../images/trophy.png')} />
             </div>
@@ -27,7 +46,7 @@ const HomePage = () => {
             You’ll fill out a description, take and upload photos, and pick a price. Your listing helps guests get a sense of what your place is like.
             </p>
           </div>
-          <div>
+          <div className="step">
             <div className="image-container">
                 <img src={require('../images/future.png')} />
             </div>
@@ -36,7 +55,7 @@ const HomePage = () => {
             </h3>
             <p>You set the availability and house rules for your listing. Host controls and calendar settings can help make hosting easier.</p>
           </div>
-          <div>
+          <div className="step">
             <div className="image-container">
                 <img src={require('../images/globe.png')} />
             </div>
@@ -45,7 +64,7 @@ const HomePage = () => {
             </h3>
             <p>From getting your home ready and choosing a price, to understanding your responsibilities under local laws — we’ve got tools and resources for you.</p>
           </div>
-        </div>
+        </Slider>
       </div>
       <hr className="section-divider" />
       <div className="jobs">

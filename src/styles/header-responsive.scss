@@ -1,0 +1,75 @@
+@import "variables";
+@media (max-width: 600px) {
+nav.header {
+  font-size: 14px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  height: 50px;
+  font-weight: 600;
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  border-bottom: 1px solid #ececec;
+  .logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 900;
+    .full {
+      display: none;
+    }
+    img {
+      margin-left: 14px;
+      position: relative;
+      top: -1px;
+      height: 22px;
+      width: 22px;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: $darkcolor;
+  }
+  .links {
+    display: flex;
+    align-items: center;
+    a {
+      margin-right: 40px;
+      letter-spacing: 0.5px;
+      &.normal {
+        display: none;
+      }
+      &.login {
+          display: none;
+      }
+      &.signup {
+          border: none;
+          color: $lightishblue;
+          white-space: nowrap;
+          width: 46px;
+          height: 14px;
+          display: flex;
+          border-radius: 0;
+          opacity: 1;
+          margin-right: 20px;
+          font-size: 14px;
+          letter-spacing: 1px;
+          justify-content: center;
+          align-items: center;
+          &:hover {
+            background-color: white;
+            color: $lightishblue;
+            opacity: 1;
+          }
+      }
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+}
+}

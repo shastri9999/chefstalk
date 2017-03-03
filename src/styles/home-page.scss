@@ -151,9 +151,12 @@ $leftrightpadding: 9.3vw;
 		  margin-bottom: 80px;
 			font-weight: 900;
 		}
-		.steps {
+		&>div {
 			display: flex;
-			&>div {
+			.slick-list {
+				overflow: inherit;
+			}
+			.step {
 				flex: 1;
 				flex-shrink: 0;
 				display: flex;
@@ -166,7 +169,7 @@ $leftrightpadding: 9.3vw;
 			    align-items: center;
 				}
 			}
-			&>div:not(:last-of-type) {
+			.step:not(:last-of-type) {
 				margin-right: 69px;
 			}
 			h3
