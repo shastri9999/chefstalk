@@ -21,9 +21,112 @@ nav.header {
     text-decoration: none;
     color: $darkcolor;
   }
+  .avatar-area {
+    margin-right: 4vw;
+    display: flex;
+    align-items: center;
+    position: relative;
+    .bell {
+      margin-right: 30px;
+    }
+    .user {
+      margin-right: 10px;
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .avatar {
+      width: 37px;
+      border-radius: 100%;
+    }
+    .avatar-dropdown {
+        color: $darkcolor;
+        position: absolute;
+        top: 68px;
+        width: 235px;
+        font-size: 14px;
+        border: 1px solid $cloudyblue;
+        box-shadow: $shadow 1px 1px 20px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        background: white;
+        z-index: 1;
+        border-radius: 3px;
+        right: -10px;
+        a, .link {
+          height: 60px;
+          font-size: 14px;
+          color: $opaque-color;
+          font-weight: 700;
+          display: flex;
+          align-items: center;
+          text-transform: none;
+          padding-left: 30px;
+          cursor: pointer;
+          &:hover {
+            color: $darkcolor;
+            background-color: #f4f8fb;
+          }
+        }
+        a {
+          border-bottom: 1px solid $border-color;
+        }
+
+        &::before {
+          content: " ";
+          width: 0;
+          height: 0;
+          border-left: 13px solid transparent;
+          border-right: 13px solid transparent;
+          border-bottom: 13px solid $cloudyblue;
+          position: absolute;
+          top: -13px;
+          right: 10px;
+        }
+        &::after {
+          content: " ";
+          width: 0;
+          height: 0;
+          border-left: 12px solid transparent;
+          border-right: 12px solid transparent;
+          border-bottom: 12px solid white;
+          position: absolute;
+          top: -12px;
+          right: 11px;
+        }
+    }
+
+    a {
+      text-transform: uppercase;
+      font-size: 14px;
+      text-decoration: none;
+      &.signup {
+        background-color: $lightishblue;
+          color: white;
+          width: 9.27em;
+          display: inline-block;
+          line-height: 2.85em;
+          text-align: center;
+          border-radius: 100px;
+          border: 0;
+          opacity: 1;
+      }
+      &.login {
+          display: inline-block;
+          line-height: 2.85em;
+          text-align: center;
+          margin-right: 35px;
+      }
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
   .links {
     display: flex;
     align-items: center;
+    padding-right: 30px;
     a {
       margin-right: 40px;
       letter-spacing: 0.5px;

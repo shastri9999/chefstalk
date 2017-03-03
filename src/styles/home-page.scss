@@ -1,6 +1,10 @@
 @import "variables";
 $leftrightpadding: 9.3vw;
 .home {
+	nav.header {
+		margin-left: calc(-9.3vw + 30px);
+		margin-right: -9.3vw;
+	}
 	display: flex;
 	flex-flow: column;
 	align-items: stretch;
