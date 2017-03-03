@@ -98,7 +98,7 @@ class SignupPage extends React.Component {
                  onChange={this.handleChangePassword}
                  value={this.state.password}/>
             <div className="show-hide" onClick={this.toggleShowPassword}>
-              Show/Hide
+              <img src={this.state.showPassword ? require('../images/hide-eye.png') : require('../images/show-eye.png')} />
             </div>
           </div>
           <div className="terms">
