@@ -21,6 +21,7 @@ class LoginPage extends React.Component {
     this.toggleShowPassword = this.toggleShowPassword.bind(this);
     this.toggleRememberme = this.toggleRememberme.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.handleKeyPasswordDown = this.handleKeyPasswordDown.bind(this);
     this.handleChangeUser = this.handleChangeUser.bind(this);
     this.handleChangePassword = this.handleChangePassword.bind(this);
     this.handleLogin = this.handleLogin.bind(this);
@@ -48,6 +49,16 @@ class LoginPage extends React.Component {
     this.setState({
       invalidCredentials: false,
     });
+  }
+
+  handleKeyPasswordDown(event){
+    if (event.keyCode === 13) {
+      this.handleLogin();
+    } else {
+      this.setState({
+        invalidCredentials: false,
+      });
+    }
   }
 
   handleChangeUser(event){
@@ -99,7 +110,7 @@ class LoginPage extends React.Component {
           <div className="password-wrapper">
             <input type={this.state.showPassword ? "text":"password"}
                    placeholder="Password"
-                   onKeyDown={this.handleKeyDown}
+                   onKeyDown={this.handleKeyPasswordDown}
                    onChange={this.handleChangePassword}
                    value={this.state.password}/>
             <div className="show-hide" onClick={this.toggleShowPassword}>
