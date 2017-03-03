@@ -10,6 +10,8 @@ import LoginPage from './components/LoginPage';
 import SignupPage from './components/SignupPage';
 import WelcomePage from './components/WelcomePage';
 import NotFoundPage from './components/NotFoundPage';
+import TermsPage from './components/TermsPage';
+import PrivacyPage from './components/PrivacyPage';
 import ProfilePicture from './components/ProfilePicture';
 import GenderPage from './components/GenderPage';
 import LanguagePage from './components/LanguagePage';
@@ -27,6 +29,8 @@ export default (
     <Route path="/restaurant/:name" component={RestaurantProfilePage}/>
     <Route path="/login" component={LoginPage}/>
     <Route path="/signup" component={SignupPage}/>
+    <Route path="/terms" component={TermsPage}/>
+    <Route path="/privacy" component={PrivacyPage}/>
     <Route path="/welcome" component={WelcomePage}>
       <Route path="picture" component={ProfilePicture}/>
       <Route path="gender" component={GenderPage}/>

@@ -1,0 +1,40 @@
+.privacy {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  color: #666;
+  font-weight: 600;
+  font-size: 30px;
+  .navbar {
+    width: 100%;
+  }
+  .privacy-container {
+    display: flex;
+    color: rgba(#293D4A, 0.5);
+    font-size: 14px;
+    .highlighted {
+      color : #293D4A;
+    }
+    .side-bar {
+      padding: 40px;
+      display: flex;
+      flex-flow: column;
+      a {
+        text-decoration: none;
+        color: inherit;
+        margin-bottom: 25px;
+        white-space: nowrap;
+        &.highlighted {
+          color : #293D4A;
+        }
+      }
+    }
+    .content {
+      padding: 40px;
+      p {
+        margin-bottom: 15px;
+      }
+    }
+  }
+}

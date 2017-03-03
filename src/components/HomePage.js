@@ -113,7 +113,7 @@ const HomePage = () => {
           <h3>Job Board</h3>
           <Link to="/unkown">About</Link>
           <Link to="/unkown">FAQ</Link>
-          <Link to="/unkown">Terms</Link>
+          <Link to="/terms">Terms</Link>
         </div>
         <div className="links">
           <h3>Business</h3>
