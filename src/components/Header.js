@@ -10,11 +10,36 @@ import '../styles/header-responsive.scss';
 class Header extends React.Component {
   constructor(props) {
     super(props);
+    this.handleScroll = this.handleScroll.bind(this);
+    this.state = {
+      fixed: false
+    };
   }
+  componentDidMount() {
+      window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+      window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll(event) {
+      let scrollTop = event.srcElement.body.scrollTop;
+      if (scrollTop > 700) {
+          this.setState({
+            fixed: true
+          });
+      } else {
+        this.setState({
+          fixed: false
+        });
+      }
+  }
+
   render() {
     const {loggedIn} = this.props;
     return (
-      <nav className="header">
+      <nav className={this.state.fixed ? "header fixed" : "header"}>
         <IndexLink to="/" className="logo">
           <img src={require('../images/logo.png')} />
           <span className="full">Chefstalk</span>
