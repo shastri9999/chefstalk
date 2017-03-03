@@ -8,7 +8,14 @@ class AvatarArea extends React.Component {
       showDropdown : false,
     };
     this.hideDropdown =  this.hideDropdown.bind(this);
+    this.showDropdown =  this.showDropdown.bind(this);
     this.toggleDropdown =  this.toggleDropdown.bind(this);
+  }
+
+  showDropdown(){
+    this.setState({
+      showDropdown: true,
+    });
   }
 
   hideDropdown(){
@@ -27,13 +34,11 @@ class AvatarArea extends React.Component {
     return (
       <div className="avatar-area">
         <img src={require('../images/bell.png')} className="bell" />
-        <div className="user">
-          Sebastian Wussler
-        </div>
         <img src="https://s30.postimg.org/jq2v3j0jl/userlogo.jpg"
              className="avatar"
+             onMouseEnter={this.showDropdown}
              onClick={this.toggleDropdown}/>
-        {this.state.showDropdown?<AvatarDropdown onOutsideClick={this.hideDropdown} /> : null}
+        {this.state.showDropdown?<AvatarDropdown onOutsideClick={this.hideDropdown} name="Sebastian Wussler"/> : null}
       </div>
     );
   }

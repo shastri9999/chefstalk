@@ -25,8 +25,8 @@ class AvatarDropdown extends React.Component{
 
   render(){
     return (
-      <div className="avatar-dropdown">
-        <Link to="/profile">View Profile</Link>
+      <div className="avatar-dropdown" onMouseLeave={this.handleClickOutside}>
+        <Link to="/profile">{this.props.name}</Link>
         <Link to="/edit-profile">Edit Profile</Link>
         <Link to="/settings">Settings</Link>
         <div className="link" onClick={this.handleLogout}>Signout</div>
@@ -38,6 +38,7 @@ class AvatarDropdown extends React.Component{
 AvatarDropdown.propTypes = {
   onOutsideClick: PropTypes.func,
   logout: PropTypes.func,
+  name: PropTypes.string,
 };
 
 const enhancedAvatarDropDown = enhanceWithClickOutside(AvatarDropdown);
