@@ -82,7 +82,6 @@ class JobDetail extends React.Component {
                     </div>
                     <div className="bottom">
                       <div className="left">
-                        <img src={require("../images/hourglass.png")} />
                         {jobitem.posted}
                       </div>
                     </div>

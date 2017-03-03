@@ -32,7 +32,6 @@ const JobItem = ({job, selected, onClick}) => {
               <div className="time">
                 {moreJobs ? <div>{`and ${moreJobs} More`}</div>: null}
                 <div>
-                  <img src={require('../images/hourglass.png')} />
                   {restaurant.posted}
                 </div>
               </div>
