@@ -48,8 +48,13 @@
         flex: 1;
         max-height: calc(100vh - 157px);
         overflow: auto;
+        display: flex;
+        flex-direction: column;
         .job-not-found {
           padding: 30px;
+          flex: 1;
+          margin-right: 10px;
+          border-right: 1px solid $cloudyblue;
         }
       }
     }

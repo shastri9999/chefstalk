@@ -116,6 +116,7 @@ class JobsPage extends React.Component {
                                               onClick={()=>{onJobItemClick(job);}}/>);
                             }) :
                             <div className="job-not-found">No Jobs found. </div>}
+              {jobs.length < 3 && jobs.length ? <div className="job-not-found" /> : null}
             </div>
           </div>
           <JobDetail job={selectedJob} />
