@@ -30,6 +30,18 @@
         line-height: 1.43;
         letter-spacing: 0.2px;
       }
+      .links {
+        margin-top: 20px;
+        img {
+          margin-right: 20px;
+          opacity: 0.3;
+          cursor: pointer;
+          height: 30px;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
     }
     .right {
       .info {

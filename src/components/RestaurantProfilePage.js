@@ -56,6 +56,11 @@ class RestaurantProfilePage extends React.Component {
             <div className="description">
               {`Providing Canadians an easier way to accomplish their financial goals.Mylo rounds up every purchase you make and automatically invests the change so you can achieve your financial goals.`}
             </div>
+            <div className="links">
+              <img src={require('../images/facebook.png')}/>
+              <img src={require('../images/twitter.png')}/>
+              <img src={require('../images/instagram.png')}/>
+            </div>
           </div>
           <div className="right">
           <div className="info">
