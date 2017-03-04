@@ -42,6 +42,10 @@ class  SearchBar extends React.Component {
           value: "",
         });
       }
+      else if (keyCode == 13 && !this.state.value)
+      {
+        this.props.search();
+      }
       else if(keyCode == 38 && this.state.selectedOptionIndex > 0)
       {
         this.setState({
