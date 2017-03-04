@@ -70,7 +70,7 @@
       font-size: 20px;
     }
     .type {
-      width: 230px;
+      width: 200px;
       font-size: 14px;
       color: $opaque-color;
       img {
@@ -92,12 +92,13 @@
     .flex-middle {
       flex: 1;
       display: flex;
+      justify-content: center;
     }
     .location {
       img {
         margin-right: 15px;
       }
-      width: 230px;
+      width: 200px;
     }
   }
   .job-item-footer {
@@ -128,7 +129,7 @@
       line-height: 36px;
       font-size: 1em;
       background-color: #fff;
-      margin-right: 100px;
+      margin-right: 70px;
       color: $opaque-color;
       cursor: pointer;
       outline: 0;

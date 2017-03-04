@@ -3,6 +3,7 @@ import '../styles/restaurantprofilepage.scss';
 import SearchHeader from './SearchHeader.js';
 import {connect} from 'react-redux';
 import filterJobs from '../helpers/filterJobs';
+import Footer from './Footer.js';
 
 
 class RestaurantProfilePage extends React.Component {
@@ -153,6 +154,7 @@ class RestaurantProfilePage extends React.Component {
             </div>
           </div>
         </div>
+        <Footer />
       </div>
     );
   }

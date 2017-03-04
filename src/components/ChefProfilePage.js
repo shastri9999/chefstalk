@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {push} from 'react-router-redux';
 import '../styles/chefprofilepage.scss';
 import SearchHeader from './SearchHeader.js';
+import Footer from './Footer.js';
 
 class ChefProfilePage extends React.Component {
   constructor(props){
@@ -206,6 +207,7 @@ class ChefProfilePage extends React.Component {
             ))}
           </div>
         </div>
+        <Footer />
       </div>
     );
   }

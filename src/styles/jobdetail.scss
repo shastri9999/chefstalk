@@ -6,6 +6,9 @@
     align-items: center;
     font-size: 14px;
     text-transform: uppercase;
+    img {
+      max-width: 100%;
+    }
   }
   .main-detail {
     display: flex;

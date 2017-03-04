@@ -1,0 +1,50 @@
+$leftrightpadding: 9.3vw;
+.footer {
+  padding: 0 $leftrightpadding;
+  display: flex;
+  justify-content: space-between;
+  background-color: #1F2E39;
+  padding-top: 50px;
+  padding-bottom: 160px;
+  position: relative;
+  .links {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    h3 {
+      font-size: 20px;
+      letter-spacing: 0.2px;
+      margin-bottom: 2em;
+      font-weight: 600;
+      color: white;
+    }
+    a {
+      margin-bottom: 0.7em;
+      color: white;
+      opacity: 0.5;
+      font-size: 18px;
+      letter-spacing: 0.2px;
+      text-decoration: none;
+      cursor: pointer;
+      &:hover {
+        opacity: 1;
+      }
+      &.country {
+        margin-top: 1.5em;
+      }
+      .dropdown {
+        margin-left: 5px;
+        font-size: 0.7em;
+      }
+    }
+  }
+}
+.copyright {
+  background-color: #1F2E39;
+  color: rgba(white, 0.5);
+  text-align: center;
+  position: absolute;
+  bottom: 70px;
+  left: 0;
+  right: 0;
+}
