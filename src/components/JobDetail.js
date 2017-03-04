@@ -16,7 +16,10 @@ class JobDetail extends React.Component {
       const {job} = this.props;
       if (!job)
       {
-        return <div className="job-detail" />;
+        return (<div className="job-detail empty">
+          <img src={require('../images/select-a-job.png')} />
+          <div className="instruction">Select a job to view more details</div>
+        </div>);
       }
       const {restaurant} = job;
       const {jobs} = restaurant;

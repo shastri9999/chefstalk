@@ -237,17 +237,17 @@ $leftrightpadding: 9.3vw;
 		}
 		.signup
 		{
-			margin: 0 7vw;
+			margin: 100px auto 0 auto;
 			height: 150px;
 			border-radius: 5px;
-			background-color: $lightishblue;
+			background-color: #d7ebff;
 			position: relative;
 			display: flex;
 	    align-items: center;
-	    margin-top: 100px;
+			max-width: 860px;
 			.start-apply {
-				font-size: 1.35em;
-				color: white;
+				font-size: 24px;
+				color: #1F2E39;
 				margin-left: 30px;
 			}
 
@@ -262,16 +262,17 @@ $leftrightpadding: 9.3vw;
 				outline: none;
 				font-size: 1.1rem;
 				padding: 1em 2em;
-				color: $lightishblue;
-				background-color: white;
+				color: white;
+				background-color:  $lightishblue;
 				position: absolute;
-				right: 100px;
+				right: 80px;
 				top: 45px;
 				cursor: pointer;
 				text-transform: uppercase;
 				font-weight: 600;
 				&:hover {
-					background-color: rgb(240,240,240);
+					background-color: white;
+					color: $lightishblue;
 				}
 			}
 		}

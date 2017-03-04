@@ -1,5 +1,12 @@
 @import "variables";
 .job-detail {
+  &.empty {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
   .main-detail {
     display: flex;
     justify-content: space-around;

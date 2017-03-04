@@ -31,7 +31,7 @@ export default class JobCarousel extends Component {
       variableWidth: true,
     };
     const slides = [{
-      image: 'https://s30.postimg.org/cqzqqa46p/mumbai.jpg',
+      image: '../images/background-0.png',
       place: 'Mumbai, India',
       restaurant: {
         name: 'Grand Hyatt',
@@ -41,7 +41,7 @@ export default class JobCarousel extends Component {
         time: '3 hours ago',
       },
     },{
-      image: 'https://s30.postimg.org/5yobot4ld/berlin.jpg',
+      image: '../images/background-1.png',
       place: 'Berlin, Germany',
       restaurant: {
         name: 'Radisson Blu',
@@ -51,7 +51,7 @@ export default class JobCarousel extends Component {
         time: '1 day ago',
       },
     },{
-      image: 'https://s27.postimg.org/mhrddkytf/barcelona.jpg',
+      image: '../images/background-2.png',
       place: 'Barcelona, Spain',
       restaurant: {
         name: 'Radisson Blu',
@@ -61,7 +61,7 @@ export default class JobCarousel extends Component {
         time: '2 days ago',
       },
     },{
-      image: 'https://s30.postimg.org/enmg5n7z5/new_york.jpg',
+      image: '../images/background-0.png',
       place: 'NewYork, USA',
       restaurant: {
         name: 'Radisson Blu',
@@ -71,7 +71,7 @@ export default class JobCarousel extends Component {
         time: '2 days ago',
       },
     },{
-      image: 'https://s23.postimg.org/65vxkfkjv/bangalore.jpg',
+      image: '../images/background-1.png',
       place: 'Bengaluru, India',
       restaurant: {
         name: 'Grand Hyatt',
