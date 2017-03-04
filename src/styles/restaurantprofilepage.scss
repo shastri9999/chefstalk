@@ -244,6 +244,15 @@
             cursor: pointer;
             outline: 0;
             font-weight: 600;
+            a {
+              text-decoration: none;
+              font-family: inherit;
+              color: inherit;
+              width: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
             &:hover {
               background-color: $lightishblue;
               border: 0;

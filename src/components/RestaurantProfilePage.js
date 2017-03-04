@@ -4,7 +4,7 @@ import SearchHeader from './SearchHeader.js';
 import {connect} from 'react-redux';
 import filterJobs from '../helpers/filterJobs';
 import Footer from './Footer.js';
-
+import { Link } from 'react-router';
 
 class RestaurantProfilePage extends React.Component {
   constructor(props){
@@ -137,7 +137,9 @@ class RestaurantProfilePage extends React.Component {
                   <div className="description">
                     {jobDescription}
                   </div>
-                  <button className="apply">Apply</button>
+                  <button className="apply">
+                    <Link to={`restaurant/${restaurant.name}/${index}`}> Apply </Link>
+                  </button>
                 </div>
                 <div className="bottom">
                   <div className="left">
