@@ -62,7 +62,9 @@ class RestaurantProfilePage extends React.Component {
               <img src={require('../images/twitter.png')}/>
               <img src={require('../images/instagram.png')}/>
               <button>
-                <img src={require('../images/share.png')}/>
+                <span>
+                  <img src={require('../images/share.png')}/>
+                </span>
               </button>
             </div>
           </div>

@@ -6,6 +6,7 @@ import HomePage from './components/HomePage';
 import JobsPage from './components/JobsPage';
 import ChefProfilePage from './components/ChefProfilePage';
 import RestaurantProfilePage from './components/RestaurantProfilePage';
+import RestaurantJobPage from './components/RestaurantJobPage';
 import LoginPage from './components/LoginPage';
 import SignupPage from './components/SignupPage';
 import WelcomePage from './components/WelcomePage';
@@ -27,6 +28,7 @@ export default (
     <Route path="/jobs" component={JobsPage}/>
     <Route path="/profile" component={ChefProfilePage}/>
     <Route path="/restaurant/:name" component={RestaurantProfilePage}/>
+    <Route path="/restaurant/:name/:jobId" component={RestaurantJobPage}/>
     <Route path="/login" component={LoginPage}/>
     <Route path="/signup" component={SignupPage}/>
     <Route path="/terms" component={TermsPage}/>

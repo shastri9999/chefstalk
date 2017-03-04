@@ -1,5 +1,5 @@
 @import "variables";
-.restaurant-profile-page{
+.restaurant-job-page{
   &>.top {
     padding-left: 203px;
     background-color: #fff;
@@ -26,57 +26,58 @@
         color: $darkcolor;
         margin-bottom: 20px;
       }
-      .description {
-        line-height: 1.43;
-        letter-spacing: 0.2px;
-      }
-      .links {
-        margin-top: 20px;
-        display: flex;
-        align-items: center;
-        img {
-          margin-right: 20px;
-          opacity: 0.3;
-          cursor: pointer;
-          height: 30px;
-          &:hover {
-            opacity: 1;
-          }
-        }
-        button {
-          border: 1px solid $cloudyblue;
-          padding: 0;
-          span {
-            width: 120px;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
-          border-radius: 100px;
-          color: rgba(#1F2E39, 0.5);
-          font-size: 14px;
-          background-color: #fff;
-          font-weight: 600;
-          outline: none;
-          cursor: pointer;
-          &:hover {
-            background-color: #f3f8fc;
-          }
-          img {
-            height: 11px;
-            opacity: 1;
-            margin: 0px;
-          }
-        }
+      .detail {
+        font-size: 20px;
+        font-weight: 600;
       }
     }
     .right {
-      .info {
-        margin-bottom: 20px;
-        font-weight: 700;
+      display: flex;
+      flex-direction: column;
+      button.share {
+        border: 1px solid $cloudyblue;
+        span {
+          width: 192px;
+          height: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        border-radius: 100px;
+        color: rgba(#1F2E39, 0.5);
+        font-size: 14px;
+        background-color: #fff;
+        font-weight: 600;
+        outline: none;
+        cursor: pointer;
+        &:hover {
+          background-color: #f3f8fc;
+        }
         img {
-          margin-right: 20px;
+          height: 11px;
+          opacity: 1;
+          margin: 0px;
+        }
+      }
+      button.applyNow {
+        border: 1px solid $lightishblue;
+        span {
+          width: 192px;
+          height: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        margin-top: 30px;
+        border-radius: 100px;
+        color: white;
+        font-size: 13px;
+        background-color: $lightishblue;
+        font-weight: 600;
+        outline: none;
+        cursor: pointer;
+        &:hover {
+          box-shadow: rgba(#2D6BDA, 0.27) 0 6px 15px;
         }
       }
     }
@@ -86,16 +87,19 @@
     align-items: stretch;
     &>.left {
       flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
       background-color: #f4f8fb;
       border-right: 1px solid $border-color;
       min-height: 700px;
-      padding: 30px;
-      padding-left: 135px;
-      .about {
+      padding: 30px 20vw;
+      .about, .job-description, .compensation {
         border: 1px solid $border-color;
         border-radius: 3px;
         background-color: #fff;
         padding: 30px;
+        margin-bottom: 30px;
         h3 {
           font-weight: 700;
           font-size: 14px;
@@ -103,76 +107,62 @@
           margin-bottom: 30px;
         }
         div {
-          padding-left: 50px;
           color: $opaque-color;
           letter-spacing: 0.2px;
           line-height: 1.43;
           font-size: 14px;
         }
       }
-      .awards {
+      .more {
         background-color: #fff;
-        line-height: 1.43;
-        font-size: 14px;
-        padding: 30px;
         border: 1px solid $border-color;
         border-radius: 3px;
-        margin-top: 30px;
-        h3 {
-            text-transform: uppercase;
-            font-weight: 700;
+        padding: 30px;
+        margin-bottom: 30px;
+        .perks, .benifits, .links {
+          font-size: 14px;
+          color: $opaque-color;
+          h4 {
             color: $darkcolor;
-            margin-bottom: 30px;
-        }
-        &>div {
-          margin-left: 50px;
-          font-weight: 700;
-          padding-bottom: 30px;
-          padding-top: 30px;
-          .main {
-            display: flex;
-            position: relative;
-            align-items: flex-start;
-            img {
-              flex-shrink: 0;
-              margin-right: 30px;
-              position: relative;
-              top:5px;
-            }
-            .duration {
-              color: $opaque-color;
-              position: absolute;
-              right: 70px;
-              top: 40px;
-              font-weight: 500;
-            }
-            .middle {
-              h4 {
-                font-size: 20px;
-                margin-bottom: 10px;
-              }
-              .detail {
-                display: flex;
-                color: $opaque-color;
-                align-items: center;
-                .left {
-                  font-size: 18px;
-                }
-              }
-            }
-          }
-          .description {
+            margin-bottom: 20px;
+            font-weight: 700;
             margin-top: 10px;
-            line-height: 1.43;
-            color: $opaque-color;
-            font-size: 14px;
+          }
+          div {
             font-weight: 500;
-            padding: 0 40px;
+            margin-bottom: 30px;
           }
         }
-        &>div:not(:last-of-type) {
-          border-bottom: 1px solid $border-color;
+      }
+      button.applyNow.main {
+        border: 1px solid $lightishblue;
+        align-self: center;
+        padding: 0;
+        span {
+          width: 192px;
+          height: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
+        margin: 50px auto;
+        border-radius: 100px;
+        color: white;
+        font-size: 13px;
+        background-color: $lightishblue;
+        font-weight: 600;
+        outline: none;
+        cursor: pointer;
+        &:hover {
+          box-shadow: rgba(#2D6BDA, 0.27) 0 6px 15px;
+        }
+      }
+
+      .divider {
+        margin: 50px -20vw;
+        border: 0;
+        height: 2px;
+        background-color: $border-color;
       }
       .openings {
         font-size: 14px;
@@ -244,6 +234,15 @@
             cursor: pointer;
             outline: 0;
             font-weight: 600;
+            a {
+              text-decoration: none;
+              font-family: inherit;
+              color: inherit;
+              width: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
             &:hover {
               background-color: $lightishblue;
               border: 0;
@@ -259,27 +258,6 @@
             font-size: 12px;
             font-weight: 600;
           }
-        }
-      }
-    }
-    &>.right {
-      background-color: #fff;
-      padding: 30px;
-      padding-top: 50px;
-      width: 500px;
-      padding-top: 0;
-      .perks, .benifits, .links {
-        font-size: 14px;
-        color: $opaque-color;
-        h4 {
-          color: $darkcolor;
-          margin-bottom: 20px;
-          font-weight: 700;
-          margin-top: 50px;
-        }
-        div {
-          font-weight: 500;
-          margin-bottom: 30px;
         }
       }
     }

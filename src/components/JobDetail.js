@@ -82,7 +82,9 @@ class JobDetail extends React.Component {
                       <div className="description">
                         {jobDescription}
                       </div>
-                      <button className="apply">Apply</button>
+                      <button className="apply">
+                        <Link to={`restaurant/${restaurant.name}/${index}`}> Apply </Link>
+                      </button>
                     </div>
                     <div className="bottom">
                       <div className="left">
