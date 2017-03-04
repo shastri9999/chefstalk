@@ -95,7 +95,7 @@ export default class JobCarousel extends Component {
           {slides.map((slide, index)=>(
             <div key={index}>
               <div className="posting">
-                  <div className="image-container" style={{backgroundImage: `url(${slide.image})`}}>
+                  <div className="image-container">
                     {slide.place}
                   </div>
                   <div className="details">
