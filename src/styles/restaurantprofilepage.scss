@@ -32,6 +32,8 @@
       }
       .links {
         margin-top: 20px;
+        display: flex;
+        align-items: center;
         img {
           margin-right: 20px;
           opacity: 0.3;
@@ -39,6 +41,31 @@
           height: 30px;
           &:hover {
             opacity: 1;
+          }
+        }
+        button {
+          border: 1px solid $cloudyblue;
+          width: 120px;
+          height: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 100px;
+          color: rgba(#1F2E39, 0.5);
+          font-size: 14px;
+          background-color: #fff;
+          font-weight: 600;
+          outline: none;
+          cursor: pointer;
+          &:hover {
+            background-color: #f3f8fc;
+          }
+          img {
+            height: 8px;
+            opacity: 1;
+            margin-right: 5px;
+            position: relative;
+            top: -1px;
           }
         }
       }

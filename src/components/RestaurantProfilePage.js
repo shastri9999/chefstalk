@@ -61,25 +61,33 @@ class RestaurantProfilePage extends React.Component {
               <img src={require('../images/facebook.png')}/>
               <img src={require('../images/twitter.png')}/>
               <img src={require('../images/instagram.png')}/>
+              <button>
+                <img src={require('../images/share.png')}/>
+                Share
+              </button>
             </div>
           </div>
           <div className="right">
-          <div className="info">
-            <img src={require('../images/location.png')}/>
-            {restaurant.location}
-          </div>
-          <div className="info">
-            <img src={require('../images/chefhat.png')}/>
-            {restaurant.restaurantType}
-          </div>
-          <div className="info">
-            <img src={require('../images/group.png')}/>
-            {restaurant.employees} Employees
-          </div>
-          <div className="info">
-            <img src={require('../images/flag.png')}/>
-            Founded {restaurant.founded}
-          </div>
+            <div className="info">
+              <img src={require('../images/location.png')}/>
+              {restaurant.location}
+            </div>
+            <div className="info">
+              <img src={require('../images/chefhat.png')}/>
+              {restaurant.restaurantType}
+            </div>
+            <div className="info">
+              <img src={require('../images/group.png')}/>
+              {restaurant.employees} Employees
+            </div>
+            <div className="info">
+              <img src={require('../images/flag.png')}/>
+              Founded {restaurant.founded}
+            </div>
+            <div className="info">
+              <img src={require('../images/globe.png')} style={{position: 'relative', top: '5px', marginRight: '15px'}}/>
+               www.{restaurant.name.toLowerCase().replace(" ", "-")}.com/global
+            </div>
           </div>
         </div>
         <div className="bottom">
