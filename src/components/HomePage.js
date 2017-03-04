@@ -59,7 +59,7 @@ const HomePage = () => {
           </div>
           <div className="step">
             <div className="image-container">
-                <img src={require('../images/globe.png')} />
+                <img src={require('../images/globehome.png')} />
             </div>
             <h3>
               Grow Your Network
