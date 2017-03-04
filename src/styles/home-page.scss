@@ -2,7 +2,7 @@
 $leftrightpadding: 9.3vw;
 .home {
 	nav.header {
-		margin-left: calc(-9.3vw + 30px);
+		margin-left: calc(-9.3vw + 10px);
 		margin-right: -9.3vw;
 	}
 	display: flex;
@@ -27,6 +27,7 @@ $leftrightpadding: 9.3vw;
 		height: 37vw;
 		background-repeat: no-repeat;
 		background-attachment: fixed;
+		padding-top: 10px;
 	}
 	.search {
 		margin: 40px $leftrightpadding;

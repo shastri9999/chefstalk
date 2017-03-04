@@ -7,7 +7,6 @@ import {changeSelectedJob, addTerm} from '../reducers/actions';
 import SelectDropDown from './selectDropdown';
 import SearchHeader from './SearchHeader';
 import filterJobs from '../helpers/filterJobs';
-import Footer from './Footer.js';
 
 class JobsPage extends React.Component {
   constructor(props){
@@ -61,7 +60,6 @@ class JobsPage extends React.Component {
     const jobTypeFilters = filters.filter(filter => filter.type == 'jobType');
 
     return (
-      <div>
         <div className="jobs-container">
           <SearchHeader />
           {this.state.loggedIn ?<div className="profile-completion-status">
@@ -124,8 +122,6 @@ class JobsPage extends React.Component {
             <JobDetail job={selectedJob} />
           </div>
         </div>
-        <Footer />
-      </div>
     );
   }
 }

@@ -41,8 +41,7 @@ class Header extends React.Component {
     return (
       <nav className={this.state.fixed ? "header fixed" : "header"}>
         <IndexLink to="/" className="logo">
-          <img src={require('../images/logo.png')} />
-          <span className="full">Chefstalk</span>
+          <img src={require('../images/logo_typo.png')} />
         </IndexLink>
         {loggedIn ? <AvatarArea /> :<div className="links">
           <Link to="/restaurant" className="normal">Are you a business?</Link>
